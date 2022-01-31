@@ -1,0 +1,28 @@
+.nav {
+  list-style: none;
+  padding: 15px 15px 0;
+  display: flex;
+  flex-flow: column;
+  background-color: #2a2e33;
+  color: #ff1616;
+  border: solid;
+  border-radius: 15px;
+  position: absolute;
+  width: fit-content;
+  top: 45px;
+}
+
+.nav li {
+  margin-bottom: 25px;
+  color: #e5e5e5;
+  text-align: center;
+  font-size: 1.2rem;
+  width: 100%;
+  font-family: lato, cursive;
+  padding-right: 15px;
+}
+
+.link {
+  text-decoration: none;
+  color: #e5e5e5;
+}

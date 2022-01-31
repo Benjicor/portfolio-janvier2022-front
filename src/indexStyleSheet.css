@@ -1,0 +1,114 @@
+/* Routage des polices */
+
+@font-face {
+  font-family: aileronbold;
+  src: url('./police/aileron-bold-webfont.woff') format('woff'),
+    url('./police/aileron-italic-webfont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: aileronitalic;
+  src: url('./police/aileron-italic-webfont.woff') format('woff'),
+    url('./police/aileron-italic-webfont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: aileronregular;
+  src: url('./police/aileron-italic-webfont.woff') format('woff'),
+    url('./police/aileron-regular-webfont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: latobold;
+  src: url('./police/lato-bold-webfont.woff') format('woff'),
+    url('./police/lato-bold-webfont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: latoitalic;
+  src: url('./police/lato-italic-webfont.woff') format('woff'),
+    url('./police/lato-italic-webfont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: latoregular;
+  src: url('./police/lato-regular-webfont.woff') format('woff'),
+    url('./police/lato-regular-webfont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Attribution des polices */
+
+.name {
+  font-size: 2.5rem;
+  font-family: aileronbold, Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  color: #fff;
+}
+
+h2 {
+  font-family: aileronbold, Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  color: #fff;
+}
+
+h3 {
+  font-family: latoitalic, Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-style: italic;
+  color: #05d8fd;
+}
+
+p {
+  font-family: latoregular, Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  color: #fff;
+}
+
+ul li {
+  font-family: latoregular, Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  color: #fff;
+  list-style-type: none;
+}
+
+.titre {
+  font-family: latobold, Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  color: #05d8fd;
+}
+
+.structure {
+  font-family: aileronregular, Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-style: italic;
+  color: #05d8fd;
+}
+
+.projet-etude {
+  color: #05d8fd;
+  text-decoration-line: underline;
+}
+
+/* Annulation de la mise en forme native html de la balise a */
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
