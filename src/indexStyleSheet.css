@@ -55,14 +55,14 @@
   font-family: aileronbold, Arial, Helvetica, sans-serif;
   font-weight: bold;
   font-style: normal;
-  color: #fff;
+  color: #e5e5e5;
 }
 
 h2 {
   font-family: aileronbold, Arial, Helvetica, sans-serif;
   font-weight: bold;
   font-style: normal;
-  color: #fff;
+  color: #e5e5e5;
 }
 
 h3 {
@@ -76,19 +76,19 @@ p {
   font-family: latoregular, Arial, Helvetica, sans-serif;
   font-weight: normal;
   font-style: normal;
-  color: #fff;
+  color: #e5e5e5;
 }
 
 ul li {
   font-family: latoregular, Arial, Helvetica, sans-serif;
   font-weight: normal;
   font-style: normal;
-  color: #fff;
+  color: #e5e5e5;
   list-style-type: none;
 }
 
 .titre {
-  font-family: latobold, Arial, Helvetica, sans-serif;
+  font-family: latobold, cursive, Arial, Helvetica, sans-serif;
   font-weight: bold;
   font-style: normal;
   color: #05d8fd;
@@ -110,5 +110,5 @@ ul li {
 
 a {
   text-decoration: none;
-  color: #fff;
+  color: #e5e5e5;
 }

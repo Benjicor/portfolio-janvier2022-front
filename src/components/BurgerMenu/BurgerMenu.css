@@ -13,8 +13,8 @@
 
 .title {
   width: 100%;
-  font-family: lato, cursive;
-  font-size: 25pt;
+  font-family: latobold, Arial, Helvetica, sans-serif;
+  font-size: 20pt;
   text-align: center;
 }
 
@@ -82,8 +82,18 @@ h1 {
   text-decoration: none;
 }
 
-@media screen and (max-width: 568px) {
+/* Média Queries - Adaptation sur écran de plus de 768px */
+
+@media screen and (min-width: 768px) {
   .title {
-    font-size: 18pt;
+    font-size: 30pt;
+  }
+}
+
+/* Média Queries - Adaptation sur écran de plus de 992px */
+
+@media screen and (min-width: 992px) {
+  .title {
+    font-size: 30pt;
   }
 }

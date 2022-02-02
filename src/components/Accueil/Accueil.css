@@ -1,0 +1,68 @@
+/* Mise en forme photo de profil */
+
+.photo-profil {
+  width: 200px;
+  height: 200px;
+  transform: rotate(40deg);
+  transition: 0.5s ease;
+}
+
+.photo-profil:hover {
+  transform: scale(1.5) rotate(40deg);
+}
+
+/* Mise en forme cadre photo de profil */
+
+.accueil {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.rond {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #adadad;
+  border: black solid 8px;
+}
+
+.carre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 175px;
+  height: 175px;
+  padding: 1rem;
+  background: linear-gradient(
+    to right,
+    #00678c 25%,
+    #1572b6 25% 50%,
+    #33a9dc 50% 75%,
+    #05d8fd 75%
+  );
+  transform: rotate(-45deg);
+}
+
+.name {
+  margin: 0;
+}
+
+/* Mise en forme des écrits */
+
+.bienvenue {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}

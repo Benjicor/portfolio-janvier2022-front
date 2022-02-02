@@ -7,24 +7,24 @@ function BurgerContent({ handleClick }) {
     <div>
       <ul className="nav">
         <li>
-          <a className="section" href="#sectionHome" onClick={handleClick}>
-            Home
-          </a>
-        </li>
-        <li>
-          <a className="section" href="#accueil" onClick={handleClick}>
-            About
-          </a>
-        </li>
-        <li>
-          <Link className="link" to="/mapbar" onClick={handleClick}>
-            Projects
+          <Link className="link" to="/" onClick={handleClick}>
+            Accueil
           </Link>
         </li>
         <li>
-          <a className="section" href="#sectionCréation" onClick={handleClick}>
+          <Link className="link" to="/APropos" onClick={handleClick}>
+            À propos
+          </Link>
+        </li>
+        <li>
+          <Link className="link" to="/Projets" onClick={handleClick}>
+            Projets
+          </Link>
+        </li>
+        <li>
+          <Link className="link" to="/Contact" onClick={handleClick}>
             Contact
-          </a>
+          </Link>
         </li>
       </ul>
     </div>
