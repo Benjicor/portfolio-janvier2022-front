@@ -5,7 +5,8 @@ footer {
   background: linear-gradient(to right, #333, #adadad, #333);
   text-align: center;
   justify-content: space-between;
-  position: fixed;
+
+  /* position: absolute; */
   width: 100%;
   bottom: 0;
   right: 0;
@@ -19,6 +20,7 @@ footer {
   width: 100%;
   justify-content: space-around;
   align-items: center;
+  flex-grow: 1; /* 4 */
 }
 
 .linkedin {
@@ -43,9 +45,4 @@ footer {
 
 /* Média Queries - Adaptation sur écran de plus de 768px */
 
-@media only screen and (max-width: 768px) {
-  .text-alcool {
-    font-size: 16px;
-    margin-left: 30px;
-  }
-}
+/* Média Queries - Adaptation sur écran de plus de 992px */

@@ -3,26 +3,26 @@
   padding: 15px 15px 0;
   display: flex;
   flex-flow: column;
-  background-color: #2a2e33;
+  background: linear-gradient(135deg, #05d8fd, #e5e5e5, #ff1616);
   color: #ff1616;
   border: solid;
   border-radius: 15px;
   position: absolute;
+  white-space: nowrap;
   width: fit-content;
   top: 45px;
 }
 
 .nav li {
   margin-bottom: 25px;
-  color: #e5e5e5;
   text-align: center;
   font-size: 1.2rem;
   width: 100%;
-  font-family: lato, cursive;
-  padding-right: 15px;
+  font-family: latobold, Arial, Helvetica, sans-serif;
+  padding-right: 5px;
 }
 
 .link {
   text-decoration: none;
-  color: #e5e5e5;
+  color: #333;
 }

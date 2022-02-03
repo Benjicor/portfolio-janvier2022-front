@@ -1,6 +1,7 @@
 /* Mise en forme photo de profil */
 
 .photo-profil {
+  display: block;
   width: 200px;
   height: 200px;
   transform: rotate(40deg);

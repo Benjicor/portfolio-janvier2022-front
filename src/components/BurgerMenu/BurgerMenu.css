@@ -7,26 +7,21 @@
   color: #e5e5e5;
   position: relative;
   top: 0;
-  z-index: 99;
+  z-index: 8;
   align-items: center;
 }
 
 .title {
   width: 100%;
   font-family: latobold, Arial, Helvetica, sans-serif;
-  font-size: 20pt;
+  font-size: 2rem;
   text-align: center;
-}
-
-h1 {
-  text-align: center;
-  color: #e5e5e5;
 }
 
 .burger-menu {
   position: fixed;
-  top: 0;
-  left: 1rem;
+  margin-top: -30.5px;
+  margin-left: 0;
   justify-content: flex-start;
   border-color: transparent;
   background-color: transparent;
@@ -86,7 +81,7 @@ h1 {
 
 @media screen and (min-width: 768px) {
   .title {
-    font-size: 30pt;
+    font-size: 2.5rem;
   }
 }
 
@@ -94,6 +89,6 @@ h1 {
 
 @media screen and (min-width: 992px) {
   .title {
-    font-size: 30pt;
+    font-size: 3rem;
   }
 }

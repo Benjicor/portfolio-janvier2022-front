@@ -5,3 +5,43 @@
 /* display: none; */
 
 /* } */
+
+/* Mise en forme du texte (titre et paragraphe) */
+
+.presentation {
+  margin-left: 7%;
+  margin-right: 7%;
+  text-align: left;
+  color: #e5e5e5;
+  font-size: 1.3rem;
+}
+
+.presentation p {
+  text-align: justify;
+  color: #e5e5e5;
+  font-size: 0.9rem;
+}
+
+/* Média Queries - Adaptation sur écran de plus de 768px */
+
+@media screen and (min-width: 768px) {
+  .presentation {
+    font-size: 2rem;
+  }
+
+  .presentation p {
+    font-size: 1.5rem;
+  }
+}
+
+/* Média Queries - Adaptation sur écran de plus de 992px */
+
+@media screen and (min-width: 992px) {
+  .presentation {
+    font-size: 2rem;
+  }
+
+  .presentation p {
+    font-size: 1.5rem;
+  }
+}

@@ -6,8 +6,10 @@ function Projets({ setTitle }) {
     setTitle('Projets');
   }, []);
   return (
-    <div className="projets">
-      <div>.</div>
+    <div className="page">
+      <div className="projets">
+        <div>.</div>
+      </div>
     </div>
   );
 }
