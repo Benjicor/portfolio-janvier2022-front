@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React, { useState, useEffect } from 'react';
 import './Accueil.css';
-import Modal from '../../D-ComposantsSite/Modal/Modal';
+import Modal from '../../SiteComposants/Modal/Modal';
 import grandePhoto from '../../../assets/jpg/grande-photo.jpg';
 import petitePhoto from '../../../assets/png/petite-photo-ronde.png';
 import html5 from '../../../assets/svg/html5.svg';

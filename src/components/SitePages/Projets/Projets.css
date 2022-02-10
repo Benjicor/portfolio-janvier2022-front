@@ -1,6 +1,6 @@
 /* Mise en forme du conteneur global */
 
-.page-contact ~ footer {
+.page-projets ~ footer {
   position: fixed;
   bottom: 0;
 }
@@ -9,16 +9,13 @@
 
 @media screen and (min-width: 360px) {
   /* Media Query BurgerMenu */
-  .header .title {
-    font-size: 2rem;
-  }
 }
 
 /* Média Queries - Adaptation sur écran de plus de 768px */
 
 @media screen and (min-width: 768px) and (min-height: 450px) {
   /* Mise en forme du conteneur global */
-  .page-contact ~ footer {
+  .page-projets ~ footer {
     position: fixed;
     bottom: 0;
   }
@@ -28,7 +25,7 @@
 
 @media screen and (min-width: 992px) and (min-height: 450px) {
   /* Mise en forme du conteneur global */
-  .page-contact ~ footer {
+  .page-projets ~ footer {
     position: fixed;
     bottom: 0;
   }

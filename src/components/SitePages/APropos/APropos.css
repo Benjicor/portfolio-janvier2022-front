@@ -26,9 +26,6 @@
 
 @media screen and (min-width: 360px) {
   /* Media Query BurgerMenu */
-  .header .title {
-    font-size: 2rem;
-  }
 }
 
 /* Média Queries - Adaptation sur écran de plus de 768px */

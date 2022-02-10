@@ -47,25 +47,16 @@ footer {
 
 @media screen and (min-width: 360px) {
   /* Media Query BurgerMenu */
-  .header .title {
-    font-size: 2rem;
-  }
 }
 
 /* Média Queries - Adaptation sur écran de plus de 768px */
 
 @media screen and (min-width: 768px) {
   /* Media Query BurgerMenu */
-  .header .title {
-    font-size: 3rem;
-  }
 }
 
 /* Média Queries - Adaptation sur écran de plus de 992px */
 
 @media screen and (min-width: 992px) {
   /* Media Query BurgerMenu */
-  .header .title {
-    font-size: 4rem;
-  }
 }
