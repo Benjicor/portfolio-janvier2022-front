@@ -2,18 +2,18 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React, { useState, useEffect } from 'react';
 import './Accueil.css';
-import Modal from '../Modal/Modal';
-import grandePhoto from '../../assets/jpg/grande-photo.jpg';
-import petitePhoto from '../../assets/png/petite-photo-ronde.png';
-import html5 from '../../assets/svg/html5.svg';
-import css3 from '../../assets/svg/css3.svg';
-import javascript from '../../assets/svg/javascript.svg';
-import nodejs from '../../assets/svg/nodejs.svg';
-import react from '../../assets/svg/react.svg';
-import mysql from '../../assets/svg/mysql.svg';
-import git from '../../assets/svg/git.svg';
-import github from '../../assets/svg/github-original.svg';
-import certificatHtml5Css3 from '../../assets/pdf/CertificatDeReussite-ApprenezACréerVotreSiteWebAvecHtml5EtCss3.pdf';
+import Modal from '../../D-ComposantsSite/Modal/Modal';
+import grandePhoto from '../../../assets/jpg/grande-photo.jpg';
+import petitePhoto from '../../../assets/png/petite-photo-ronde.png';
+import html5 from '../../../assets/svg/html5.svg';
+import css3 from '../../../assets/svg/css3.svg';
+import javascript from '../../../assets/svg/javascript.svg';
+import nodejs from '../../../assets/svg/nodejs.svg';
+import react from '../../../assets/svg/react.svg';
+import mysql from '../../../assets/svg/mysql.svg';
+import git from '../../../assets/svg/git.svg';
+import github from '../../../assets/svg/github-original.svg';
+import certificatHtml5Css3 from '../../../assets/pdf/CertificatDeReussite-ApprenezACréerVotreSiteWebAvecHtml5EtCss3.pdf';
 
 function Accueil({ setTitle }) {
   const [openModal, setOpenModal] = useState(false);

@@ -28,7 +28,7 @@
   border-radius: 100%;
   width: 200px;
   height: 200px;
-  margin: 0 auto;
+  margin: 35px auto;
   padding: 2rem;
   background-color: #adadad;
   border: black solid 8px;
@@ -126,15 +126,19 @@ p {
   }
 }
 
-/* Média Queries - Adaptation sur écran de plus de 381px */
+/* Média Queries - Adaptation sur écran de plus de 381px de large et 1025px de haut */
 
-@media screen and (min-width: 381px) {
-  /* Media Query BurgerMenu */
+@media screen and (min-width: 320px) and (min-height: 1070px) {
+  /* Mise en forme du conteneur global */
+  .page-accueil ~ footer {
+    position: fixed;
+    bottom: 0;
+  }
 }
 
-/* Média Queries - Adaptation sur écran de plus de 768px */
+/* Média Queries - Adaptation sur écran de plus de 768px de large */
 
-@media screen and (min-width: 768px) and (min-height: 818px) {
+@media screen and (min-width: 768px) {
   /* Mise en forme photo de profil */
   .photo-profil {
     width: 275px;
@@ -145,26 +149,44 @@ p {
   .rond {
     width: 350px;
     height: 350px;
+    margin: 40px auto;
   }
 
   .carre {
     width: 250px;
     height: 250px;
   }
+}
 
-  /* Mise en place du footer */
-  .page-accueil ~ footer {
-    position: fixed;
-    bottom: 0;
+/* Média Queries - Adaptation sur écran de plus de 992px de large */
+
+@media screen and (min-width: 992px) {
+  /* Mise en forme photo de profil */
+  .photo-profil {
+    width: 275px;
+    height: 275px;
+  }
+
+  /* Mise en forme cadre photo de profil */
+  .rond {
+    width: 350px;
+    height: 350px;
+    margin: 50px auto;
+  }
+
+  .carre {
+    width: 250px;
+    height: 250px;
   }
 }
 
-/* Média Queries - Adaptation sur écran de plus de 992px */
+/* Média Queries - Adaptation sur écran de plus de 992px de large et 1049px de haut */
 
-@media screen and (min-width: 992px) and (min-height: 818px) {
-  /* Mise en place du footer */
-  .page-accueil ~ footer {
+@media screen and (min-width: 992px) and (min-height: 1049px) {
+  /* Mise en forme du conteneur global */
+
+  /* .page-accueil ~ footer {
     position: fixed;
     bottom: 0;
-  }
+  } */
 }

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import BurgerMenu from './components/BurgerMenu/BurgerMenu';
-import Accueil from './components/Accueil/Accueil';
-import APropos from './components/APropos/APropos';
-import Projets from './components/Projets/Projets';
-import Contact from './components/Contact/Contact';
-import Footer from './components/Footer/Footer';
+import BurgerMenu from './components/D-ComposantsSite/BurgerMenu/BurgerMenu';
+import Accueil from './components/C-PagesSite/Accueil/Accueil';
+import APropos from './components/C-PagesSite/APropos/APropos';
+import Projets from './components/C-PagesSite/Projets/Projets';
+import Contact from './components/C-PagesSite/Contact/Contact';
+import Footer from './components/D-ComposantsSite/Footer/Footer';
 
 function App() {
   const [title, setTitle] = useState('');
