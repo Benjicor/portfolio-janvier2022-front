@@ -21,3 +21,32 @@
   color: #e5e5e5;
   font-size: 0.9rem;
 }
+
+/* Média Queries - Adaptation sur écran de plus de 360px */
+
+@media screen and (min-width: 360px) {
+  /* Media Query BurgerMenu */
+  .header .title {
+    font-size: 2rem;
+  }
+}
+
+/* Média Queries - Adaptation sur écran de plus de 768px */
+
+@media screen and (min-width: 768px) and (min-height: 450px) {
+  /* Mise en forme du conteneur global */
+  .page-a-propos ~ footer {
+    position: fixed;
+    bottom: 0;
+  }
+}
+
+/* Média Queries - Adaptation sur écran de plus de 992px */
+
+@media screen and (min-width: 992px) and (min-height: 450px) {
+  /* Mise en forme du conteneur global */
+  .page-a-propos ~ footer {
+    position: fixed;
+    bottom: 0;
+  }
+}

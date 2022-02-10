@@ -17,12 +17,11 @@ import certificatHtml5Css3 from '../../assets/pdf/CertificatDeReussite-ApprenezA
 
 function Accueil({ setTitle }) {
   const [openModal, setOpenModal] = useState(false);
-  const [openModal2, setOpenModal2] = useState(false);
   useEffect(() => {
     setTitle('Accueil');
   }, []);
   return (
-    <div className="page">
+    <div className="page-accueil">
       <div className="accueil">
         <h1 className="bienvenue">Bienvenue sur mon Portfolio</h1>
         <div className="rond">
@@ -48,19 +47,14 @@ function Accueil({ setTitle }) {
             <a
               className="certificat"
               href={certificatHtml5Css3}
-              onClick={() => setOpenModal2(true)}
+              target="_blank"
+              rel="noreferrer"
             >
               HTML5
-              <img
-                src={html5}
-                alt="Logo Html5"
-                onClick={() => setOpenModal2(true)}
-              />
+              <img src={html5} alt="Logo Html5" />
             </a>
-            {openModal2 && (
-              <Modal closeModal={setOpenModal2} img={certificatHtml5Css3} />
-            )}
           </li>
+
           <li>
             <a
               className="certificat"
@@ -72,26 +66,32 @@ function Accueil({ setTitle }) {
               <img src={css3} alt="Logo Css3" />
             </a>
           </li>
+
           <li>
             javascript
             <img src={javascript} alt="Logo Javascript" />
           </li>
+
           <li>
             Node JS
             <img src={nodejs} alt="Logo Node JS" />
           </li>
+
           <li>
             React JS
             <img src={react} alt="Logo React JS" />
           </li>
+
           <li>
             Mysql
             <img src={mysql} alt="Logo Mysql" />
           </li>
+
           <li>
             Git
             <img src={git} alt="Logo Git" />
           </li>
+
           <li>
             Github
             <img src={github} alt="Logo Github" />

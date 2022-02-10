@@ -10,30 +10,9 @@ body {
   color: #e5e5e5;
 }
 
-/* Mise en forme du conteneur global */
-
-.page {
-  min-height: 89vh;
-  display: flex;
-  flex-direction: column;
-}
-
 /* Média Queries - Adaptation sur écran de plus de 768px */
 
 @media screen and (min-width: 768px) {
-  /* Media Query BurgerMenu */
-  .title {
-    font-size: 2.5rem;
-  }
-
-  /* Media Query Modal */
-  .modal-container {
-    width: 350px;
-    height: 350px;
-    top: 25%;
-    left: 50%;
-  }
-
   /* Media Query APropos */
   .presentation {
     font-size: 2rem;
@@ -41,25 +20,18 @@ body {
 
   .presentation p {
     font-size: 1.5rem;
+  }
+
+  /* Media Query Accueil */
+  .photo-profil {
+    width: 300px;
+    height: 300px;
   }
 }
 
 /* Média Queries - Adaptation sur écran de plus de 992px */
 
 @media screen and (min-width: 992px) {
-  /* Media Query BurgerMenu */
-  .title {
-    font-size: 3rem;
-  }
-
-  /* Media Query Modal */
-  .modal-container {
-    width: 450px;
-    height: 450px;
-    top: 30%;
-    left: 50%;
-  }
-
   /* Media Query APropos */
   .presentation {
     font-size: 2rem;
@@ -67,5 +39,11 @@ body {
 
   .presentation p {
     font-size: 1.5rem;
+  }
+
+  /* Media Query Accueil */
+  .photo-profil {
+    width: 300px;
+    height: 300px;
   }
 }

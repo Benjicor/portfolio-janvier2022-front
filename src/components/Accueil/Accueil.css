@@ -2,8 +2,8 @@
 
 .photo-profil {
   display: block;
-  width: 200px;
-  height: 200px;
+  width: 160px;
+  height: 160px;
   transform: rotate(40deg);
   transition: 0.5s ease;
 }
@@ -26,8 +26,8 @@
   justify-content: center;
   align-items: center;
   border-radius: 100%;
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   margin: 0 auto;
   padding: 2rem;
   background-color: #adadad;
@@ -38,8 +38,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 175px;
-  height: 175px;
+  width: 135px;
+  height: 135px;
   padding: 1rem;
   background: linear-gradient(
     to right,
@@ -49,10 +49,6 @@
     #05d8fd 75%
   );
   transform: rotate(-45deg);
-}
-
-.name {
-  margin: 0;
 }
 
 /* Mise en forme des écrits */
@@ -71,14 +67,15 @@ p {
 
 /* Mise en page des logos de langage */
 
-.logo {
-  display: flex;
-  flex-wrap: wrap;
+.techno {
+  margin: 100px 0 25px;
+}
 
-  /* flex-direction: column; */
+.logo {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   width: 100%;
-  justify-content: space-between;
-  align-items: flex-start;
   padding-inline-start: 0;
 }
 
@@ -96,8 +93,7 @@ p {
 .logo li img {
   width: 30px;
   height: 30px;
-
-  /* padding-right: 1.5rem; */
+  margin-top: 0.5rem;
   transition: all 0.5s ease;
 }
 
@@ -127,5 +123,48 @@ p {
 
   100% {
     transform: scale(1);
+  }
+}
+
+/* Média Queries - Adaptation sur écran de plus de 381px */
+
+@media screen and (min-width: 381px) {
+  /* Media Query BurgerMenu */
+}
+
+/* Média Queries - Adaptation sur écran de plus de 768px */
+
+@media screen and (min-width: 768px) and (min-height: 818px) {
+  /* Mise en forme photo de profil */
+  .photo-profil {
+    width: 275px;
+    height: 275px;
+  }
+
+  /* Mise en forme cadre photo de profil */
+  .rond {
+    width: 350px;
+    height: 350px;
+  }
+
+  .carre {
+    width: 250px;
+    height: 250px;
+  }
+
+  /* Mise en place du footer */
+  .page-accueil ~ footer {
+    position: fixed;
+    bottom: 0;
+  }
+}
+
+/* Média Queries - Adaptation sur écran de plus de 992px */
+
+@media screen and (min-width: 992px) and (min-height: 818px) {
+  /* Mise en place du footer */
+  .page-accueil ~ footer {
+    position: fixed;
+    bottom: 0;
   }
 }

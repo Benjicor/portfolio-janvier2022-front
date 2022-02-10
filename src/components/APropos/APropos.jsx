@@ -6,7 +6,7 @@ function APropos({ setTitle }) {
     setTitle('À propos');
   }, []);
   return (
-    <div className="page">
+    <div className="page-a-propos">
       <div className="a-propos">
         <h1 className="presentation">
           Bonjour et bienvenue, je suis Benjamin CORDREAUX et je vais tenter de

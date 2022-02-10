@@ -6,7 +6,7 @@ function Contact({ setTitle }) {
     setTitle('Contact');
   }, []);
   return (
-    <div className="page">
+    <div className="page-contact">
       <div className="contact">
         <div>.</div>
       </div>

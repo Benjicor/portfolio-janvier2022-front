@@ -1,8 +1,7 @@
 .modal-container {
-  width: 315px;
-  height: 315px;
+  width: 265px;
   position: absolute;
-  top: 34.5%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 15px;
@@ -29,17 +28,24 @@
 
 .title-close-btn {
   position: absolute;
+  right: -12.5px;
+  top: -12.5px;
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: center;
 }
 
 .title-close-btn button {
-  background-color: transparent;
+  background-color: #333;
+  color: #ff1616;
   border-radius: 100%;
-  font-size: 25px;
+  border: 2px solid #ff1616;
+  width: 25px;
+  height: 25px;
+  font-size: 15px;
   font-weight: bold;
+  line-height: 1;
   cursor: pointer;
-  color: #e5e5e5;
 }
 
 .modal-container .body {
@@ -49,4 +55,37 @@
   align-items: center;
   font-size: 1.7rem;
   text-align: center;
+}
+
+/* Média Queries - Adaptation sur écran de plus de 381px */
+
+@media screen and (min-width: 381px) {
+  /* Media Query Modal */
+  .modal-container {
+    width: 300px;
+    top: 44%;
+    left: 50%;
+  }
+}
+
+/* Média Queries - Adaptation sur écran de plus de 768px */
+
+@media screen and (min-width: 768px) {
+  /* Media Query Modal */
+  .modal-container {
+    width: 350px;
+    top: 25%;
+    left: 50%;
+  }
+}
+
+/* Média Queries - Adaptation sur écran de plus de 992px */
+
+@media screen and (min-width: 992px) {
+  /* Media Query Modal */
+  .modal-container {
+    width: 450px;
+    top: 30%;
+    left: 50%;
+  }
 }

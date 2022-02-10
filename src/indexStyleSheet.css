@@ -2,61 +2,53 @@
 
 @font-face {
   font-family: aileronbold;
-  src: url('./police/aileron-bold-webfont.woff') format('woff'),
-    url('./police/aileron-italic-webfont.woff2') format('woff2');
+  src: url('./font/aileron-bold-webfont.woff') format('woff'),
+    url('./font/aileron-bold-webfont.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: aileronitalic;
-  src: url('./police/aileron-italic-webfont.woff') format('woff'),
-    url('./police/aileron-italic-webfont.woff2') format('woff2');
+  src: url('./font/aileron-italic-webfont.woff') format('woff'),
+    url('./font/aileron-italic-webfont.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: aileronregular;
-  src: url('./police/aileron-italic-webfont.woff') format('woff'),
-    url('./police/aileron-regular-webfont.woff2') format('woff2');
+  src: url('./font/aileron-regular-webfont.woff') format('woff'),
+    url('./font/aileron-regular-webfont.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: latobold;
-  src: url('./police/lato-bold-webfont.woff') format('woff'),
-    url('./police/lato-bold-webfont.woff2') format('woff2');
+  src: url('./font/lato-bold-webfont.woff') format('woff'),
+    url('./font/lato-bold-webfont.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: latoitalic;
-  src: url('./police/lato-italic-webfont.woff') format('woff'),
-    url('./police/lato-italic-webfont.woff2') format('woff2');
+  src: url('./font/lato-italic-webfont.woff') format('woff'),
+    url('./font/lato-italic-webfont.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: latoregular;
-  src: url('./police/lato-regular-webfont.woff') format('woff'),
-    url('./police/lato-regular-webfont.woff2') format('woff2');
+  src: url('./font/lato-regular-webfont.woff') format('woff'),
+    url('./font/lato-regular-webfont.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 
 /* Attribution des polices */
-
-.name {
-  font-size: 2.5rem;
-  font-family: aileronbold, Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  font-style: normal;
-  color: #e5e5e5;
-}
 
 h2 {
   font-family: aileronbold, Arial, Helvetica, sans-serif;
@@ -88,7 +80,7 @@ ul li {
 }
 
 .titre {
-  font-family: latobold, cursive, Arial, Helvetica, sans-serif;
+  font-family: latobold, Arial, Helvetica, sans-serif;
   font-weight: bold;
   font-style: normal;
   color: #05d8fd;

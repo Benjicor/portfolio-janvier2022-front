@@ -6,7 +6,7 @@ function Projets({ setTitle }) {
     setTitle('Projets');
   }, []);
   return (
-    <div className="page">
+    <div className="page-projets">
       <div className="projets">
         <div>.</div>
       </div>
