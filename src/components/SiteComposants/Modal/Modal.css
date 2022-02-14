@@ -61,6 +61,7 @@
 
 @media screen and (min-width: 381px) {
   /* Media Query Modal */
+
   .modal-container {
     width: 290px;
     top: 47%;
@@ -72,6 +73,7 @@
 
 @media screen and (min-width: 424px) {
   /* Media Query Modal */
+
   .modal-container {
     width: 290px;
     top: 44%;
@@ -83,6 +85,7 @@
 
 @media screen and (min-width: 525px) {
   /* Media Query Modal */
+
   .modal-container {
     width: 295px;
     top: 46%;
@@ -94,6 +97,7 @@
 
 @media screen and (min-width: 768px) {
   /* Media Query Modal */
+
   .modal-container {
     width: 430px;
     top: 47%;
@@ -105,6 +109,7 @@
 
 @media screen and (min-width: 992px) {
   /* Media Query Modal */
+
   .modal-container {
     width: 450px;
     top: 47%;

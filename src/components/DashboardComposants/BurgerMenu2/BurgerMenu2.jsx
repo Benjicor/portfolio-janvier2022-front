@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
-import BurgerContent from './BurgerContent';
+import BurgerContent2 from './BurgerContent2';
 
-import './BurgerMenu.css';
+import './BurgerMenu2.css';
 
-function BurgerMenu({ siteTitle }) {
+function BurgerMenu2({ dashboardTitle }) {
   const [open, setOpen] = useState(false);
   const handleClick = () => {
     setOpen(!open);
@@ -16,12 +16,12 @@ function BurgerMenu({ siteTitle }) {
           <span />
           <span />
           <span />
-          {open ? <BurgerContent handleClick={handleClick} /> : null}
+          {open ? <BurgerContent2 handleClick={handleClick} /> : null}
         </button>
       </div>
-      <div className="title">{siteTitle}</div>
+      <div className="title">{dashboardTitle}</div>
     </header>
   );
 }
 
-export default BurgerMenu;
+export default BurgerMenu2;

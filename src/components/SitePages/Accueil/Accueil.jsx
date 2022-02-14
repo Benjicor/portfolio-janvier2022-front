@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React, { useState, useEffect } from 'react';
-import './Accueil.css';
+
 import Modal from '../../SiteComposants/Modal/Modal';
 import grandePhoto from '../../../assets/jpg/grande-photo.jpg';
 import petitePhoto from '../../../assets/png/petite-photo-ronde.png';
@@ -15,10 +15,12 @@ import git from '../../../assets/svg/git.svg';
 import github from '../../../assets/svg/github-original.svg';
 import certificatHtml5Css3 from '../../../assets/pdf/CertificatDeReussite-ApprenezACréerVotreSiteWebAvecHtml5EtCss3.pdf';
 
-function Accueil({ setTitle }) {
+import './Accueil.css';
+
+function Accueil({ setSiteTitle }) {
   const [openModal, setOpenModal] = useState(false);
   useEffect(() => {
-    setTitle('Accueil');
+    setSiteTitle('Accueil');
   }, []);
   return (
     <div className="page-accueil">

@@ -1,11 +1,3 @@
-/* Permet de masquer le footer */
-
-/* .a-propos ~ footer { */
-
-/* display: none; */
-
-/* } */
-
 /* Mise en forme du texte (titre et paragraphe) */
 
 .presentation {
@@ -31,7 +23,8 @@
 /* Média Queries - Adaptation sur écran de plus de 768px */
 
 @media screen and (min-width: 768px) and (min-height: 450px) {
-  /* Mise en forme du conteneur global */
+  /* Mise en place du footer en bas de page quand pas suffisamment de contenu */
+
   .page-a-propos ~ footer {
     position: fixed;
     bottom: 0;
@@ -41,7 +34,8 @@
 /* Média Queries - Adaptation sur écran de plus de 992px */
 
 @media screen and (min-width: 992px) and (min-height: 450px) {
-  /* Mise en forme du conteneur global */
+  /* Mise en place du footer en bas de page quand pas suffisamment de contenu */
+
   .page-a-propos ~ footer {
     position: fixed;
     bottom: 0;

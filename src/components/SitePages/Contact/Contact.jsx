@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
+
 import './Contact.css';
 
-function Contact({ setTitle }) {
+function Contact({ setSiteTitle }) {
   useEffect(() => {
-    setTitle('Contact');
+    setSiteTitle('Contact');
   }, []);
   return (
     <div className="page-contact">

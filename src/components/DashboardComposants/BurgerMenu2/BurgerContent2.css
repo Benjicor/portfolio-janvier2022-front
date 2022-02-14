@@ -1,0 +1,28 @@
+.nav {
+  list-style: none;
+  padding: 15px 15px 0;
+  display: flex;
+  flex-flow: column;
+  background: linear-gradient(135deg, #05d8fd, #e5e5e5, #ff1616);
+  color: #ff1616;
+  border: solid;
+  border-radius: 15px;
+  position: absolute;
+  white-space: nowrap;
+  width: fit-content;
+  top: 45px;
+}
+
+.nav li {
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 1.2rem;
+  width: 100%;
+  font-family: latobold, Arial, Helvetica, sans-serif;
+  padding-right: 5px;
+}
+
+.link {
+  text-decoration: none;
+  color: #333;
+}

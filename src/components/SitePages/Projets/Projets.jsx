@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
+
 import './Projets.css';
 
-function Projets({ setTitle }) {
+function Projets({ setSiteTitle }) {
   useEffect(() => {
-    setTitle('Projets');
+    setSiteTitle('Projets');
   }, []);
   return (
     <div className="page-projets">

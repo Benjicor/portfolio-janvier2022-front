@@ -1,0 +1,8 @@
+/* Mise en place du footer en bas de page quand pas suffisamment de contenu */
+.dashboard-fichiers ~ footer {
+  position: fixed;
+  bottom: 0;
+
+  /* Permet de masquer le footer */
+  display: none;
+}

@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
+
 import './APropos.css';
 
-function APropos({ setTitle }) {
+function APropos({ setSiteTitle }) {
   useEffect(() => {
-    setTitle('À propos');
+    setSiteTitle('À propos');
   }, []);
   return (
     <div className="page-a-propos">
