@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
-import BurgerMenu from './components/SiteComposants/BurgerMenu/BurgerMenu';
+import BurgerMenuSite from './components/SiteComposants/BurgerMenuSite/BurgerMenuSite';
 import Accueil from './components/SitePages/Accueil/Accueil';
 import APropos from './components/SitePages/APropos/APropos';
 import Projets from './components/SitePages/Projets/Projets';
 import Contact from './components/SitePages/Contact/Contact';
 import Footer from './components/SiteComposants/Footer/Footer';
 
-import BurgerMenu2 from './components/DashboardComposants/BurgerMenu2/BurgerMenu2';
+import BurgerMenuDash from './components/DashboardComposants/BurgerMenuDash/BurgerMenuDash';
 import Connect from './components/DashboardPages/Connect/Connect';
 import Fichiers from './components/DashboardPages/Fichiers/Fichiers';
 import Images from './components/DashboardPages/Images/Images';
@@ -21,9 +21,9 @@ function App() {
   return (
     <div className="app">
       {!user ? (
-        <BurgerMenu siteTitle={siteTitle} />
+        <BurgerMenuSite siteTitle={siteTitle} />
       ) : (
-        <BurgerMenu2 dashboardTitle={dashboardTitle} />
+        <BurgerMenuDash dashboardTitle={dashboardTitle} />
       )}
       <Routes>
         <Route path="/" element={<Accueil setSiteTitle={setSiteTitle} />} />

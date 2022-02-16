@@ -6,3 +6,116 @@
   /* Permet de masquer le footer */
   display: none;
 }
+
+/* Mise en place et style du formulaire */
+
+.container-form {
+  margin: 10vh auto 15vh;
+  justify-content: center;
+  text-align: -webkit-center;
+}
+
+.file-upload,
+.file-name,
+.file-date,
+.file-add-at,
+.file-source,
+.file-description {
+  display: flex;
+  margin: 2vh auto 10vh;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#file-upload,
+#file-name,
+#file-date,
+#file-add-at,
+#file-source {
+  width: 350px;
+  height: 75px;
+  font-size: 25px;
+}
+
+#file-description {
+  width: 350px;
+  height: 225px;
+  font-size: 25px;
+}
+
+/* Mise en forme des input type file */
+
+.file-upload {
+  background-color: #e5e5e5;
+  border: 1px solid #adadad;
+  border-radius: 5px;
+  display: inline-block;
+  height: 75px;
+  padding: 0;
+  position: relative;
+  width: 200px;
+}
+
+.file-upload:hover {
+  opacity: 0.75;
+}
+
+.file-upload input[type='file'] {
+  display: input-block;
+  width: 350px;
+  height: 75px;
+  opacity: 0;
+  cursor: pointer;
+  position: absolute;
+  left: 0;
+}
+
+.file-select {
+  display: flex;
+  align-items: center;
+}
+
+.upload-button {
+  background-color: #adadad;
+  color: #e5e5e5;
+  font-weight: bold;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  display: inline-block;
+  height: 75px;
+  margin-right: 0;
+  width: 150px;
+  padding: 0;
+  box-sizing: content-box;
+}
+
+.file-name-button {
+  font-size: 14px;
+  color: #adadad;
+}
+
+/* Mise en place et style du bouton */
+
+.button {
+  display: flex;
+  margin: auto;
+  width: 150px;
+  height: 50px;
+  font-size: 20px;
+}
+
+.add {
+  background-color: #adadad;
+  color: #e5e5e5;
+}
+
+.modify {
+  background-color: #05d8fd;
+  color: #ff1616;
+}
+
+.delete {
+  background-color: #ff1616;
+  color: #05d8fd;
+}

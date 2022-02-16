@@ -1,8 +1,49 @@
 /* Mise en place du footer en bas de page quand pas suffisamment de contenu */
+
 .dashboard-connect ~ footer {
   position: fixed;
   bottom: 0;
 
   /* Permet de masquer le footer */
   display: none;
+}
+
+/* Mise en place et style du formulaire */
+
+.container-form {
+  margin: 10vh auto 15vh;
+  justify-content: center;
+}
+
+.user-name,
+.password {
+  display: flex;
+  margin: 2vh auto 10vh;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#user-name,
+#password {
+  width: 350px;
+  height: 75px;
+  font-family: aileronregular, arial, helvetica, sans-serif;
+  font-size: 25px;
+}
+
+/* Mise en place et style du bouton */
+
+.button {
+  display: flex;
+  margin: auto;
+  justify-content: space-around;
+  width: 150px;
+  height: 50px;
+  align-items: center;
+  font-size: 20px;
+}
+
+.validate {
+  background-color: #05d8fd;
+  color: #ff1616;
 }

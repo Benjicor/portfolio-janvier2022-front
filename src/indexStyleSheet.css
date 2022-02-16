@@ -50,6 +50,7 @@
 
 /* Attribution des polices */
 
+h1,
 h2 {
   font-family: aileronbold, Arial, Helvetica, sans-serif;
   font-weight: bold;
@@ -68,34 +69,57 @@ p {
   font-family: latoregular, Arial, Helvetica, sans-serif;
   font-weight: normal;
   font-style: normal;
-  color: #e5e5e5;
 }
 
 ul li {
-  font-family: latoregular, Arial, Helvetica, sans-serif;
+  font-family: latobold, Arial, Helvetica, sans-serif;
   font-weight: normal;
   font-style: normal;
   color: #e5e5e5;
   list-style-type: none;
 }
 
-.titre {
+/* Attribution des polices : Titre dans le Header */
+
+.header .title {
   font-family: latobold, Arial, Helvetica, sans-serif;
+}
+
+/* Attribution des polices : Dashboard Connect */
+
+.user-name {
+  font-family: aileronbold, Arial, Helvetica, sans-serif;
   font-weight: bold;
   font-style: normal;
-  color: #05d8fd;
+  color: #e5e5e5;
 }
 
-.structure {
-  font-family: aileronregular, Arial, Helvetica, sans-serif;
-  font-weight: bold;
+.button-name {
+  font-family: latoitalic, Arial, Helvetica, sans-serif;
+  font-weight: normal;
   font-style: italic;
-  color: #05d8fd;
 }
 
-.projet-etude {
-  color: #05d8fd;
-  text-decoration-line: underline;
+/* Attribution des polices : Input type file dans DashboardPages */
+
+.upload-button,
+.file-name-button,
+.image-name-button {
+  font-family: aileronregular, arial, helvetica, sans-serif;
+}
+
+#file-upload,
+#file-name,
+#file-date,
+#file-add-at,
+#file-source,
+#file-description,
+#image-upload,
+#image-name,
+#image-add-at,
+#image-source,
+#image-description {
+  font-family: aileronregular, arial, helvetica, sans-serif;
 }
 
 /* Annulation de la mise en forme native html de la balise a */

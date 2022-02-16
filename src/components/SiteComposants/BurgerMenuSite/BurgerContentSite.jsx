@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import './BurgerContent.css';
+import './BurgerContentSite.css';
 
-function BurgerContent({ handleClick }) {
+function BurgerContentSite({ handleClick }) {
   return (
     <div>
       <ul className="nav">
@@ -32,4 +32,4 @@ function BurgerContent({ handleClick }) {
   );
 }
 
-export default BurgerContent;
+export default BurgerContentSite;

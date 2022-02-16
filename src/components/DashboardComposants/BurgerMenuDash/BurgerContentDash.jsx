@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import './BurgerContent2.css';
+import './BurgerContentDash.css';
 
-function BurgerContent2({ handleClick }) {
+function BurgerContentDash({ handleClick }) {
   return (
     <div>
       <ul className="nav">
@@ -44,4 +44,4 @@ function BurgerContent2({ handleClick }) {
   );
 }
 
-export default BurgerContent2;
+export default BurgerContentDash;
