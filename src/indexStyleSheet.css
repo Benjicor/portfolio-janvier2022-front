@@ -100,25 +100,22 @@ ul li {
   font-style: italic;
 }
 
-/* Attribution des polices : Input type file dans DashboardPages */
+/* Attribution des polices : Input dans DashboardPages */
 
-.upload-button,
-.file-name-button,
-.image-name-button {
-  font-family: aileronregular, arial, helvetica, sans-serif;
-}
-
-#file-upload,
-#file-name,
-#file-date,
-#file-add-at,
-#file-source,
-#file-description,
-#image-upload,
-#image-name,
-#image-add-at,
-#image-source,
-#image-description {
+#files-upload,
+#files-name,
+#files-date,
+#files-add-at,
+#files-source,
+#files-description,
+#images-upload,
+#images-name,
+#images-add-at,
+#images-source,
+#images-description,
+#technologies-upload,
+#technologies-name,
+#technologies-source {
   font-family: aileronregular, arial, helvetica, sans-serif;
 }
 

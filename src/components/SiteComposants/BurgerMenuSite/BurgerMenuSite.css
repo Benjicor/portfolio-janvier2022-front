@@ -30,6 +30,7 @@
   display: block;
   height: 5px;
   width: 40px;
+  border-radius: 5px;
   background-color: #e5e5e5;
   margin: 10px 0;
   justify-content: flex-start;
@@ -38,6 +39,7 @@
 .header .burger-menu span:nth-child(1) {
   height: 5px;
   width: 40px;
+  border-radius: 5px;
   background-color: #05d8fd;
   transition: 0.3s;
   transform-origin: top right;
@@ -46,6 +48,7 @@
 .header .burger-menu span:nth-child(3) {
   height: 5px;
   width: 40px;
+  border-radius: 5px;
   background-color: #ff1616;
   transform-origin: bottom right;
   transition: 0.3s;

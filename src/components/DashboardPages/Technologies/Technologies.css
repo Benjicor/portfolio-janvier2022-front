@@ -6,3 +6,92 @@
   /* Permet de masquer le footer */
   display: none;
 }
+
+/* Mise en place et style du formulaire */
+
+.container-form {
+  margin: 5vh auto;
+  max-width: 350px;
+}
+
+input {
+  background-color: #e5e5e5;
+  width: 100%;
+  height: 50px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 2px solid #adadad;
+  margin: 0 auto 4vh;
+}
+
+[type='file']::-webkit-file-upload-button {
+  background-color: #e5e5e5;
+  color: #adadad;
+}
+
+[type='date']::-webkit-datetime-edit {
+  color: #adadad;
+}
+
+input::placeholder {
+  color: #adadad;
+}
+
+/* Mise en forme input type file */
+
+.technologies-upload input {
+  padding: 0.8rem;
+  color: #ff1616;
+  outline: none;
+}
+
+/* Mise en place et style du bouton */
+
+.technologies-button {
+  margin: 26vh auto 5vh;
+}
+
+.grid-button {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-row-gap: 4vh;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.grid-button .button {
+  width: 100%;
+}
+
+.grid-button li:nth-child(2) {
+  grid-row: 1;
+  grid-column: 3;
+}
+
+.grid-button li:nth-child(3) {
+  grid-row: 2;
+  grid-column: 2;
+}
+
+.add {
+  background-color: #adadad;
+  color: #e5e5e5;
+  border-radius: 5px;
+  border: 2px solid #e5e5e5;
+}
+
+.modify {
+  background-color: #05d8fd;
+  color: #ff1616;
+  border-radius: 5px;
+  border: 2px solid #e5e5e5;
+}
+
+.delete {
+  background-color: #ff1616;
+  color: #05d8fd;
+  border-radius: 5px;
+  border: 2px solid #e5e5e5;
+}

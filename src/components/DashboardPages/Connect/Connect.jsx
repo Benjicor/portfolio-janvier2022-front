@@ -14,8 +14,8 @@ function Connect({ setDashboardTitle }) {
     <div className="dashboard-connect">
       <div className="connect">
         <form>
-          <div className="container-form">
-            <div>
+          <div className="container-form-connect">
+            <div className="form-group-user">
               <h2>Nom d&#39;utilisateur</h2>
               <label htmlFor="user-name" className="user-name">
                 <input
@@ -27,7 +27,7 @@ function Connect({ setDashboardTitle }) {
                 />
               </label>
             </div>
-            <div>
+            <div className="form-group-password">
               <h2>Mot de passe</h2>
               <label htmlFor="password" className="password">
                 <input
@@ -39,9 +39,9 @@ function Connect({ setDashboardTitle }) {
                 />
               </label>
             </div>
-          </div>
-          <div className="button">
-            <Button className="validate" buttonName="Valider" />
+            <div className="button-connect">
+              <Button className="validate" buttonName="Valider" />
+            </div>
           </div>
         </form>
       </div>

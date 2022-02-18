@@ -4,9 +4,9 @@ import Button from '../../DashboardComposants/Button/Button';
 
 import './Images.css';
 
-function Images({ setDashboardTitle, alt }) {
-  const [image, setImage] = useState('');
-  const [imageName, setImageName] = useState('');
+function Images({ setDashboardTitle }) {
+  const [images, setImages] = useState('');
+  const [imagesName, setImagesName] = useState('');
   const [addAt, setAddAt] = useState('');
   const [source, setSource] = useState('');
   const [description, setDescription] = useState('');
@@ -18,47 +18,35 @@ function Images({ setDashboardTitle, alt }) {
       <div className="images">
         <form>
           <div className="container-form">
-            <div className="image-upload">
-              <label htmlFor="image-select" className="image-select">
+            <div className="images-upload">
+              <label htmlFor="images-select" className="images-select">
                 <input
-                  type="button"
-                  className="upload-button"
-                  value="Consulter"
-                />
-                <input
-                  type="image"
-                  alt={alt}
-                  id="image-upload"
+                  type="file"
+                  id="images-upload"
                   placeholder="Sélectionner une image"
-                  value={image}
-                  onChange={(e) => setImage(e.target.value)}
+                  accept=".jpg, .jpeg, .png, .svg"
+                  multiple
+                  value={images}
+                  onChange={(e) => setImages(e.target.value)}
                 />
-                <span className="image-name-button">
-                  Sélectionner une image
-                </span>
               </label>
             </div>
-            <input
-              type="button"
-              className="upload-button"
-              value="Télécharger une image"
-            />
             <div>
-              <label htmlFor="image-name" className="image-name">
+              <label htmlFor="images-name" className="images-name">
                 <input
                   type="text"
-                  id="file-name"
+                  id="images-name"
                   placeholder="Nom de l'image"
-                  value={imageName}
-                  onChange={(e) => setImageName(e.target.value)}
+                  value={imagesName}
+                  onChange={(e) => setImagesName(e.target.value)}
                 />
               </label>
             </div>
             <div>
-              <label htmlFor="image-add-at" className="image-add-at">
+              <label htmlFor="images-add-at" className="images-add-at">
                 <input
                   type="date"
-                  id="image-add-at"
+                  id="images-add-at"
                   placeholder="Date d'ajout de l'image"
                   value={addAt}
                   onChange={(e) => setAddAt(e.target.value)}
@@ -66,33 +54,42 @@ function Images({ setDashboardTitle, alt }) {
               </label>
             </div>
             <div>
-              <label htmlFor="image-source" className="image-source">
+              <label htmlFor="images-source" className="images-source">
                 <input
                   type="text"
-                  id="image-source"
-                  placeholder="Lien de l'image"
-                  ource
+                  id="images-source"
+                  placeholder="Lien de l'images"
                   value={source}
                   onChange={(e) => setSource(e.target.value)}
                 />
               </label>
             </div>
             <div>
-              <label htmlFor="image-description" className="image-description">
-                <input
+              <label
+                htmlFor="images-description"
+                className="images-description"
+              >
+                <textarea
                   type="text"
-                  id="image-description"
+                  rows={10}
+                  id="images-description"
                   placeholder="Description de l'image"
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
                 />
               </label>
             </div>
-          </div>
-          <div className="button">
-            <Button className="add" buttonName="Ajouter" />
-            <Button className="modify" buttonName="Modifier" />
-            <Button className="delete" buttonName="Supprimer" />
+            <ul className="grid-button">
+              <li>
+                <Button className="add" buttonName="Ajouter" />
+              </li>
+              <li>
+                <Button className="modify" buttonName="Modifier" />
+              </li>
+              <li>
+                <Button className="delete" buttonName="Supprimer" />
+              </li>
+            </ul>
           </div>
         </form>
       </div>

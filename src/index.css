@@ -1,3 +1,9 @@
+/* Mise en place d'un box-sizing à l'ensemble du site */
+
+* {
+  box-sizing: border-box;
+}
+
 /* Mise en forme du body dans son conteneur */
 
 body {

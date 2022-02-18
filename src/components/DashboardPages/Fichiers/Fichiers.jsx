@@ -5,9 +5,9 @@ import Button from '../../DashboardComposants/Button/Button';
 import './Fichiers.css';
 
 function Fichiers({ setDashboardTitle }) {
-  const [file, setFile] = useState('');
-  const [fileName, setFileName] = useState('');
-  const [fileDate, setFileDate] = useState('');
+  const [files, setFiles] = useState('');
+  const [filesName, setFilesName] = useState('');
+  const [filesDate, setFilesDate] = useState('');
   const [addAt, setAddAt] = useState('');
   const [source, setSource] = useState('');
   const [description, setDescription] = useState('');
@@ -19,57 +19,46 @@ function Fichiers({ setDashboardTitle }) {
       <div className="fichiers">
         <form>
           <div className="container-form">
-            <div className="file-upload">
-              <label htmlFor="file-select" className="file-select">
-                <input
-                  type="button"
-                  className="upload-button"
-                  value="Consulter"
-                />
+            <div className="files-upload">
+              <label htmlFor="files-select" className="files-select">
                 <input
                   type="file"
-                  id="file-upload"
+                  id="files-upload"
                   placeholder="Sélectionner un fichier"
-                  value={file}
-                  onChange={(e) => setFile(e.target.value)}
+                  accept=".pdf"
+                  multiple
+                  value={files}
+                  onChange={(e) => setFiles(e.target.value)}
                 />
-                <span className="file-name-button">
-                  Sélectionner un fichier
-                </span>
               </label>
             </div>
-            <input
-              type="button"
-              className="upload-button"
-              value="Télécharger un fichier"
-            />
             <div>
-              <label htmlFor="file-name" className="file-name">
+              <label htmlFor="files-name" className="files-name">
                 <input
                   type="text"
-                  id="file-name"
+                  id="files-name"
                   placeholder="Nom du fichier"
-                  value={fileName}
-                  onChange={(e) => setFileName(e.target.value)}
+                  value={filesName}
+                  onChange={(e) => setFilesName(e.target.value)}
                 />
               </label>
             </div>
             <div>
-              <label htmlFor="file-date" className="file-date">
+              <label htmlFor="files-date" className="files-date">
                 <input
                   type="date"
-                  id="file-date"
+                  id="files-date"
                   placeholder="Date de réalisation du fichier"
-                  value={fileDate}
-                  onChange={(e) => setFileDate(e.target.value)}
+                  value={filesDate}
+                  onChange={(e) => setFilesDate(e.target.value)}
                 />
               </label>
             </div>
             <div>
-              <label htmlFor="file-add-at" className="file-add-at">
+              <label htmlFor="files-add-at" className="files-add-at">
                 <input
                   type="date"
-                  id="file-add-at"
+                  id="files-add-at"
                   placeholder="Date d'ajout du fichier"
                   value={addAt}
                   onChange={(e) => setAddAt(e.target.value)}
@@ -77,33 +66,39 @@ function Fichiers({ setDashboardTitle }) {
               </label>
             </div>
             <div>
-              <label htmlFor="file-source" className="file-source">
+              <label htmlFor="files-source" className="files-source">
                 <input
                   type="text"
-                  id="file-source"
+                  id="files-source"
                   placeholder="Lien du fichier"
-                  ource
                   value={source}
                   onChange={(e) => setSource(e.target.value)}
                 />
               </label>
             </div>
             <div>
-              <label htmlFor="file-description" className="file-description">
-                <input
+              <label htmlFor="files-description" className="files-description">
+                <textarea
                   type="text"
-                  id="file-description"
+                  rows={10}
+                  id="files-description"
                   placeholder="Description du fichier"
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
                 />
               </label>
             </div>
-          </div>
-          <div className="button">
-            <Button className="add" buttonName="Ajouter" />
-            <Button className="modify" buttonName="Modifier" />
-            <Button className="delete" buttonName="Supprimer" />
+            <ul className="grid-button">
+              <li>
+                <Button className="add" buttonName="Ajouter" />
+              </li>
+              <li>
+                <Button className="modify" buttonName="Modifier" />
+              </li>
+              <li>
+                <Button className="delete" buttonName="Supprimer" />
+              </li>
+            </ul>
           </div>
         </form>
       </div>
