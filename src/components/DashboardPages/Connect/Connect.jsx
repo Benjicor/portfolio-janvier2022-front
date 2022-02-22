@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import Button from '../../DashboardComposants/Button/Button';
+import ButtonDash from '../../DashboardComposants/ButtonDash/ButtonDash';
 
 import './Connect.css';
 
@@ -40,7 +40,7 @@ function Connect({ setDashboardTitle }) {
               </label>
             </div>
             <div className="button-connect">
-              <Button className="validate" buttonName="Valider" />
+              <ButtonDash className="validate" buttonName="Valider" />
             </div>
           </div>
         </form>

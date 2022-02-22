@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import Button from '../../DashboardComposants/Button/Button';
+import ButtonDash from '../../DashboardComposants/ButtonDash/ButtonDash';
 
 import './Technologies.css';
 
@@ -60,13 +60,13 @@ function Technologies({ setDashboardTitle }) {
             <div className="technologies-button">
               <ul className="grid-button">
                 <li>
-                  <Button className="add" buttonName="Ajouter" />
+                  <ButtonDash className="add" buttonName="Ajouter" />
                 </li>
                 <li>
-                  <Button className="modify" buttonName="Modifier" />
+                  <ButtonDash className="modify" buttonName="Modifier" />
                 </li>
                 <li>
-                  <Button className="delete" buttonName="Supprimer" />
+                  <ButtonDash className="delete" buttonName="Supprimer" />
                 </li>
               </ul>
             </div>

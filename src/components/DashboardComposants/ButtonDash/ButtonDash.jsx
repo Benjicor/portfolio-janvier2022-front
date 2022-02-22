@@ -1,8 +1,8 @@
 import React from 'react';
 
-import './Button.css';
+import './ButtonDash.css';
 
-function Button({ buttonName, className }) {
+function ButtonDash({ buttonName, className }) {
   return (
     <div>
       <button className={`button ${className}`} type="button">
@@ -14,4 +14,4 @@ function Button({ buttonName, className }) {
   );
 }
 
-export default Button;
+export default ButtonDash;

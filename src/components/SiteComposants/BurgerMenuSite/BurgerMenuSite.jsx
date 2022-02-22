@@ -19,7 +19,7 @@ function BurgerMenuSite({ siteTitle }) {
           {open ? <BurgerContentSite handleClick={handleClick} /> : null}
         </button>
       </div>
-      <div className="title">{siteTitle}</div>
+      <div className="title-burger-menu-site">{siteTitle}</div>
     </header>
   );
 }

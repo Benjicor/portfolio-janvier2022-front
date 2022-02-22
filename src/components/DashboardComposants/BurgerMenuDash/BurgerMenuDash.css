@@ -11,7 +11,7 @@
   align-items: center;
 }
 
-.header .title {
+.header .title-burger-menu-dashboard {
   width: 100%;
   padding-right: 4rem;
   padding-left: 4rem;
@@ -83,7 +83,7 @@
 @media screen and (min-width: 768px) {
   /* Media Query BurgerMenu */
 
-  .header .title {
+  .header .title-burger-menu-dashboard {
     font-size: 2.75rem;
   }
 }
@@ -93,7 +93,7 @@
 @media screen and (min-width: 992px) {
   /* Media Query BurgerMenu */
 
-  .header .title {
+  .header .title-burger-menu-dashboard {
     font-size: 3rem;
   }
 }

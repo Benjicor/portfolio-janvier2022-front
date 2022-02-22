@@ -6,6 +6,7 @@ import Accueil from './components/SitePages/Accueil/Accueil';
 import APropos from './components/SitePages/APropos/APropos';
 import Projets from './components/SitePages/Projets/Projets';
 import Contact from './components/SitePages/Contact/Contact';
+import Contact2 from './components/SitePages/Contact/Contact2';
 import Footer from './components/SiteComposants/Footer/Footer';
 
 import BurgerMenuDash from './components/DashboardComposants/BurgerMenuDash/BurgerMenuDash';
@@ -17,7 +18,7 @@ import Technologies from './components/DashboardPages/Technologies/Technologies'
 function App() {
   const [siteTitle, setSiteTitle] = useState('');
   const [dashboardTitle, setDashboardTitle] = useState('');
-  const [user, setUser] = useState(true);
+  const [user /* setUser */] = useState(false);
   return (
     <div className="app">
       {!user ? (
@@ -38,6 +39,10 @@ function App() {
         <Route
           path="/Contact"
           element={<Contact setSiteTitle={setSiteTitle} />}
+        />
+        <Route
+          path="/Contact2"
+          element={<Contact2 setSiteTitle={setSiteTitle} />}
         />
         <Route
           path="/Private/Admin/Connect"

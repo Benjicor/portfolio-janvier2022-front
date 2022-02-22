@@ -1,7 +1,7 @@
 .modal-container {
-  width: 300px;
+  width: 290px;
   position: absolute;
-  top: 45.4%;
+  top: 49%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 15px;
@@ -15,18 +15,7 @@
   width: 100%;
 }
 
-.modal-container .body p {
-  color: #333;
-}
-
-.modal-container .title {
-  display: inline-block;
-  text-align: center;
-  margin-top: 10px;
-  font-size: 1.2rem;
-}
-
-.title-close-btn {
+.close-btn {
   position: absolute;
   right: -12.5px;
   top: -12.5px;
@@ -35,7 +24,7 @@
   justify-content: center;
 }
 
-.title-close-btn button {
+.close-btn button {
   background-color: #333;
   color: #ff1616;
   border-radius: 100%;
@@ -48,15 +37,6 @@
   cursor: pointer;
 }
 
-.modal-container .body {
-  flex: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.7rem;
-  text-align: center;
-}
-
 /* Média Queries - Adaptation sur écran de plus de 381px */
 
 @media screen and (min-width: 381px) {
@@ -64,7 +44,7 @@
 
   .modal-container {
     width: 290px;
-    top: 47%;
+    top: 49%;
     left: 50%;
   }
 }
@@ -76,7 +56,7 @@
 
   .modal-container {
     width: 290px;
-    top: 44%;
+    top: 49%;
     left: 50%;
   }
 }

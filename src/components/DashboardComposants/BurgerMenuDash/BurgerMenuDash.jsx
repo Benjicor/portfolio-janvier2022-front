@@ -19,7 +19,7 @@ function BurgerMenuDash({ dashboardTitle }) {
           {open ? <BurgerContentDash handleClick={handleClick} /> : null}
         </button>
       </div>
-      <div className="title">{dashboardTitle}</div>
+      <div className="title-burger-menu-dashboard">{dashboardTitle}</div>
     </header>
   );
 }

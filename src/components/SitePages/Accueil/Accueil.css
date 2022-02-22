@@ -2,8 +2,8 @@
 
 .photo-profil {
   display: block;
-  width: 160px;
-  height: 160px;
+  width: 150px;
+  height: 150px;
   transform: rotate(40deg);
   transition: 0.5s ease;
 }
@@ -14,7 +14,7 @@
 
 /* Mise en forme cadre photo de profil */
 
-.accueil {
+.container-accueil {
   position: relative;
   justify-content: center;
   align-items: center;
@@ -26,8 +26,8 @@
   justify-content: center;
   align-items: center;
   border-radius: 100%;
-  width: 200px;
-  height: 200px;
+  width: 270px;
+  height: 270px;
   margin: 35px auto;
   padding: 2rem;
   background-color: #adadad;
@@ -38,8 +38,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 135px;
-  height: 135px;
+  width: 150px;
+  height: 150px;
   padding: 1rem;
   background: linear-gradient(
     to right,
@@ -144,21 +144,35 @@ h2 {
   /* Mise en forme photo de profil */
 
   .photo-profil {
-    width: 275px;
-    height: 275px;
+    width: 285px;
+    height: 285px;
   }
 
   /* Mise en forme cadre photo de profil */
 
   .rond {
-    width: 350px;
-    height: 350px;
+    width: 450px;
+    height: 450px;
     margin: 40px auto;
   }
 
   .carre {
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 300px;
+  }
+
+  /* Mise en forme des écrits */
+
+  .bienvenue {
+    font-size: 3em;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+
+  .accueil p {
+    font-size: 1.5em;
   }
 }
 

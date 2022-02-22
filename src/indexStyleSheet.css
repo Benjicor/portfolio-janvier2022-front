@@ -81,8 +81,24 @@ ul li {
 
 /* Attribution des polices : Titre dans le Header */
 
-.header .title {
+.header .title-burger-menu-site,
+.header .title-burger-menu-dashboard {
   font-family: latobold, Arial, Helvetica, sans-serif;
+}
+
+/* Attribution des polices : Input dans SitePages */
+
+#contact-first-name,
+#contact-last-name,
+#contact-email,
+#contact-description {
+  font-family: aileronregular, arial, helvetica, sans-serif;
+}
+
+#submit-contact {
+  font-family: latoitalic, Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-style: italic;
 }
 
 /* Attribution des polices : Dashboard Connect */

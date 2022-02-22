@@ -11,7 +11,7 @@
   align-items: center;
 }
 
-.header .title {
+.header .title-burger-menu-site {
   width: 100%;
   font-size: 2.5rem;
   text-align: center;
@@ -81,7 +81,7 @@
 @media screen and (min-width: 768px) {
   /* Media Query BurgerMenu */
 
-  .header .title {
+  .header .title-burger-menu-site {
     font-size: 2.75rem;
   }
 }
@@ -91,7 +91,7 @@
 @media screen and (min-width: 992px) {
   /* Media Query BurgerMenu */
 
-  .header .title {
+  .header .title-burger-menu-site {
     font-size: 3rem;
   }
 }
