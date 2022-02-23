@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 import './Contact.css';
 
@@ -8,7 +9,7 @@ function Contact({ setSiteTitle }) {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  const onSubmit = () => {
+  const onSubmit = async () => {
     if (!firstName) {
       alert("Je vous remercie d'entrer votre Prénom");
       return;
@@ -25,6 +26,15 @@ function Contact({ setSiteTitle }) {
       alert("Je vous remercie d'entrer votre message");
       return;
     }
+    await axios.post(
+      `${process.env.REACT_APP_API_PORTFOLIO_URL}/api/emails/hbs-and-file`,
+      {
+        email,
+        firstName,
+        lastName,
+        message,
+      }
+    );
     alert('Je vous remercie de votre message');
   };
 
