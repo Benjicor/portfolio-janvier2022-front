@@ -5,6 +5,56 @@
   bottom: 0;
 }
 
+.projets-title {
+  text-align: center;
+}
+
+/* Stylisation du carousel */
+
+.carousel {
+  position: relative;
+}
+
+.carousel .thumbs {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 10px;
+}
+
+.carousel .thumb {
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.carousel .overlay {
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10%;
+  padding: 0.4rem 1.5rem;
+  text-align: left;
+  background: rgb(51 51 51 / 60%);
+  color: #e5e5e5;
+}
+
+.carousel .overlay-title {
+  margin: 0.8rem 0 1rem;
+}
+
+/* Média Queries - Adaptation sur écran de maximum 600px */
+
+@media screen and (max-width: 600px) {
+  /* Media Query Projets */
+
+  .carousel .slide img {
+    width: 100vw !important;
+    height: 40vh;
+    object-fit: cover;
+  }
+}
+
 /* Média Queries - Adaptation sur écran de plus de 360px */
 
 @media screen and (min-width: 360px) {
