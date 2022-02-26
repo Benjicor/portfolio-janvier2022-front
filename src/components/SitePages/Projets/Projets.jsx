@@ -27,9 +27,8 @@ function Projets({ setSiteTitle }) {
     },
   ];
 
-  useEffect(() => {
-    setSiteTitle('Projets');
-  }, []);
+  setSiteTitle('Projets');
+  useEffect(() => {}, []);
   return (
     <div className="page-projets">
       <div className="projets">

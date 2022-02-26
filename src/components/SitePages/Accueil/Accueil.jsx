@@ -19,9 +19,8 @@ import './Accueil.css';
 
 function Accueil({ setSiteTitle }) {
   const [openModal, setOpenModal] = useState(false);
-  useEffect(() => {
-    setSiteTitle('Accueil');
-  }, []);
+  setSiteTitle('Accueil');
+  useEffect(() => {}, []);
   return (
     <div className="page-accueil">
       <div className="accueil">

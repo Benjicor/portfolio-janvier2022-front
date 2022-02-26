@@ -16,6 +16,34 @@ body {
   color: #e5e5e5;
 }
 
+/* Style des input */
+
+input:focus-visible,
+textarea:focus-visible {
+  outline: #ff1616 auto 1px;
+}
+
+/* Style des boutons */
+
+button {
+  cursor: pointer;
+}
+
+button:not(.burger-menu) {
+  box-shadow: 6px 6px 6px #adadad;
+}
+
+button:hover:not(.burger-menu) {
+  transform: translateY(3.5px);
+  box-shadow: 4px 4px 4px;
+}
+
+button:active:not(.burger-menu) {
+  transform: translateY(7px);
+  box-shadow: 2px 2px 2px;
+  color: #333;
+}
+
 /* Média Queries - Adaptation sur écran de plus de 768px */
 
 @media screen and (min-width: 768px) {

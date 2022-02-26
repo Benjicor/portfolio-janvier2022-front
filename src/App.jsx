@@ -6,10 +6,10 @@ import Accueil from './components/SitePages/Accueil/Accueil';
 import APropos from './components/SitePages/APropos/APropos';
 import Projets from './components/SitePages/Projets/Projets';
 import Contact from './components/SitePages/Contact/Contact';
-import Contact2 from './components/SitePages/Contact/Contact2';
 import Footer from './components/SiteComposants/Footer/Footer';
 
 import BurgerMenuDash from './components/DashboardComposants/BurgerMenuDash/BurgerMenuDash';
+import Admin from './components/DashboardPages/Admin/Admin';
 import Connect from './components/DashboardPages/Connect/Connect';
 import Fichiers from './components/DashboardPages/Fichiers/Fichiers';
 import Images from './components/DashboardPages/Images/Images';
@@ -18,7 +18,7 @@ import Technologies from './components/DashboardPages/Technologies/Technologies'
 function App() {
   const [siteTitle, setSiteTitle] = useState('');
   const [dashboardTitle, setDashboardTitle] = useState('');
-  const [user /* setUser */] = useState(false);
+  const [user /* setUser */] = useState(true);
   return (
     <div className="app">
       {!user ? (
@@ -41,8 +41,8 @@ function App() {
           element={<Contact setSiteTitle={setSiteTitle} />}
         />
         <Route
-          path="/Contact2"
-          element={<Contact2 setSiteTitle={setSiteTitle} />}
+          path="/Private/Admin"
+          element={<Admin setDashboardTitle={setDashboardTitle} />}
         />
         <Route
           path="/Private/Admin/Connect"
@@ -51,7 +51,7 @@ function App() {
         {user && (
           <>
             <Route
-              path="/Private/Admin"
+              path="/Private/Admin/Connect"
               element={<Connect setDashboardTitle={setDashboardTitle} />}
             />
             <Route
