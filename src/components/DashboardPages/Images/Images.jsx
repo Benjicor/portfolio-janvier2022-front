@@ -10,8 +10,10 @@ function Images({ setDashboardTitle }) {
   const [addAt, setAddAt] = useState('');
   const [source, setSource] = useState('');
   const [description, setDescription] = useState('');
+
   setDashboardTitle('Administration des Images');
   useEffect(() => {}, []);
+
   return (
     <div className="dashboard-images">
       <div className="images">

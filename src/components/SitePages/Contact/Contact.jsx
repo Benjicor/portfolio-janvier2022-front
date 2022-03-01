@@ -6,8 +6,8 @@ import ButtonSite from '../../SiteComposants/ButtonSite/ButtonSite';
 import './Contact.css';
 
 function Contact({ setSiteTitle }) {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
+  const [firstname, setFirstname] = useState('');
+  const [lastname, setLastname] = useState('');
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
@@ -17,8 +17,8 @@ function Contact({ setSiteTitle }) {
       `${process.env.REACT_APP_API_PORTFOLIO_URL}/api/emails/hbs-and-file`,
       {
         email,
-        firstName,
-        lastName,
+        firstname,
+        lastname,
         subject,
         message,
       }
@@ -45,8 +45,8 @@ function Contact({ setSiteTitle }) {
                   name="prenom"
                   id="contact-first-name"
                   placeholder="Entrer votre Prénom"
-                  value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
+                  value={firstname}
+                  onChange={(e) => setFirstname(e.target.value)}
                   autoComplete="given-name"
                 />
               </label>
@@ -60,8 +60,8 @@ function Contact({ setSiteTitle }) {
                   name="nom"
                   id="contact-last-name"
                   placeholder="Entrer votre NOM"
-                  value={lastName}
-                  onChange={(e) => setLastName(e.target.value)}
+                  value={lastname}
+                  onChange={(e) => setLastname(e.target.value)}
                   autoComplete="family-name"
                 />
               </label>

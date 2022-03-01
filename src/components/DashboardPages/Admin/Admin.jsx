@@ -1,45 +1,61 @@
-import React, { useEffect, useState } from 'react';
-// import axios from 'axios';
+import React, { useState } from 'react';
+import axios from 'axios';
 
 import ButtonDash from '../../DashboardComposants/ButtonDash/ButtonDash';
 
 import './Admin.css';
 
-// const API_URL = process.env.REACT_APP_API_PORTFOLIO_URL;
+const API_URL = process.env.REACT_APP_API_PORTFOLIO_URL;
 
 function Admin({ setDashboardTitle }) {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [userName, setUserName] = useState('');
+  const [firstname, setFirstname] = useState('');
+  const [lastname, setLastname] = useState('');
+  const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
-  //   const handleSubmit = async (e) => {
-  //     e.preventDefault();
-  //     if (
-  //       !firstName ||
-  //       !lastName ||
-  //       !userName ||
-  //       !email ||
-  //       !password ||
-  //       !confirmPassword
-  //     ) {
-  //       alert('Vous devez fournir toutes les informations');
-  //     } else if (password !== confirmPassword) {
-  //       alert('Le mot de passe et sa confirmation doivent être identique');
-  //     } else {
-  //       console.log("Informations envoyées pour créer l'utilisateur");
-  //       const response = await axios.post(`${API_URL}/api/users`, {
-  //         email,
-  //         password,
-  //       });
-  //       console.log(response);
-  //     }
-  //   };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (
+      !firstname ||
+      !lastname ||
+      !username ||
+      !email ||
+      !password ||
+      !confirmPassword
+    ) {
+      alert('Vous devez fournir toutes les informations');
+    } else if (password !== confirmPassword) {
+      alert('Le mot de passe et sa confirmation doivent être identique');
+    } else {
+      console.log("Informations envoyées pour créer l'utilisateur");
+      try {
+        const response = await axios.post(`${API_URL}/api/users`, {
+          firstname,
+          lastname,
+          username,
+          email,
+          password,
+        });
+        if (response.status === 201) {
+          alert('Nouvel utilisateur créé');
+          setFirstname('');
+          setLastname('');
+          setUsername('');
+          setEmail('');
+          setPassword('');
+          setConfirmPassword('');
+        } else {
+          alert('Erreur');
+        }
+      } catch (err) {
+        alert(err.message);
+      }
+    }
+  };
 
-  setDashboardTitle('Administration');
-  useEffect(() => {}, []);
+  setDashboardTitle('Création Utilisateur');
 
   return (
     <div className="dashboard-admin">
@@ -53,8 +69,8 @@ function Admin({ setDashboardTitle }) {
                   type="text"
                   id="admin-first-name"
                   placeholder="Entrer votre Prénom"
-                  value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
+                  value={firstname}
+                  onChange={(e) => setFirstname(e.target.value)}
                 />
               </label>
             </div>
@@ -65,8 +81,8 @@ function Admin({ setDashboardTitle }) {
                   type="text"
                   id="admin-last-name"
                   placeholder="Entrer votre NOM"
-                  value={lastName}
-                  onChange={(e) => setLastName(e.target.value)}
+                  value={lastname}
+                  onChange={(e) => setLastname(e.target.value)}
                 />
               </label>
             </div>
@@ -77,8 +93,8 @@ function Admin({ setDashboardTitle }) {
                   type="text"
                   id="admin-user-name"
                   placeholder="Entrer votre Prénom"
-                  value={userName}
-                  onChange={(e) => setUserName(e.target.value)}
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
                 />
               </label>
             </div>

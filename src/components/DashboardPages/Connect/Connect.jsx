@@ -7,8 +7,10 @@ import './Connect.css';
 function Connect({ setDashboardTitle }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  setDashboardTitle('Administration');
+
+  setDashboardTitle('Connexion');
   useEffect(() => {}, []);
+
   return (
     <div className="dashboard-connect">
       <div className="connect">

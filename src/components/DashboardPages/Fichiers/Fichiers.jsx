@@ -11,8 +11,10 @@ function Fichiers({ setDashboardTitle }) {
   const [addAt, setAddAt] = useState('');
   const [source, setSource] = useState('');
   const [description, setDescription] = useState('');
+
   setDashboardTitle('Administration des Fichiers');
   useEffect(() => {}, []);
+
   return (
     <div className="dashboard-fichiers">
       <div className="fichiers">

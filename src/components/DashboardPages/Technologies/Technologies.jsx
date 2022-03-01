@@ -8,8 +8,10 @@ function Technologies({ setDashboardTitle }) {
   const [technologies, setTechnologies] = useState('');
   const [technologiesName, setTechnologiesName] = useState('');
   const [source, setSource] = useState('');
+
   setDashboardTitle('Administration des Technologies');
   useEffect(() => {}, []);
+
   return (
     <div className="dashboard-technologies">
       <div className="technologies">
