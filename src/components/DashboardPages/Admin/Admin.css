@@ -63,6 +63,24 @@
   color: #adadad;
 }
 
+/* Forcer la première lettre du prénom à être en majuscule dans son input */
+
+.admin-first-name input {
+  text-transform: capitalize;
+}
+
+/* Forcer le NOM de famille à être en majuscule dans son input */
+
+.admin-last-name input {
+  text-transform: uppercase;
+}
+
+/* Forcer la première lettre du pseudo à être en majuscule dans son input */
+
+.admin-user-name input {
+  text-transform: capitalize;
+}
+
 /* Mise en place et style du bouton */
 
 .button-admin {

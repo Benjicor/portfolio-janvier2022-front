@@ -50,12 +50,12 @@ function Admin({ setDashboardTitle }) {
           alert('Erreur');
         }
       } catch (err) {
-        alert(err.message);
+        alert(err.response.data);
       }
     }
   };
 
-  setDashboardTitle('Création Utilisateur');
+  setDashboardTitle("Création d'Utilisateur");
 
   return (
     <div className="dashboard-admin">
@@ -114,7 +114,7 @@ function Admin({ setDashboardTitle }) {
               <h2>Mot de passe</h2>
               <label htmlFor="admin-password" className="admin-password">
                 <input
-                  type="text"
+                  type="password"
                   id="admin-password"
                   placeholder="Entrer votre mot de passe"
                   value={password}
@@ -129,7 +129,7 @@ function Admin({ setDashboardTitle }) {
                 className="admin-confirm-password"
               >
                 <input
-                  type="text"
+                  type="password"
                   id="admin-confirm-password"
                   placeholder="Confirmer votre mot de passe"
                   value={confirmPassword}

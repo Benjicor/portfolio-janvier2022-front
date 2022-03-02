@@ -1,28 +1,49 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 import ButtonDash from '../../DashboardComposants/ButtonDash/ButtonDash';
 
 import './Connect.css';
 
+const API_URL = process.env.REACT_APP_API_PORTFOLIO_URL;
+
 function Connect({ setDashboardTitle }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!email || !password) {
+      alert('Vous devez fournir toutes les informations');
+    } else {
+      try {
+        await axios.post(`${API_URL}/api/auth/connect`, {
+          email,
+          password,
+        });
+        navigate('/Private/Admin/Files');
+      } catch (err) {
+        alert(err.response.data);
+      }
+    }
+  };
 
   setDashboardTitle('Connexion');
-  useEffect(() => {}, []);
 
   return (
     <div className="dashboard-connect">
       <div className="connect">
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="container-form-connect">
             <div className="form-group-user">
               <h2>Nom d&#39;utilisateur</h2>
               <label htmlFor="user-name" className="user-name">
                 <input
-                  type="text"
+                  type="email"
                   id="user-name"
-                  placeholder="Entrer votre e-mail"
+                  placeholder="Entrer votre nom d'utilisateur"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
@@ -32,7 +53,7 @@ function Connect({ setDashboardTitle }) {
               <h2>Mot de passe</h2>
               <label htmlFor="password" className="password">
                 <input
-                  type="text"
+                  type="password"
                   id="password"
                   placeholder="Entrer votre mot de passe"
                   value={password}

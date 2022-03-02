@@ -29,20 +29,16 @@ function App() {
       <Routes>
         <Route path="/" element={<Accueil setSiteTitle={setSiteTitle} />} />
         <Route
-          path="/APropos"
+          path="/About"
           element={<APropos setSiteTitle={setSiteTitle} />}
         />
         <Route
-          path="/Projets"
+          path="/Projects"
           element={<Projets setSiteTitle={setSiteTitle} />}
         />
         <Route
           path="/Contact"
           element={<Contact setSiteTitle={setSiteTitle} />}
-        />
-        <Route
-          path="/Private/Admin"
-          element={<Admin setDashboardTitle={setDashboardTitle} />}
         />
         <Route
           path="/Private/Admin/Connect"
@@ -51,11 +47,15 @@ function App() {
         {user && (
           <>
             <Route
+              path="/Private/Admin/CreateUser"
+              element={<Admin setDashboardTitle={setDashboardTitle} />}
+            />
+            <Route
               path="/Private/Admin/Connect"
               element={<Connect setDashboardTitle={setDashboardTitle} />}
             />
             <Route
-              path="Private/Admin/Fichiers"
+              path="Private/Admin/Files"
               element={<Fichiers setDashboardTitle={setDashboardTitle} />}
             />
             <Route
