@@ -19,10 +19,16 @@ function Connect({ setDashboardTitle }) {
       alert('Vous devez fournir toutes les informations');
     } else {
       try {
-        await axios.post(`${API_URL}/api/auth/connect`, {
-          email,
-          password,
-        });
+        await axios.post(
+          `${API_URL}/api/auth/connect`,
+          {
+            email,
+            password,
+          },
+          {
+            withCredentials: true,
+          }
+        );
         navigate('/Private/Admin/Files');
       } catch (err) {
         alert(err.response.data);
@@ -42,6 +48,7 @@ function Connect({ setDashboardTitle }) {
               <label htmlFor="user-name" className="user-name">
                 <input
                   type="email"
+                  pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
                   id="user-name"
                   placeholder="Entrer votre nom d'utilisateur"
                   value={email}

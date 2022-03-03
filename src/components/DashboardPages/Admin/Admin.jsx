@@ -31,13 +31,19 @@ function Admin({ setDashboardTitle }) {
     } else {
       console.log("Informations envoyées pour créer l'utilisateur");
       try {
-        const response = await axios.post(`${API_URL}/api/users`, {
-          firstname,
-          lastname,
-          username,
-          email,
-          password,
-        });
+        const response = await axios.post(
+          `${API_URL}/api/users`,
+          {
+            firstname,
+            lastname,
+            username,
+            email,
+            password,
+          },
+          {
+            withCredentials: true,
+          }
+        );
         if (response.status === 201) {
           alert('Nouvel utilisateur créé');
           setFirstname('');
@@ -102,7 +108,8 @@ function Admin({ setDashboardTitle }) {
               <h2>Email</h2>
               <label htmlFor="admin-email" className="admin-email">
                 <input
-                  type="text"
+                  type="email"
+                  pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
                   id="admin-email"
                   placeholder="Entrer votre e-mail"
                   value={email}
