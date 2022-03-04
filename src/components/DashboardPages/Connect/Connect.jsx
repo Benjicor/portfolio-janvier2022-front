@@ -29,7 +29,7 @@ function Connect({ setDashboardTitle }) {
             withCredentials: true,
           }
         );
-        navigate('/Private/Admin/Files');
+        navigate('/Private/Admin/CreateUser');
       } catch (err) {
         alert(err.response.data);
       }
@@ -61,10 +61,12 @@ function Connect({ setDashboardTitle }) {
               <label htmlFor="password" className="password">
                 <input
                   type="password"
+                  minLength="10"
                   id="password"
                   placeholder="Entrer votre mot de passe"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                  autoComplete="off"
                 />
               </label>
             </div>

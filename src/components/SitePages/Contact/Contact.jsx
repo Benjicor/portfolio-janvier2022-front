@@ -28,7 +28,7 @@ function Contact({ setSiteTitle }) {
   setSiteTitle('Contact');
   useEffect(() => {}, []);
   return (
-    <div className="page-contact">
+    <div className="contact-page">
       <div className="contact">
         <h1 className="contact-title">Me contacter</h1>
         <form onSubmit={onSubmit} autoComplete="on">

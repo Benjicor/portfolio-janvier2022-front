@@ -25,7 +25,7 @@
 @media screen and (min-width: 768px) and (min-height: 450px) {
   /* Mise en place du footer en bas de page quand pas suffisamment de contenu */
 
-  .page-a-propos ~ footer {
+  .about-page ~ footer {
     position: fixed;
     bottom: 0;
   }
@@ -36,7 +36,7 @@
 @media screen and (min-width: 992px) and (min-height: 450px) {
   /* Mise en place du footer en bas de page quand pas suffisamment de contenu */
 
-  .page-a-propos ~ footer {
+  .about-page ~ footer {
     position: fixed;
     bottom: 0;
   }

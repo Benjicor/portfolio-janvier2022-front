@@ -29,7 +29,7 @@ function Admin({ setDashboardTitle }) {
     } else if (password !== confirmPassword) {
       alert('Le mot de passe et sa confirmation doivent être identique');
     } else {
-      console.log("Informations envoyées pour créer l'utilisateur");
+      console.log("Données envoyées pour créer l'utilisateur");
       try {
         const response = await axios.post(
           `${API_URL}/api/users`,
@@ -122,10 +122,12 @@ function Admin({ setDashboardTitle }) {
               <label htmlFor="admin-password" className="admin-password">
                 <input
                   type="password"
+                  minLength="10"
                   id="admin-password"
                   placeholder="Entrer votre mot de passe"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                  autoComplete="off"
                 />
               </label>
             </div>
@@ -137,10 +139,12 @@ function Admin({ setDashboardTitle }) {
               >
                 <input
                   type="password"
+                  minLength="10"
                   id="admin-confirm-password"
                   placeholder="Confirmer votre mot de passe"
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
+                  autoComplete="off"
                 />
               </label>
             </div>

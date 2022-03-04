@@ -13,12 +13,12 @@ function BurgerContentSite({ handleClick }) {
           </Link>
         </li>
         <li>
-          <Link className="link" to="/APropos" onClick={handleClick}>
+          <Link className="link" to="/About" onClick={handleClick}>
             À propos
           </Link>
         </li>
         <li>
-          <Link className="link" to="/Projets" onClick={handleClick}>
+          <Link className="link" to="/Projects" onClick={handleClick}>
             Projets
           </Link>
         </li>

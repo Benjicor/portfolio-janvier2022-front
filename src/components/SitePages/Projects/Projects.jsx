@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 
-import './Projets.css';
+import './Projects.css';
 
-function Projets({ setSiteTitle }) {
+function Projects({ setSiteTitle }) {
   const baseUrl = 'http://react-responsive-carousel.js.org/assets/';
   const datas = [
     {
@@ -30,9 +30,9 @@ function Projets({ setSiteTitle }) {
   setSiteTitle('Projets');
   useEffect(() => {}, []);
   return (
-    <div className="page-projets">
-      <div className="projets">
-        <h1 className="projets-title">Voici mes projets réalisés</h1>
+    <div className="projects-page">
+      <div className="projects">
+        <h1 className="projects-title">Voici mes projets réalisés</h1>
         <Carousel
           autoPlay
           interval={2000}
@@ -56,4 +56,4 @@ function Projets({ setSiteTitle }) {
   );
 }
 
-export default Projets;
+export default Projects;

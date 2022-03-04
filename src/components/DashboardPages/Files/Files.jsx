@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 
 import ButtonDash from '../../DashboardComposants/ButtonDash/ButtonDash';
 
-import './Fichiers.css';
+import './Files.css';
 
-function Fichiers({ setDashboardTitle }) {
+function Files({ setDashboardTitle }) {
   const [files, setFiles] = useState('');
   const [filesName, setFilesName] = useState('');
   const [filesDate, setFilesDate] = useState('');
@@ -16,8 +16,8 @@ function Fichiers({ setDashboardTitle }) {
   useEffect(() => {}, []);
 
   return (
-    <div className="dashboard-fichiers">
-      <div className="fichiers">
+    <div className="dashboard-files">
+      <div className="files">
         <form>
           <div className="container-form">
             <div className="files-upload">
@@ -107,4 +107,4 @@ function Fichiers({ setDashboardTitle }) {
   );
 }
 
-export default Fichiers;
+export default Files;

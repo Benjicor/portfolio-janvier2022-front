@@ -10,7 +10,7 @@ function BurgerContentDash({ handleClick }) {
         <li>
           <Link
             className="link"
-            to="/Private/Admin/Fichiers"
+            to="/Private/Admin/Files"
             onClick={handleClick}
           >
             Fichiers

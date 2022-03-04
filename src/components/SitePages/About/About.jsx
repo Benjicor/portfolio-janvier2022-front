@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 
-import './APropos.css';
+import './About.css';
 
-function APropos({ setSiteTitle }) {
+function About({ setSiteTitle }) {
   setSiteTitle('À propos');
   useEffect(() => {}, []);
   return (
-    <div className="page-a-propos">
-      <div className="a-propos">
+    <div className="about-page">
+      <div className="about">
         <h1 className="presentation">
           Bonjour et bienvenue, je suis Benjamin CORDREAUX et je vais tenter de
           vous présenter qui je suis.
@@ -36,4 +36,4 @@ function APropos({ setSiteTitle }) {
   );
 }
 
-export default APropos;
+export default About;

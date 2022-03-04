@@ -15,16 +15,17 @@ import git from '../../../assets/svg/git.svg';
 import github from '../../../assets/svg/github-original.svg';
 import certificatHtml5Css3 from '../../../assets/pdf/CertificatDeReussite-ApprenezACréerVotreSiteWebAvecHtml5EtCss3.pdf';
 
-import './Accueil.css';
+import './Home.css';
 
-function Accueil({ setSiteTitle }) {
+function Home({ setSiteTitle }) {
   const [openModal, setOpenModal] = useState(false);
+
   setSiteTitle('Accueil');
   useEffect(() => {}, []);
   return (
-    <div className="page-accueil">
-      <div className="accueil">
-        <h1 className="bienvenue">Bienvenue sur mon Portfolio</h1>
+    <div className="home-page">
+      <div className="home">
+        <h1 className="welcome">Bienvenue sur mon Portfolio</h1>
         <div className="rond">
           <div className="carre">
             <img
@@ -103,4 +104,4 @@ function Accueil({ setSiteTitle }) {
   );
 }
 
-export default Accueil;
+export default Home;

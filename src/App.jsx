@@ -1,24 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
 import BurgerMenuSite from './components/SiteComposants/BurgerMenuSite/BurgerMenuSite';
-import Accueil from './components/SitePages/Accueil/Accueil';
-import APropos from './components/SitePages/APropos/APropos';
-import Projets from './components/SitePages/Projets/Projets';
+import Home from './components/SitePages/Home/Home';
+import About from './components/SitePages/About/About';
+import Projects from './components/SitePages/Projects/Projects';
 import Contact from './components/SitePages/Contact/Contact';
 import Footer from './components/SiteComposants/Footer/Footer';
 
 import BurgerMenuDash from './components/DashboardComposants/BurgerMenuDash/BurgerMenuDash';
 import Admin from './components/DashboardPages/Admin/Admin';
 import Connect from './components/DashboardPages/Connect/Connect';
-import Fichiers from './components/DashboardPages/Fichiers/Fichiers';
+import Files from './components/DashboardPages/Files/Files';
 import Images from './components/DashboardPages/Images/Images';
 import Technologies from './components/DashboardPages/Technologies/Technologies';
 
 function App() {
   const [siteTitle, setSiteTitle] = useState('');
   const [dashboardTitle, setDashboardTitle] = useState('');
-  const [user /* setUser */] = useState(true);
+  const [user, setUser] = useState(true);
+
+  useEffect(() => {
+    (async () => {
+      await axios
+        .get(
+          `${process.env.REACT_APP_API_PORTFOLIO_URL}/api/auth/connect`.then(
+            (response) => response.data
+          )
+        )
+        .then((data) => {
+          setUser(data);
+        });
+    })();
+  }, []);
+
   return (
     <div className="app">
       {!user ? (
@@ -27,14 +43,11 @@ function App() {
         <BurgerMenuDash dashboardTitle={dashboardTitle} />
       )}
       <Routes>
-        <Route path="/" element={<Accueil setSiteTitle={setSiteTitle} />} />
-        <Route
-          path="/About"
-          element={<APropos setSiteTitle={setSiteTitle} />}
-        />
+        <Route path="/" element={<Home setSiteTitle={setSiteTitle} />} />
+        <Route path="/About" element={<About setSiteTitle={setSiteTitle} />} />
         <Route
           path="/Projects"
-          element={<Projets setSiteTitle={setSiteTitle} />}
+          element={<Projects setSiteTitle={setSiteTitle} />}
         />
         <Route
           path="/Contact"
@@ -56,7 +69,7 @@ function App() {
             />
             <Route
               path="Private/Admin/Files"
-              element={<Fichiers setDashboardTitle={setDashboardTitle} />}
+              element={<Files setDashboardTitle={setDashboardTitle} />}
             />
             <Route
               path="Private/Admin/Images"
