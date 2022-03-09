@@ -19,19 +19,15 @@ import Technologies from './components/DashboardPages/Technologies/Technologies'
 function App() {
   const [siteTitle, setSiteTitle] = useState('');
   const [dashboardTitle, setDashboardTitle] = useState('');
-  const [user, setUser] = useState(true);
+  const [user, setUser] = useState(1);
 
   useEffect(() => {
     (async () => {
-      await axios
-        .get(
-          `${process.env.REACT_APP_API_PORTFOLIO_URL}/api/auth/connect`.then(
-            (response) => response.data
-          )
+      await axios.get(
+        `${process.env.REACT_APP_API_PORTFOLIO_URL}/api/auth/connect`.then(
+          (response) => setUser.data(response.data)
         )
-        .then((data) => {
-          setUser(data);
-        });
+      );
     })();
   }, []);
 
@@ -57,7 +53,7 @@ function App() {
           path="/Private/Admin/Connect"
           element={<Connect setDashboardTitle={setDashboardTitle} />}
         />
-        {user && (
+        {user !== 0 && (
           <>
             <Route
               path="/Private/Admin/CreateUser"

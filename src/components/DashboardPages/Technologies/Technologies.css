@@ -10,18 +10,18 @@
 /* Mise en place et style du formulaire */
 
 .container-form {
-  margin: 5vh auto;
+  margin: 4vh auto;
   max-width: 350px;
 }
 
 input {
+  margin: 1vh auto 4vh;
   background-color: #e5e5e5;
   width: 100%;
   height: 50px;
-  font-size: 14px;
   border-radius: 5px;
   border: 2px solid #adadad;
-  margin: 0 auto 4vh;
+  font-size: 14px;
 }
 
 [type='file']::-webkit-file-upload-button {
@@ -47,8 +47,8 @@ input::placeholder {
 
 /* Mise en place et style du bouton */
 
-.technologies-button {
-  margin: 26vh auto 5vh;
+.button-technologies {
+  margin: 24vh auto 4vh;
 }
 
 .grid-button {
@@ -80,6 +80,7 @@ input::placeholder {
   color: #e5e5e5;
   border-radius: 5px;
   border: none;
+  font-size: 15px;
 }
 
 .modify {
@@ -87,6 +88,7 @@ input::placeholder {
   color: #ff1616;
   border-radius: 5px;
   border: none;
+  font-size: 15px;
 }
 
 .delete {
@@ -94,4 +96,5 @@ input::placeholder {
   color: #05d8fd;
   border-radius: 5px;
   border: none;
+  font-size: 15px;
 }

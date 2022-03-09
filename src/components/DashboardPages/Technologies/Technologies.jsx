@@ -21,7 +21,9 @@ function Technologies({ setDashboardTitle }) {
               <label
                 htmlFor="technologies-select"
                 className="technologies-select"
+                id="label-technologies"
               >
+                Technologie
                 <input
                   type="file"
                   id="technologies-upload"
@@ -34,7 +36,12 @@ function Technologies({ setDashboardTitle }) {
               </label>
             </div>
             <div>
-              <label htmlFor="technologies-name" className="technologies-name">
+              <label
+                htmlFor="technologies-name"
+                className="technologies-name"
+                id="label-technologies"
+              >
+                Nom de la technologie
                 <input
                   type="text"
                   id="technologies-name"
@@ -48,7 +55,9 @@ function Technologies({ setDashboardTitle }) {
               <label
                 htmlFor="technologies-source"
                 className="technologies-source"
+                id="label-technologies"
               >
+                Lien de la technologie
                 <input
                   type="text"
                   id="technologies-source"
@@ -58,7 +67,7 @@ function Technologies({ setDashboardTitle }) {
                 />
               </label>
             </div>
-            <div className="technologies-button">
+            <div className="button-technologies">
               <ul className="grid-button">
                 <li>
                   <ButtonDash className="add" buttonName="Ajouter" />

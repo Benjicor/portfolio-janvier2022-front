@@ -35,15 +35,16 @@ function Contact({ setSiteTitle }) {
           <div className="container-form">
             <div className="contact-form">
               <label
-                htmlFor="contact-first-name"
-                className="contact-first-name"
+                htmlFor="contact-firstname"
+                className="contact-firstname"
+                id="label-contact"
               >
                 Prénom :
                 <input
                   type="text"
                   required="required"
                   name="prenom"
-                  id="contact-first-name"
+                  id="contact-firstname"
                   placeholder="Entrer votre Prénom"
                   value={firstname}
                   onChange={(e) => setFirstname(e.target.value)}
@@ -52,13 +53,17 @@ function Contact({ setSiteTitle }) {
               </label>
             </div>
             <div className="contact-form">
-              <label htmlFor="contact-last-name" className="contact-last-name">
+              <label
+                htmlFor="contact-lastname"
+                className="contact-lastname"
+                id="label-contact"
+              >
                 NOM :
                 <input
                   type="text"
                   required="required"
                   name="nom"
-                  id="contact-last-name"
+                  id="contact-lastname"
                   placeholder="Entrer votre NOM"
                   value={lastname}
                   onChange={(e) => setLastname(e.target.value)}
@@ -67,7 +72,11 @@ function Contact({ setSiteTitle }) {
               </label>
             </div>
             <div className="contact-form">
-              <label htmlFor="contact-email" className="contact-email">
+              <label
+                htmlFor="contact-email"
+                className="contact-email"
+                id="label-contact"
+              >
                 Adresse email :
                 <input
                   type="email"
@@ -83,13 +92,17 @@ function Contact({ setSiteTitle }) {
               </label>
             </div>
             <div className="contact-form">
-              <label htmlFor="contact-sujet" className="contact-sujet">
+              <label
+                htmlFor="contact-subject"
+                className="contact-subject"
+                id="label-contact"
+              >
                 Sujet :
                 <input
                   type="text"
                   required="required"
                   name="sujet"
-                  id="contact-sujet"
+                  id="contact-subject"
                   placeholder="Entrer votre raison de prise de contact"
                   value={subject}
                   onChange={(e) => setSubject(e.target.value)}
@@ -101,6 +114,7 @@ function Contact({ setSiteTitle }) {
               <label
                 htmlFor="contact-description"
                 className="contact-description"
+                id="label-contact"
               >
                 Message :
                 <textarea
@@ -116,7 +130,7 @@ function Contact({ setSiteTitle }) {
                 />
               </label>
             </div>
-            <div className="contact-button">
+            <div className="button-contact">
               <ButtonSite className="send" buttonName="Envoyer" />
             </div>
           </div>

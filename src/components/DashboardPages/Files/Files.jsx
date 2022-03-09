@@ -21,10 +21,15 @@ function Files({ setDashboardTitle }) {
         <form>
           <div className="container-form">
             <div className="files-upload">
-              <label htmlFor="files-select" className="files-select">
+              <label
+                htmlFor="files-select"
+                className="files-select"
+                id="label-files"
+              >
+                Fichier
                 <input
                   type="file"
-                  id="files-upload"
+                  id="files-select"
                   placeholder="Sélectionner un fichier"
                   accept=".pdf"
                   multiple
@@ -34,7 +39,12 @@ function Files({ setDashboardTitle }) {
               </label>
             </div>
             <div>
-              <label htmlFor="files-name" className="files-name">
+              <label
+                htmlFor="files-name"
+                className="files-name"
+                id="label-files"
+              >
+                Nom du fichier
                 <input
                   type="text"
                   id="files-name"
@@ -45,7 +55,12 @@ function Files({ setDashboardTitle }) {
               </label>
             </div>
             <div>
-              <label htmlFor="files-date" className="files-date">
+              <label
+                htmlFor="files-date"
+                className="files-date"
+                id="label-files"
+              >
+                Date de réalisation du fichier
                 <input
                   type="date"
                   id="files-date"
@@ -56,7 +71,12 @@ function Files({ setDashboardTitle }) {
               </label>
             </div>
             <div>
-              <label htmlFor="files-add-at" className="files-add-at">
+              <label
+                htmlFor="files-add-at"
+                className="files-add-at"
+                id="label-files"
+              >
+                Date d&#39;ajout du fichier
                 <input
                   type="date"
                   id="files-add-at"
@@ -67,7 +87,12 @@ function Files({ setDashboardTitle }) {
               </label>
             </div>
             <div>
-              <label htmlFor="files-source" className="files-source">
+              <label
+                htmlFor="files-source"
+                className="files-source"
+                id="label-files"
+              >
+                Lien du fichier
                 <input
                   type="text"
                   id="files-source"
@@ -78,7 +103,12 @@ function Files({ setDashboardTitle }) {
               </label>
             </div>
             <div>
-              <label htmlFor="files-description" className="files-description">
+              <label
+                htmlFor="files-description"
+                className="files-description"
+                id="label-files"
+              >
+                Déscription du fichier
                 <textarea
                   type="text"
                   rows={10}
