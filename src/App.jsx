@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
+import './App.css';
+
 import BurgerMenuSite from './components/SiteComposants/BurgerMenuSite/BurgerMenuSite';
 import Home from './components/SitePages/Home/Home';
 import About from './components/SitePages/About/About';
@@ -19,7 +21,7 @@ import Technologies from './components/DashboardPages/Technologies/Technologies'
 function App() {
   const [siteTitle, setSiteTitle] = useState('');
   const [dashboardTitle, setDashboardTitle] = useState('');
-  const [user, setUser] = useState(1);
+  const [user, setUser] = useState(0);
 
   useEffect(() => {
     (async () => {

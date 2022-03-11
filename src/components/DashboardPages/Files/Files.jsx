@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 import ButtonDash from '../../DashboardComposants/ButtonDash/ButtonDash';
 
@@ -7,18 +8,55 @@ import './Files.css';
 function Files({ setDashboardTitle }) {
   const [files, setFiles] = useState('');
   const [filesName, setFilesName] = useState('');
-  const [filesDate, setFilesDate] = useState('');
-  const [addAt, setAddAt] = useState('');
+  const [filesDateStart, setFilesDateStart] = useState('');
+  const [filesDateEnd, setFilesDateEnd] = useState('');
   const [source, setSource] = useState('');
   const [description, setDescription] = useState('');
 
-  setDashboardTitle('Administration des Fichiers');
+  const handleChangeFile = (e) => {
+    console.log(e);
+    const selectedFile = e.target.files[0];
+    const { type } = selectedFile;
+    if (type !== 'fichier/pdf') {
+      setFiles();
+      alert('Veuillez sélectionner un fichier .pdf');
+    } else {
+      setFiles(selectedFile);
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!files) {
+      alert('Veuillez sélectionner un fichier .pdf');
+    } else if (!description) {
+      alert('Veuillez fournir une description');
+    } else {
+      const data = new FormData();
+      // Ajoute mon fichier pdf à mon FormData
+      data.append('file', files);
+      // Ajoute la description au FormData
+      data.append('pictureData', JSON.stringify({ description }));
+      try {
+        const res = await axios.post(
+          `${process.env.REACT_APP_API_PORTFOLIO_URL}/api/images/upload`,
+          data
+        );
+        console.log(res);
+      } catch (err) {
+        console.log(err.message);
+      }
+    }
+  };
+
+  setDashboardTitle('Administration des Projets');
   useEffect(() => {}, []);
 
   return (
     <div className="dashboard-files">
       <div className="files">
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="container-form">
             <div className="files-upload">
               <label
@@ -26,15 +64,15 @@ function Files({ setDashboardTitle }) {
                 className="files-select"
                 id="label-files"
               >
-                Fichier
+                Sélectionner les images du projet
                 <input
                   type="file"
+                  name="upload"
                   id="files-select"
                   placeholder="Sélectionner un fichier"
                   accept=".pdf"
                   multiple
-                  value={files}
-                  onChange={(e) => setFiles(e.target.value)}
+                  onChange={handleChangeFile}
                 />
               </label>
             </div>
@@ -44,11 +82,11 @@ function Files({ setDashboardTitle }) {
                 className="files-name"
                 id="label-files"
               >
-                Nom du fichier
+                Nom du projet
                 <input
                   type="text"
                   id="files-name"
-                  placeholder="Nom du fichier"
+                  placeholder="Nom du projet"
                   value={filesName}
                   onChange={(e) => setFilesName(e.target.value)}
                 />
@@ -56,33 +94,33 @@ function Files({ setDashboardTitle }) {
             </div>
             <div>
               <label
-                htmlFor="files-date"
-                className="files-date"
+                htmlFor="files-start-date"
+                className="files-start-date"
                 id="label-files"
               >
-                Date de réalisation du fichier
+                Date de début de réalisation du projet
                 <input
                   type="date"
-                  id="files-date"
-                  placeholder="Date de réalisation du fichier"
-                  value={filesDate}
-                  onChange={(e) => setFilesDate(e.target.value)}
+                  id="files-start-date"
+                  placeholder="Date de début de réalisation du projet"
+                  value={filesDateStart}
+                  onChange={(e) => setFilesDateStart(e.target.value)}
                 />
               </label>
             </div>
             <div>
               <label
-                htmlFor="files-add-at"
-                className="files-add-at"
+                htmlFor="files-end-date"
+                className="files-end-date"
                 id="label-files"
               >
-                Date d&#39;ajout du fichier
+                Date de fin de réalisation du projet
                 <input
                   type="date"
-                  id="files-add-at"
-                  placeholder="Date d'ajout du fichier"
-                  value={addAt}
-                  onChange={(e) => setAddAt(e.target.value)}
+                  id="files-end-date"
+                  placeholder="Date de fin de réalisation du projet"
+                  value={filesDateEnd}
+                  onChange={(e) => setFilesDateEnd(e.target.value)}
                 />
               </label>
             </div>
@@ -92,11 +130,11 @@ function Files({ setDashboardTitle }) {
                 className="files-source"
                 id="label-files"
               >
-                Lien du fichier
+                Lien du projet en ligne
                 <input
                   type="text"
                   id="files-source"
-                  placeholder="Lien du fichier"
+                  placeholder="Lien du projet en ligne"
                   value={source}
                   onChange={(e) => setSource(e.target.value)}
                 />
@@ -108,12 +146,12 @@ function Files({ setDashboardTitle }) {
                 className="files-description"
                 id="label-files"
               >
-                Déscription du fichier
+                Déscription du projet
                 <textarea
                   type="text"
                   rows={10}
                   id="files-description"
-                  placeholder="Description du fichier"
+                  placeholder="Description du projet"
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
                 />

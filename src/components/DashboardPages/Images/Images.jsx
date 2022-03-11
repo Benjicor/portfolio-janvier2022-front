@@ -8,7 +8,6 @@ import './Images.css';
 function Images({ setDashboardTitle }) {
   const [images, setImages] = useState('');
   const [imagesName, setImagesName] = useState();
-  const [addAt, setAddAt] = useState('');
   const [source, setSource] = useState('');
   const [description, setDescription] = useState('');
 
@@ -68,7 +67,7 @@ function Images({ setDashboardTitle }) {
                 className="images-select"
                 id="label-images"
               >
-                Image
+                Sélectionner une image
                 <input
                   type="file"
                   name="upload"
@@ -99,33 +98,16 @@ function Images({ setDashboardTitle }) {
             </div>
             <div>
               <label
-                htmlFor="images-add-at"
-                className="images-add-at"
-                id="label-images"
-              >
-                Date d&#39;ajout de l&#39;image
-                <input
-                  type="date"
-                  name="add-at"
-                  id="images-add-at"
-                  placeholder="Date d'ajout de l'image"
-                  value={addAt}
-                  onChange={(e) => setAddAt(e.target.value)}
-                />
-              </label>
-            </div>
-            <div>
-              <label
                 htmlFor="images-source"
                 className="images-source"
                 id="label-images"
               >
-                Lien d&#39;image
+                Lien de l&#39;image en ligne
                 <input
                   type="text"
                   name="source"
                   id="images-source"
-                  placeholder="Lien de l'images"
+                  placeholder="Lien de l'image en ligne"
                   value={source}
                   onChange={(e) => setSource(e.target.value)}
                 />

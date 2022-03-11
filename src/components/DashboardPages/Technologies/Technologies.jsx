@@ -23,11 +23,11 @@ function Technologies({ setDashboardTitle }) {
                 className="technologies-select"
                 id="label-technologies"
               >
-                Technologie
+                Sélectionner une technologie
                 <input
                   type="file"
                   id="technologies-upload"
-                  placeholder="Sélectionner une technologies"
+                  placeholder="Sélectionner une technologie"
                   accept=".svg"
                   multiple
                   value={technologies}
@@ -57,11 +57,11 @@ function Technologies({ setDashboardTitle }) {
                 className="technologies-source"
                 id="label-technologies"
               >
-                Lien de la technologie
+                Lien de la technologie en ligne
                 <input
                   type="text"
                   id="technologies-source"
-                  placeholder="Lien de la technologie"
+                  placeholder="Lien de la technologie en ligne"
                   value={source}
                   onChange={(e) => setSource(e.target.value)}
                 />
