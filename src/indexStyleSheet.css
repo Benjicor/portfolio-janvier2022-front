@@ -86,54 +86,31 @@ ul li {
   font-family: latobold, Arial, Helvetica, sans-serif;
 }
 
-/* Attribution des polices : Input dans SitePages */
+/* Attribution des polices : Label */
 
-#contact-first-name,
-#contact-last-name,
-#contact-email,
-#contact-description {
-  font-family: aileronregular, arial, helvetica, sans-serif;
-}
-
-#submit-contact {
-  font-family: latoitalic, Arial, Helvetica, sans-serif;
-  font-weight: normal;
-  font-style: italic;
-}
-
-/* Attribution des polices : Dashboard Connect */
-
-.user-name {
+label {
   font-family: aileronbold, Arial, Helvetica, sans-serif;
   font-weight: bold;
   font-style: normal;
   color: #e5e5e5;
 }
 
-.button-contact,
-.button-name {
+/* Attribution des polices : Input */
+
+input,
+textarea {
+  font-family: latoregular, Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  color: #333;
+}
+
+/* Attribution des polices : Button */
+
+button {
   font-family: latoitalic, Arial, Helvetica, sans-serif;
   font-weight: normal;
   font-style: italic;
-}
-
-/* Attribution des polices : Input dans DashboardPages */
-
-#files-upload,
-#files-name,
-#files-date,
-#files-add-at,
-#files-source,
-#files-description,
-#images-upload,
-#images-name,
-#images-add-at,
-#images-source,
-#images-description,
-#technologies-upload,
-#technologies-name,
-#technologies-source {
-  font-family: aileronregular, arial, helvetica, sans-serif;
 }
 
 /* Annulation de la mise en forme native html de la balise a */

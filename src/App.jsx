@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
+import './App.css';
+
 import BurgerMenuSite from './components/SiteComposants/BurgerMenuSite/BurgerMenuSite';
 import Home from './components/SitePages/Home/Home';
 import About from './components/SitePages/About/About';
@@ -23,15 +25,11 @@ function App() {
 
   useEffect(() => {
     (async () => {
-      await axios
-        .get(
-          `${process.env.REACT_APP_API_PORTFOLIO_URL}/api/auth/connect`.then(
-            (response) => response.data
-          )
+      await axios.get(
+        `${process.env.REACT_APP_API_PORTFOLIO_URL}/api/auth/connect`.then(
+          (response) => setUser.data(response.data)
         )
-        .then((data) => {
-          setUser(data);
-        });
+      );
     })();
   }, []);
 
@@ -57,7 +55,7 @@ function App() {
           path="/Private/Admin/Connect"
           element={<Connect setDashboardTitle={setDashboardTitle} />}
         />
-        {user && (
+        {user !== 0 && (
           <>
             <Route
               path="/Private/Admin/CreateUser"

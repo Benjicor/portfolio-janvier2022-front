@@ -25,6 +25,7 @@ specifiers:
   react-responsive-carousel: ^3.2.22
   react-router-dom: ^6.2.1
   react-scripts: 5.0.0
+  react-toastify: ^8.2.0
   stylelint: ^14.3.0
   stylelint-config-prettier: ^9.0.3
   stylelint-config-standard: ^24.0.0
@@ -43,6 +44,7 @@ dependencies:
   react-responsive-carousel: 3.2.22
   react-router-dom: 6.2.1_react-dom@17.0.2+react@17.0.2
   react-scripts: 5.0.0_react@17.0.2
+  react-toastify: 8.2.0_react-dom@17.0.2+react@17.0.2
   yup: 0.32.11
 
 devDependencies:
@@ -3342,6 +3344,11 @@ packages:
   /clone/1.0.4:
     resolution: {integrity: sha1-2jCcwmPfFZlMaIypAheco8fNfH4=}
     engines: {node: '>=0.8'}
+    dev: false
+
+  /clsx/1.1.1:
+    resolution: {integrity: sha512-6/bPho624p3S2pMyvP5kKBPXnI3ufHLObBFCfgx+LkeR5lg2XYy2hqZqUf45ypD8COn2bhgGJSUE+l5dhNBieA==}
+    engines: {node: '>=6'}
     dev: false
 
   /co/4.6.0:
@@ -8429,6 +8436,17 @@ packages:
       - webpack-cli
       - webpack-hot-middleware
       - webpack-plugin-serve
+    dev: false
+
+  /react-toastify/8.2.0_react-dom@17.0.2+react@17.0.2:
+    resolution: {integrity: sha512-Pg2Ju7NngAamarFvLwqrFomJ57u/Ay6i6zfLurt/qPynWkAkOthu6vxfqYpJCyNhHRhR4hu7+bySSeWWJu6PAg==}
+    peerDependencies:
+      react: '>=16'
+      react-dom: '>=16'
+    dependencies:
+      clsx: 1.1.1
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
     dev: false
 
   /react/17.0.2:

@@ -21,11 +21,13 @@ function Technologies({ setDashboardTitle }) {
               <label
                 htmlFor="technologies-select"
                 className="technologies-select"
+                id="label-technologies"
               >
+                Sélectionner une technologie
                 <input
                   type="file"
                   id="technologies-upload"
-                  placeholder="Sélectionner une technologies"
+                  placeholder="Sélectionner une technologie"
                   accept=".svg"
                   multiple
                   value={technologies}
@@ -34,7 +36,12 @@ function Technologies({ setDashboardTitle }) {
               </label>
             </div>
             <div>
-              <label htmlFor="technologies-name" className="technologies-name">
+              <label
+                htmlFor="technologies-name"
+                className="technologies-name"
+                id="label-technologies"
+              >
+                Nom de la technologie
                 <input
                   type="text"
                   id="technologies-name"
@@ -48,17 +55,19 @@ function Technologies({ setDashboardTitle }) {
               <label
                 htmlFor="technologies-source"
                 className="technologies-source"
+                id="label-technologies"
               >
+                Lien de la technologie en ligne
                 <input
                   type="text"
                   id="technologies-source"
-                  placeholder="Lien de la technologie"
+                  placeholder="Lien de la technologie en ligne"
                   value={source}
                   onChange={(e) => setSource(e.target.value)}
                 />
               </label>
             </div>
-            <div className="technologies-button">
+            <div className="button-technologies">
               <ul className="grid-button">
                 <li>
                   <ButtonDash className="add" buttonName="Ajouter" />

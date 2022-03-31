@@ -16,6 +16,16 @@ body {
   color: #e5e5e5;
 }
 
+/* Style des label */
+
+label {
+  display: block;
+}
+
+#label-connect {
+  text-align: center;
+}
+
 /* Style des input */
 
 input:focus-visible,
