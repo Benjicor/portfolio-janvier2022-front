@@ -19,7 +19,7 @@ import Technologies from './components/DashboardPages/Technologies/Technologies'
 function App() {
   const [siteTitle, setSiteTitle] = useState('');
   const [dashboardTitle, setDashboardTitle] = useState('');
-  const [user, setUser] = useState(true);
+  const [user, setUser] = useState(0);
 
   useEffect(() => {
     (async () => {

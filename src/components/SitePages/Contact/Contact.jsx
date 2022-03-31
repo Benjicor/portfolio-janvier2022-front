@@ -38,7 +38,7 @@ function Contact({ setSiteTitle }) {
                 htmlFor="contact-first-name"
                 className="contact-first-name"
               >
-                Prénom :
+                Prénom
                 <input
                   type="text"
                   required="required"
@@ -53,7 +53,7 @@ function Contact({ setSiteTitle }) {
             </div>
             <div className="contact-form">
               <label htmlFor="contact-last-name" className="contact-last-name">
-                NOM :
+                NOM
                 <input
                   type="text"
                   required="required"
@@ -68,7 +68,7 @@ function Contact({ setSiteTitle }) {
             </div>
             <div className="contact-form">
               <label htmlFor="contact-email" className="contact-email">
-                Adresse email :
+                Adresse email
                 <input
                   type="email"
                   required="required"
@@ -84,7 +84,7 @@ function Contact({ setSiteTitle }) {
             </div>
             <div className="contact-form">
               <label htmlFor="contact-sujet" className="contact-sujet">
-                Sujet :
+                Sujet
                 <input
                   type="text"
                   required="required"
@@ -102,7 +102,7 @@ function Contact({ setSiteTitle }) {
                 htmlFor="contact-description"
                 className="contact-description"
               >
-                Message :
+                Message
                 <textarea
                   type="text"
                   required="required"

@@ -46,6 +46,7 @@ function Connect({ setDashboardTitle }) {
             <div className="form-group-user">
               <h2>Nom d&#39;utilisateur</h2>
               <label htmlFor="user-name" className="user-name">
+                Nom d&#39;utilisateur
                 <input
                   type="email"
                   pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
@@ -59,6 +60,7 @@ function Connect({ setDashboardTitle }) {
             <div className="form-group-password">
               <h2>Mot de passe</h2>
               <label htmlFor="password" className="password">
+                Mot de passe
                 <input
                   type="password"
                   minLength="10"

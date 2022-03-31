@@ -71,6 +71,7 @@ function Admin({ setDashboardTitle }) {
             <div className="form-group-admin-first-name">
               <h2>Prénom</h2>
               <label htmlFor="admin-first-name" className="admin-first-name">
+                Prénom
                 <input
                   type="text"
                   id="admin-first-name"
@@ -83,6 +84,7 @@ function Admin({ setDashboardTitle }) {
             <div className="form-group-admin-last-name">
               <h2>NOM</h2>
               <label htmlFor="admin-last-name" className="admin-last-name">
+                NOM
                 <input
                   type="text"
                   id="admin-last-name"
@@ -95,6 +97,7 @@ function Admin({ setDashboardTitle }) {
             <div className="form-group-admin-user-name">
               <h2>Nom d&#39;utilisateur</h2>
               <label htmlFor="admin-user-name" className="admin-user-name">
+                Nom d&#39;utilisateur
                 <input
                   type="text"
                   id="admin-user-name"
@@ -107,6 +110,7 @@ function Admin({ setDashboardTitle }) {
             <div className="form-group-admin-email">
               <h2>Email</h2>
               <label htmlFor="admin-email" className="admin-email">
+                Email
                 <input
                   type="email"
                   pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
@@ -120,6 +124,7 @@ function Admin({ setDashboardTitle }) {
             <div className="form-group-admin-password">
               <h2>Mot de passe</h2>
               <label htmlFor="admin-password" className="admin-password">
+                Mot de passe
                 <input
                   type="password"
                   minLength="10"
@@ -137,6 +142,7 @@ function Admin({ setDashboardTitle }) {
                 htmlFor="admin-confirm-password"
                 className="admin-confirm-password"
               >
+                Confirmer Mot de passe
                 <input
                   type="password"
                   minLength="10"
