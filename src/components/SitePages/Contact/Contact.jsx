@@ -45,7 +45,7 @@ function Contact({ setSiteTitle }) {
                 className="contact-firstname"
                 id="label-contact"
               >
-                Prénom :
+                Prénom
                 <input
                   type="text"
                   required="required"
@@ -122,7 +122,7 @@ function Contact({ setSiteTitle }) {
                 className="contact-description"
                 id="label-contact"
               >
-                Message :
+                Message
                 <textarea
                   type="text"
                   required="required"
