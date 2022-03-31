@@ -1,0 +1,84 @@
+/* Mise en place du titre de la page */
+
+.contact-title {
+  text-align: center;
+}
+
+/* Mise en place et style du formulaire */
+
+.container-form {
+  margin: 4vh auto;
+  max-width: 350px;
+}
+
+input,
+textarea {
+  margin: 1vh auto 4vh;
+  background-color: #e5e5e5;
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  border: 2px solid #adadad;
+  font-size: 14px;
+}
+
+textarea {
+  height: initial;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #adadad;
+}
+
+/* Forcer la première lettre du prénom à être en majuscule dans son input */
+
+.contact-firstname input {
+  text-transform: capitalize;
+}
+
+/* Forcer le NOM de famille à être en majuscule dans son input */
+
+.contact-lastname input {
+  text-transform: uppercase;
+}
+
+/* Mise en place et style du bouton */
+
+.button-contact {
+  width: 150px;
+  background-color: #05d8fd;
+  color: #ff1616;
+  border-radius: 5px;
+  border: none;
+  font-size: 15px;
+  margin: auto;
+}
+
+.send {
+  width: 150px;
+  height: 50px;
+  background-color: #05d8fd;
+  color: #ff1616;
+  border-radius: 5px;
+  border: none;
+  font-size: 15px;
+}
+
+/* Média Queries - Adaptation sur écran de plus de 360px */
+
+@media screen and (min-width: 360px) {
+  /* Media Query BurgerMenu */
+}
+
+/* Média Queries - Adaptation sur écran de plus de 768px */
+
+@media screen and (min-width: 768px) and (min-height: 450px) {
+  /* Mise en place du footer en bas de page quand pas suffisamment de contenu */
+}
+
+/* Média Queries - Adaptation sur écran de plus de 992px */
+
+@media screen and (min-width: 992px) and (min-height: 450px) {
+  /* Mise en place du footer en bas de page quand pas suffisamment de contenu */
+}
