@@ -12,21 +12,27 @@ function Contact({ setSiteTitle }) {
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
 
-  const onSubmit = async () => {
-    await axios.post(
-      `${process.env.REACT_APP_API_PORTFOLIO_URL}/api/emails/hbs-and-file`,
-      {
-        email,
-        firstname,
-        lastname,
-        subject,
-        message,
-      }
-    );
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    await axios
+      .post(
+        `${process.env.REACT_APP_API_PORTFOLIO_URL}/api/emails/hbs-and-file`,
+        {
+          email,
+          firstname,
+          lastname,
+          subject,
+          message,
+        }
+      )
+      .catch((err) => {
+        alert(err);
+      });
   };
 
-  setSiteTitle('Contact');
-  useEffect(() => {}, []);
+  useEffect(() => {
+    setSiteTitle('Contact');
+  }, []);
   return (
     <div className="contact-page">
       <div className="contact">

@@ -23,14 +23,10 @@ function App() {
   const [dashboardTitle, setDashboardTitle] = useState('');
   const [user, setUser] = useState(0);
 
-  useEffect(() => {
-    (async () => {
-      await axios.get(
-        `${process.env.REACT_APP_API_PORTFOLIO_URL}/api/auth/connect`.then(
-          (response) => setUser.data(response.data)
-        )
-      );
-    })();
+  useEffect(async () => {
+    await axios
+      .get(`${process.env.REACT_APP_API_PORTFOLIO_URL}/api/auth/connect`)
+      .then((response) => setUser.data(response.data));
   }, []);
 
   return (
