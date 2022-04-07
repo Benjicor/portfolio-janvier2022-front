@@ -2,8 +2,8 @@
 
 .photo-profil {
   display: block;
-  width: 150px;
-  height: 150px;
+  width: 165px;
+  height: 165px;
   transform: rotate(40deg);
   transition: 0.5s ease;
 }
@@ -38,8 +38,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 150px;
-  height: 150px;
+  width: 175px;
+  height: 175px;
   padding: 1rem;
   background: linear-gradient(
     to right,
@@ -108,7 +108,9 @@ h2 {
   align-items: center;
 }
 
-.logo li a.certificat img {
+/* Animation battement */
+
+/* .logo li a.certificat img {
   animation: bounce 1.5s infinite ease;
 }
 
@@ -125,7 +127,7 @@ h2 {
   100% {
     transform: scale(1);
   }
-}
+} */
 
 /* Média Queries - Adaptation sur écran de plus de 381px de large et 1025px de haut */
 
@@ -182,21 +184,21 @@ h2 {
   /* Mise en forme photo de profil */
 
   .photo-profil {
-    width: 275px;
-    height: 275px;
+    width: 250px;
+    height: 250px;
   }
 
   /* Mise en forme cadre photo de profil */
 
   .rond {
-    width: 350px;
-    height: 350px;
+    width: 400px;
+    height: 400px;
     margin: 50px auto;
   }
 
   .carre {
-    width: 250px;
-    height: 250px;
+    width: 265px;
+    height: 265px;
   }
 }
 
