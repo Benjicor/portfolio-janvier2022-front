@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 
+import Button from '../../Button/Button';
+
 import './About.css';
 
 function About({ setSiteTitle }) {
@@ -33,6 +35,18 @@ function About({ setSiteTitle }) {
             dynamique !
           </p>
         </h1>
+        <ul className="grid-button-about">
+          <li>
+            <Button className="button-cv" buttonName="CV" submit />
+          </li>
+          <li>
+            <Button
+              className="button-contact-me"
+              buttonName="Me contacter"
+              submit
+            />
+          </li>
+        </ul>
       </div>
     </div>
   );
