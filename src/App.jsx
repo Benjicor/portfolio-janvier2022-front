@@ -19,7 +19,7 @@ import Technologies from './components/PagesDashboard/Technologies/Technologies'
 function App() {
   const [siteTitle, setSiteTitle] = useState('');
   const [dashboardTitle, setDashboardTitle] = useState('');
-  const [user, setUser] = useState(1);
+  const [user, setUser] = useState(0);
 
   useEffect(async () => {
     await axios

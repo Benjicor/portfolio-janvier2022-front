@@ -7,25 +7,29 @@ import './Images.css';
 
 function Images({ setDashboardTitle }) {
   const [images, setImages] = useState('');
+  const [files, setFiles] = useState([]);
+  const [filesId, setFilesId] = useState();
   const [imagesName, setImagesName] = useState();
   const [source, setSource] = useState('');
   const [description, setDescription] = useState('');
 
   const handleChangeFile = (e) => {
-    console.log(e);
-    const selectedFile = e.target.files[0];
-    const { type } = selectedFile;
-    if (
-      type !== 'image/png' &&
-      type !== 'image/jpg' &&
-      type !== 'image/jpeg' &&
-      type !== 'image/svg'
-    ) {
-      setImages();
-      alert('Veuillez sélectionner une image .png, .jpg, .jpeg, .svg');
-    } else {
-      setImages(selectedFile);
-    }
+    const selectedFile = e.target.files;
+    [selectedFile].map((file, index) => {
+      if (
+        file[index].type !== 'image/png' &&
+        file[index].type !== 'image/jpg' &&
+        file[index].type !== 'image/jpeg' &&
+        file[index].type !== 'image/svg+xml'
+      ) {
+        alert('Veuillez sélectionner une image .png, .jpg, .jpeg, .svg');
+      }
+      return setImages([...selectedFile]);
+    });
+  };
+
+  const handleProject = (e) => {
+    setFilesId(parseInt(e.target.value, 10));
   };
 
   const handleSubmit = async (e) => {
@@ -38,9 +42,11 @@ function Images({ setDashboardTitle }) {
     } else {
       const data = new FormData();
       // Ajoute mon fichier image à mon FormData
-      data.append('file', images);
-      // Ajoute la description au FormData
-      data.append('pictureData', JSON.stringify({ description }));
+      images.forEach((image) => {
+        data.append('file', image);
+      });
+      // Ajoute les différentes valeurs attendu dans ma table images au FormData
+      data.append('data', JSON.stringify({ description, files_id: filesId }));
       try {
         const res = await axios.post(
           `${process.env.REACT_APP_API_PORTFOLIO_URL}/api/images/upload`,
@@ -54,6 +60,13 @@ function Images({ setDashboardTitle }) {
   };
 
   useEffect(() => {
+    (async () => {
+      axios
+        .get(`${process.env.REACT_APP_API_PORTFOLIO_URL}/api/files`)
+        .then((res) => {
+          setFiles(res.data);
+        });
+    })();
     setDashboardTitle('Administration des Images');
   }, []);
 
@@ -63,6 +76,27 @@ function Images({ setDashboardTitle }) {
         <form onSubmit={handleSubmit}>
           <div className="container-form">
             <div className="images-upload">
+              <div>
+                <label
+                  htmlFor="images-name"
+                  className="images-name"
+                  id="label-images"
+                >
+                  Projet
+                  <select
+                    name="files_id"
+                    id="files_id"
+                    onChange={handleProject}
+                  >
+                    <option value="" selected>
+                      Choisir un projet
+                    </option>
+                    {files?.map((file) => (
+                      <option value={file.id}>{file.title}</option>
+                    ))}
+                  </select>
+                </label>
+              </div>
               <label
                 htmlFor="images-select"
                 className="images-select"
