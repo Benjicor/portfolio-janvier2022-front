@@ -1,34 +1,23 @@
-import React, { useEffect } from 'react';
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+import React, { useEffect, useState } from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-
+import axios from 'axios';
 import './Projects.css';
 
 function Projects({ setSiteTitle }) {
-  const baseUrl = 'http://react-responsive-carousel.js.org/assets/';
-  const datas = [
-    {
-      id: 1,
-      image: `${baseUrl}1.jpeg`,
-      title: 'Titre du slider 1',
-      text: `Nous allons voir dans cette vidéo comment créer un carrousel d'images couramment appelé Slideshow ou Slider.`,
-    },
-    {
-      id: 2,
-      image: `${baseUrl}2.jpeg`,
-      title: 'Titre du slider 2',
-      text: `Nous allons voir dans cette vidéo comment créer un carrousel d'images couramment appelé Slideshow ou Slider.`,
-    },
-    {
-      id: 3,
-      image: `${baseUrl}3.jpeg`,
-      title: 'Titre du slider 3',
-      text: `Nous allons voir dans cette vidéo comment créer un carrousel d'images couramment appelé Slideshow ou Slider.`,
-    },
-  ];
-
+  const [files, setFiles] = useState([]);
+  const [details, setDetails] = useState(false);
   useEffect(() => {
     setSiteTitle('Projets');
+    (async () => {
+      await axios
+        .get(`${process.env.REACT_APP_API_PORTFOLIO_URL}/api/files`)
+        .then((res) => {
+          setFiles(res.data);
+        });
+    })();
   }, []);
 
   return (
@@ -43,13 +32,23 @@ function Projects({ setSiteTitle }) {
           showIndicators={false}
           showStatus={false}
         >
-          {datas.map((slide) => (
-            <div key={slide.id}>
-              <img src={slide.image} alt="" />
+          {files?.map((file) => (
+            // eslint-disable-next-line jsx-a11y/click-events-have-key-events
+            <div key={file.id} onClick={() => setDetails(true)}>
+              <img
+                src={`${process.env.REACT_APP_API_PORTFOLIO_URL}/images/${file.images[0].src}`}
+                alt={file.alt}
+              />
               <div className="overlay">
-                <h2 className="overlay-title">{slide.title}</h2>
-                <p className="overlay-text">{slide.text}</p>
+                <h2 className="overlay-title">{file.title}</h2>
+                <p className="overlay-text">{file.description}</p>
               </div>
+              {details &&
+                file.images.map((image) => (
+                  <img
+                    src={`${process.env.REACT_APP_API_PORTFOLIO_URL}/images/${image.src}`}
+                  />
+                ))}
             </div>
           ))}
         </Carousel>
