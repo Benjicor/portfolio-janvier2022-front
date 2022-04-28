@@ -1,24 +1,28 @@
-.modal-container {
+.home {
+  position: relative;
+}
+
+.container-modal {
   width: 290px;
   position: absolute;
-  top: 49%;
+  top: 70px;
   left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 15px;
+  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   color: #333;
-  z-index: 9;
+  z-index: 10;
 }
 
-.modal-container img {
+.container-modal img {
   width: 100%;
+  border-radius: 25px;
 }
 
 .close-btn {
   position: absolute;
-  right: -12.5px;
-  top: -12.5px;
+  right: -10px;
+  top: -10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,38 +41,14 @@
   cursor: pointer;
 }
 
-/* Média Queries - Adaptation sur écran de plus de 381px */
+/* Média Queries - Adaptation sur écran de plus de 459px */
 
-@media screen and (min-width: 381px) {
+@media screen and (min-width: 459px) {
   /* Media Query Modal */
 
-  .modal-container {
+  .container-modal {
     width: 290px;
-    top: 49%;
-    left: 50%;
-  }
-}
-
-/* Média Queries - Adaptation sur écran de plus de 424px */
-
-@media screen and (min-width: 424px) {
-  /* Media Query Modal */
-
-  .modal-container {
-    width: 290px;
-    top: 49%;
-    left: 50%;
-  }
-}
-
-/* Média Queries - Adaptation sur écran de plus de 525px */
-
-@media screen and (min-width: 525px) {
-  /* Media Query Modal */
-
-  .modal-container {
-    width: 295px;
-    top: 46%;
+    top: 30px;
     left: 50%;
   }
 }
@@ -78,10 +58,9 @@
 @media screen and (min-width: 768px) {
   /* Media Query Modal */
 
-  .modal-container {
-    width: 430px;
-    top: 47%;
-    left: 50%;
+  .container-modal {
+    width: 450px;
+    top: 50px;
   }
 }
 
@@ -90,9 +69,7 @@
 @media screen and (min-width: 992px) {
   /* Media Query Modal */
 
-  .modal-container {
-    width: 450px;
-    top: 47%;
-    left: 50%;
+  .container-modal {
+    width: 425px;
   }
 }
