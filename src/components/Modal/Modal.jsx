@@ -4,7 +4,7 @@ import './Modal.css';
 
 function Modal({ closeModal, img }) {
   return (
-    <div className="modal-container">
+    <div className="container-modal">
       <div className="close-btn">
         <button
           type="button"

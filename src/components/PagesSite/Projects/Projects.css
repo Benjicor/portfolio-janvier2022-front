@@ -1,5 +1,3 @@
-/* Mise en place du footer en bas de page quand pas suffisamment de contenu */
-
 .projects-page ~ footer {
   position: fixed;
   bottom: 0;
@@ -11,36 +9,56 @@
 
 /* Stylisation du carousel */
 
-.carousel {
+.carousel-slider-projects .swiper {
+  padding-bottom: 2rem;
+  height: auto;
+}
+
+.carousel-slider-projects .swiper-slide {
+  position: relative;
+  text-align: center;
+}
+
+.carousel-slider-projects .swiper-slide img {
+  object-fit: contain;
+  width: 100%;
+  height: 250px;
+}
+
+.swiper-overlay-projects .swipper-overlay-wrapper {
   position: relative;
 }
 
-.carousel .thumbs {
+/* Définition de l'overlay du slider */
+
+.overlay-projects {
+  text-align: center;
+  position: absolute;
+  background: hsl(0deg 0% 0% / 40%);
+  color: #fff;
+  padding: 0.8rem;
+  width: auto;
+  border-radius: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -13px;
+  right: 20px;
+  cursor: pointer;
+  min-width: fit-content;
+}
+
+/* Définition des images des projets que l'on affiche */
+
+.selected-project-container {
   display: flex;
   justify-content: center;
-  margin: 0;
-  padding: 10px;
+  margin: 1rem;
 }
 
-.carousel .thumb {
-  margin: 0 5px;
-  cursor: pointer;
-}
-
-.carousel .overlay {
-  width: 80%;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 10%;
-  padding: 0.4rem 1.5rem;
-  text-align: left;
-  background: rgb(51 51 51 / 60%);
-  color: #e5e5e5;
-}
-
-.carousel .overlay-title {
-  margin: 0.8rem 0 1rem;
+.selected-project-img {
+  width: 500px;
+  height: auto;
+  border-radius: 5px;
 }
 
 /* Média Queries - Adaptation sur écran de maximum 600px */
@@ -58,27 +76,14 @@
 /* Média Queries - Adaptation sur écran de plus de 360px */
 
 @media screen and (min-width: 360px) {
-  /* Media Query BurgerMenu */
 }
 
 /* Média Queries - Adaptation sur écran de plus de 768px */
 
 @media screen and (min-width: 768px) and (min-height: 450px) {
-  /* Mise en place du footer en bas de page quand pas suffisamment de contenu */
-
-  .projects-page ~ footer {
-    position: fixed;
-    bottom: 0;
-  }
 }
 
 /* Média Queries - Adaptation sur écran de plus de 992px */
 
 @media screen and (min-width: 992px) and (min-height: 450px) {
-  /* Mise en place du footer en bas de page quand pas suffisamment de contenu */
-
-  .projects-page ~ footer {
-    position: fixed;
-    bottom: 0;
-  }
 }
