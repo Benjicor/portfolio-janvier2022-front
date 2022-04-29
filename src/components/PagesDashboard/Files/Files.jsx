@@ -51,6 +51,13 @@ function Files({ setDashboardTitle }) {
   };
 
   useEffect(() => {
+    (async () => {
+      axios
+        .get(`${process.env.REACT_APP_API_PORTFOLIO_URL}/api/files`)
+        .then((res) => {
+          setFiles(res.data);
+        });
+    })();
     setDashboardTitle('Administration des Projets');
   }, []);
 
@@ -65,7 +72,7 @@ function Files({ setDashboardTitle }) {
                 className="files-select"
                 id="label-files"
               >
-                Sélectionner les images du projet
+                Sélectionner une ou des image(s) du projet
                 <input
                   type="file"
                   name="upload"
@@ -77,87 +84,73 @@ function Files({ setDashboardTitle }) {
                 />
               </label>
             </div>
-            <div>
-              <label
-                htmlFor="files-name"
-                className="files-name"
-                id="label-files"
-              >
-                Nom du projet
-                <input
-                  type="text"
-                  id="files-name"
-                  placeholder="Nom du projet"
-                  value={filesName}
-                  onChange={(e) => setFilesName(e.target.value)}
-                />
-              </label>
-            </div>
-            <div>
-              <label
-                htmlFor="files-start-date"
-                className="files-start-date"
-                id="label-files"
-              >
-                Date de début de réalisation du projet
-                <input
-                  type="date"
-                  id="files-start-date"
-                  placeholder="Date de début de réalisation du projet"
-                  value={filesDateStart}
-                  onChange={(e) => setFilesDateStart(e.target.value)}
-                />
-              </label>
-            </div>
-            <div>
-              <label
-                htmlFor="files-end-date"
-                className="files-end-date"
-                id="label-files"
-              >
-                Date de fin de réalisation du projet
-                <input
-                  type="date"
-                  id="files-end-date"
-                  placeholder="Date de fin de réalisation du projet"
-                  value={filesDateEnd}
-                  onChange={(e) => setFilesDateEnd(e.target.value)}
-                />
-              </label>
-            </div>
-            <div>
-              <label
-                htmlFor="files-source"
-                className="files-source"
-                id="label-files"
-              >
-                Lien du projet en ligne
-                <input
-                  type="text"
-                  id="files-source"
-                  placeholder="Lien du projet en ligne"
-                  value={source}
-                  onChange={(e) => setSource(e.target.value)}
-                />
-              </label>
-            </div>
-            <div>
-              <label
-                htmlFor="files-description"
-                className="files-description"
-                id="label-files"
-              >
-                Déscription du projet
-                <textarea
-                  type="text"
-                  rows={10}
-                  id="files-description"
-                  placeholder="Description du projet"
-                  value={description}
-                  onChange={(e) => setDescription(e.target.value)}
-                />
-              </label>
-            </div>
+            <label htmlFor="files-name" className="files-name" id="label-files">
+              Nom du projet
+              <input
+                type="text"
+                id="files-name"
+                placeholder="Nom du projet"
+                value={filesName}
+                onChange={(e) => setFilesName(e.target.value)}
+              />
+            </label>
+            <label
+              htmlFor="files-start-date"
+              className="files-start-date"
+              id="label-files"
+            >
+              Date de début de réalisation du projet
+              <input
+                type="date"
+                id="files-start-date"
+                placeholder="Date de début de réalisation du projet"
+                value={filesDateStart}
+                onChange={(e) => setFilesDateStart(e.target.value)}
+              />
+            </label>
+            <label
+              htmlFor="files-end-date"
+              className="files-end-date"
+              id="label-files"
+            >
+              Date de fin de réalisation du projet
+              <input
+                type="date"
+                id="files-end-date"
+                placeholder="Date de fin de réalisation du projet"
+                value={filesDateEnd}
+                onChange={(e) => setFilesDateEnd(e.target.value)}
+              />
+            </label>
+            <label
+              htmlFor="files-source"
+              className="files-source"
+              id="label-files"
+            >
+              Lien du projet en ligne
+              <input
+                type="text"
+                id="files-source"
+                placeholder="Lien du projet en ligne"
+                value={source}
+                onChange={(e) => setSource(e.target.value)}
+              />
+            </label>
+            <label
+              htmlFor="files-description"
+              className="files-description"
+              id="label-files"
+            >
+              Déscription du projet
+              <textarea
+                type="text"
+                rows={10}
+                id="files-description"
+                placeholder="Description du projet"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+              />
+            </label>
             <ul className="grid-button">
               <li>
                 <Button className="add" buttonName="Ajouter" submit />

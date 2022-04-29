@@ -9,7 +9,6 @@ function Images({ setDashboardTitle }) {
   const [images, setImages] = useState('');
   const [files, setFiles] = useState([]);
   const [filesId, setFilesId] = useState();
-  const [imagesName, setImagesName] = useState();
   const [source, setSource] = useState('');
   const [description, setDescription] = useState('');
 
@@ -75,97 +74,74 @@ function Images({ setDashboardTitle }) {
       <div className="images">
         <form onSubmit={handleSubmit}>
           <div className="container-form">
+            <label
+              htmlFor="project-select"
+              className="project-select"
+              id="label-images"
+            >
+              Sélectionner un projet
+              <select
+                name="files_id"
+                id="project-select"
+                onChange={handleProject}
+              >
+                <option value="" selected>
+                  Choisir un projet
+                </option>
+                {files?.map((file) => (
+                  <option value={file.id}>{file.title}</option>
+                ))}
+              </select>
+            </label>
             <div className="images-upload">
-              <div>
-                <label
-                  htmlFor="images-name"
-                  className="images-name"
-                  id="label-images"
-                >
-                  Projet
-                  <select
-                    name="files_id"
-                    id="files_id"
-                    onChange={handleProject}
-                  >
-                    <option value="" selected>
-                      Choisir un projet
-                    </option>
-                    {files?.map((file) => (
-                      <option value={file.id}>{file.title}</option>
-                    ))}
-                  </select>
-                </label>
-              </div>
               <label
                 htmlFor="images-select"
                 className="images-select"
                 id="label-images"
               >
-                Sélectionner une image
+                Sélectionner une ou des image(s)
                 <input
                   type="file"
                   name="upload"
-                  id="images-upload"
-                  placeholder="Sélectionner une image"
-                  accept=".png, .jpg, .jpeg, .svg"
+                  id="images-select"
+                  placeholder="Sélectionner une ou des image(s)"
+                  accept=".png, .jpg, .jpeg, .svg+xml"
                   multiple
                   onChange={handleChangeFile}
                 />
               </label>
             </div>
-            <div>
-              <label
-                htmlFor="images-name"
-                className="images-name"
-                id="label-images"
-              >
-                Nom de l&#39;image
-                <input
-                  type="text"
-                  name="name"
-                  id="images-name"
-                  placeholder="Nom de l'image"
-                  value={imagesName}
-                  onChange={(e) => setImagesName(e.target.value)}
-                />
-              </label>
-            </div>
-            <div>
-              <label
-                htmlFor="images-source"
-                className="images-source"
-                id="label-images"
-              >
-                Lien de l&#39;image en ligne
-                <input
-                  type="text"
-                  name="source"
-                  id="images-source"
-                  placeholder="Lien de l'image en ligne"
-                  value={source}
-                  onChange={(e) => setSource(e.target.value)}
-                />
-              </label>
-            </div>
-            <div>
-              <label
-                htmlFor="images-description"
-                className="images-description"
-                id="label-images"
-              >
-                Déscription de l&#39;image
-                <textarea
-                  type="text"
-                  name="description"
-                  rows={10}
-                  id="images-description"
-                  placeholder="Description de l'image"
-                  value={description}
-                  onChange={(e) => setDescription(e.target.value)}
-                />
-              </label>
-            </div>
+            <label
+              htmlFor="images-source"
+              className="images-source"
+              id="label-images"
+            >
+              Lien de l&#39;image en ligne
+              <input
+                type="text"
+                name="source"
+                id="images-source"
+                placeholder="Lien de l'image en ligne"
+                value={source}
+                onChange={(e) => setSource(e.target.value)}
+              />
+            </label>
+            <label
+              htmlFor="images-description"
+              className="images-description"
+              id="label-images"
+            >
+              Déscription de l&#39;image
+              <textarea
+                type="text"
+                name="description"
+                rows={10}
+                id="images-description"
+                placeholder="Description de l'image"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+              />
+            </label>
             <ul className="grid-button">
               <li>
                 <Button className="add" buttonName="Ajouter" submit />

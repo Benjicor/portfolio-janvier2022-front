@@ -28,6 +28,7 @@ label {
 
 /* Style des input */
 
+select:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
   outline: #ff1616 auto 1px;
@@ -39,7 +40,7 @@ button {
   cursor: pointer;
 }
 
-button:not(.burger-menu),
+button:not(.burger-menu) :not(.close-btn),
 .button-cv,
 .button-contact-me {
   width: 100%;
@@ -51,15 +52,15 @@ button:hover:not(.burger-menu),
 .button-cv,
 .button-contact-me {
   transform: translateY(3.5px);
-  box-shadow: 4px 4px 4px;
+  box-shadow: 2.5px 2.5px 2.5px;
 }
 
 button:active:not(.burger-menu),
 .button-cv,
 .button-contact-me {
   transform: translateY(7px);
-  box-shadow: 2px 2px 2px;
-  color: #333;
+  box-shadow: 1.25px 1.25px 1.25px;
+  color: #fff;
 }
 
 /* Média Queries - Adaptation sur écran de plus de 768px */
