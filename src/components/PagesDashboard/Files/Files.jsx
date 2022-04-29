@@ -28,26 +28,33 @@ function Files({ setDashboardTitle }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!files) {
-      alert('Veuillez sélectionner un fichier .pdf');
-    } else if (!description) {
-      alert('Veuillez fournir une description');
-    } else {
-      const data = new FormData();
-      // Ajoute mon fichier pdf à mon FormData
-      data.append('file', files);
-      // Ajoute la description au FormData
-      data.append('pictureData', JSON.stringify({ description }));
-      try {
-        const res = await axios.post(
-          `${process.env.REACT_APP_API_PORTFOLIO_URL}/api/images/upload`,
-          data
-        );
-        console.log(res);
-      } catch (err) {
-        console.log(err.message);
-      }
-    }
+    axios.post(`${process.env.REACT_APP_API_PORTFOLIO_URL}/api/files`, {
+      title: filesName,
+      start_date: filesDateStart,
+      end_date: filesDateEnd,
+      src: source,
+      description,
+    });
+    // if (!files) {
+    //   alert('Veuillez sélectionner un fichier .pdf');
+    // } else if (!description) {
+    //   alert('Veuillez fournir une description');
+    // } else {
+    //   const data = new FormData();
+    //   // Ajoute mon fichier pdf à mon FormData
+    //   data.append('file', files);
+    //   // Ajoute la description au FormData
+    //   data.append('pictureData', JSON.stringify({ description }));
+    //   try {
+    //     const res = await axios.post(
+    //       `${process.env.REACT_APP_API_PORTFOLIO_URL}/api/images/upload`,
+    //       data
+    //     );
+    //     console.log(res);
+    //   } catch (err) {
+    //     console.log(err.message);
+    //   }
+    // }
   };
 
   useEffect(() => {
@@ -67,7 +74,7 @@ function Files({ setDashboardTitle }) {
         <form onSubmit={handleSubmit}>
           <div className="container-form">
             <div className="files-upload">
-              <label
+              {/* <label
                 htmlFor="files-select"
                 className="files-select"
                 id="label-files"
@@ -78,11 +85,11 @@ function Files({ setDashboardTitle }) {
                   name="upload"
                   id="files-select"
                   placeholder="Sélectionner un fichier"
-                  accept=".pdf"
+                  accept=".png, .jpg, .jpeg, .svg+xml, .pdf"
                   multiple
                   onChange={handleChangeFile}
                 />
-              </label>
+              </label> */}
             </div>
             <label htmlFor="files-name" className="files-name" id="label-files">
               Nom du projet
