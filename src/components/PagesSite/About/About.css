@@ -1,3 +1,10 @@
+/* Mise en place du container about */
+
+.container-about {
+  margin: 4vh auto;
+  max-width: 350px;
+}
+
 /* Mise en forme du texte (titre et paragraphe) */
 
 .presentation {
@@ -16,17 +23,37 @@
 
 /* Mise en place et style du bouton */
 
+.button-cv {
+  display: block;
+  text-align: center;
+  background-color: #05d8fd;
+  color: #ff1616;
+  border-radius: 5px;
+  border: none;
+  font-size: 15px;
+}
+
+.button-contact-me {
+  display: block;
+  text-align: center;
+  background-color: #ff1616;
+  color: #05d8fd;
+  border-radius: 5px;
+  border: none;
+  font-size: 15px;
+}
+
 .grid-button-about {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   grid-row-gap: 4vh;
   justify-content: center;
-  margin: 0;
+  margin: 0 auto 4vh;
   padding: 0;
 }
 
-.grid-button-about .button {
+.grid-button-about .button-cv .button-contact-me {
   width: 100%;
 }
 
@@ -40,24 +67,25 @@
   grid-column: 2;
 }
 
-.button-cv,
-.button-contact-me {
-  background-color: #adadad;
-  color: #e5e5e5;
-  border-radius: 5px;
-  border: none;
-  font-size: 15px;
-}
-
 /* Média Queries - Adaptation sur écran de plus de 360px */
 
-@media screen and (min-width: 360px) {
-  /* Media Query BurgerMenu */
+@media screen and (min-width: 360px) and (min-height: 880px) {
+  /* Mise en place du footer en bas de page quand pas suffisamment de contenu */
+
+  .about-page ~ footer {
+    position: fixed;
+    bottom: 0;
+  }
 }
 
 /* Média Queries - Adaptation sur écran de plus de 768px */
 
-@media screen and (min-width: 768px) and (min-height: 450px) {
+@media screen and (min-width: 768px) {
+}
+
+/* Média Queries - Adaptation sur écran de plus de 992px */
+
+@media screen and (min-width: 992px) {
   /* Mise en place du footer en bas de page quand pas suffisamment de contenu */
 
   .about-page ~ footer {
@@ -68,11 +96,5 @@
 
 /* Média Queries - Adaptation sur écran de plus de 992px */
 
-@media screen and (min-width: 992px) and (min-height: 450px) {
-  /* Mise en place du footer en bas de page quand pas suffisamment de contenu */
-
-  .about-page ~ footer {
-    position: fixed;
-    bottom: 0;
-  }
+@media screen and (min-width: 350px) and (min-height: 950px) {
 }

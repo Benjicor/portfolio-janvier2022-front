@@ -107,7 +107,8 @@ textarea {
 
 /* Attribution des polices : Button */
 
-button {
+button,
+a {
   font-family: latoitalic, Arial, Helvetica, sans-serif;
   font-weight: normal;
   font-style: italic;

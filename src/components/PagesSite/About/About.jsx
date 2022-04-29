@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
-
-import Button from '../../Button/Button';
+import { Link } from 'react-router-dom';
 
 import './About.css';
 
-function About({ setSiteTitle }) {
+function About({ setSiteTitle, handleClick }) {
   useEffect(() => {
     setSiteTitle('À propos');
   }, []);
@@ -35,18 +34,30 @@ function About({ setSiteTitle }) {
             dynamique !
           </p>
         </h1>
-        <ul className="grid-button-about">
-          <li>
-            <Button className="button-cv" buttonName="CV" submit />
-          </li>
-          <li>
-            <Button
-              className="button-contact-me"
-              buttonName="Me contacter"
-              submit
-            />
-          </li>
-        </ul>
+        <div className="container-btn-about">
+          <ul className="grid-button-about">
+            <li>
+              <a
+                className="button-cv"
+                href="https://benjicor.github.io/curriculum-vitae"
+                target="_blank"
+                rel="noreferrer"
+              >
+                CV
+              </a>
+            </li>
+            <li>
+              <Link
+                className="button-contact-me"
+                buttonName="Me contacter"
+                to="/Contact"
+                onClick={handleClick}
+              >
+                Me contacter
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );
