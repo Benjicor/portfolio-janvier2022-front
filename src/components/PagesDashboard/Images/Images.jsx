@@ -49,7 +49,8 @@ function Images({ setDashboardTitle }) {
       try {
         const res = await axios.post(
           `${process.env.REACT_APP_API_PORTFOLIO_URL}/api/images/upload`,
-          data
+          data,
+          { withCredentials: true }
         );
         console.log(res);
       } catch (err) {
@@ -105,7 +106,7 @@ function Images({ setDashboardTitle }) {
                   name="upload"
                   id="images-select"
                   placeholder="Sélectionner une ou des image(s)"
-                  accept=".png, .jpg, .jpeg, .svg+xml"
+                  accept=".png, .jpg, .jpeg, .svg+xml, .pdf"
                   multiple
                   onChange={handleChangeFile}
                 />
