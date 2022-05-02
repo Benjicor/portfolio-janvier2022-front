@@ -5,7 +5,7 @@ import Button from '../../Button/Button';
 
 import './Images.css';
 
-function Images({ setDashboardTitle }) {
+function Images({ setTitlePage }) {
   const [images, setImages] = useState('');
   const [files, setFiles] = useState([]);
   const [filesId, setFilesId] = useState();
@@ -19,23 +19,40 @@ function Images({ setDashboardTitle }) {
         file[index].type !== 'image/png' &&
         file[index].type !== 'image/jpg' &&
         file[index].type !== 'image/jpeg' &&
-        file[index].type !== 'image/svg+xml'
+        file[index].type !== 'image/svg+xml' &&
+        file[index].type !== 'application/pdf'
       ) {
-        alert('Veuillez sélectionner une image .png, .jpg, .jpeg, .svg');
+        alert('Veuillez sélectionner une image .png, .jpg, .jpeg, .svg, .pdf');
       }
       return setImages([...selectedFile]);
     });
   };
 
   const handleProject = (e) => {
-    setFilesId(parseInt(e.target.value, 10));
+    axios
+      .get(
+        `${process.env.REACT_APP_API_PORTFOLIO_URL}/api/images/${e.target.value}`
+      )
+      .then((res) => {
+        setSource([res.data.src]);
+        setDescription([res.data.description]);
+        setFilesId(e.target.value);
+      });
   };
 
-  const handleSubmit = async (e) => {
+  const getImages = () => {
+    axios
+      .get(`${process.env.REACT_APP_API_PORTFOLIO_URL}/api/images`)
+      .then((res) => {
+        setImages(res.data);
+      });
+  };
+
+  const modify = async (e) => {
     e.preventDefault();
 
     if (!images) {
-      alert('Veuillez sélectionner une image .png, .jpg, .jpeg, .svg');
+      alert('Veuillez sélectionner une image .png, .jpg, .jpeg, .svg, .pdf');
     } else if (!description) {
       alert('Veuillez fournir une description');
     } else {
@@ -47,14 +64,54 @@ function Images({ setDashboardTitle }) {
       // Ajoute les différentes valeurs attendu dans ma table images au FormData
       data.append('data', JSON.stringify({ description, files_id: filesId }));
       try {
-        const res = await axios.post(
-          `${process.env.REACT_APP_API_PORTFOLIO_URL}/api/images/upload`,
-          data,
-          { withCredentials: true }
-        );
-        console.log(res);
+        await axios
+          .post(
+            `${process.env.REACT_APP_API_PORTFOLIO_URL}/api/images/upload`,
+            data,
+            { withCredentials: true }
+          )
+          .then(() => {
+            setImages('');
+            setSource('');
+            setDescription('');
+            getImages();
+          });
       } catch (err) {
-        console.log(err.message);
+        alert(err.message);
+      }
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!images) {
+      alert('Veuillez sélectionner une image .png, .jpg, .jpeg, .svg, .pdf');
+    } else if (!description) {
+      alert('Veuillez fournir une description');
+    } else {
+      const data = new FormData();
+      // Ajoute mon fichier image à mon FormData
+      images.forEach((image) => {
+        data.append('file', image);
+      });
+      // Ajoute les différentes valeurs attendu dans ma table images au FormData
+      data.append('data', JSON.stringify({ description, files_id: filesId }));
+      try {
+        await axios
+          .post(
+            `${process.env.REACT_APP_API_PORTFOLIO_URL}/api/images/upload`,
+            data,
+            { withCredentials: true }
+          )
+          .then(() => {
+            setImages('');
+            setSource('');
+            setDescription('');
+            getImages();
+          });
+      } catch (err) {
+        alert(err.message);
       }
     }
   };
@@ -67,7 +124,7 @@ function Images({ setDashboardTitle }) {
           setFiles(res.data);
         });
     })();
-    setDashboardTitle('Administration des Images');
+    setTitlePage('Administration des Images');
   }, []);
 
   return (
@@ -148,7 +205,12 @@ function Images({ setDashboardTitle }) {
                 <Button className="add" buttonName="Ajouter" submit />
               </li>
               <li>
-                <Button className="modify" buttonName="Modifier" submit />
+                <Button
+                  className="modify"
+                  buttonName="Modifier"
+                  submit
+                  onClick={modify}
+                />
               </li>
               <li>
                 <Button className="delete" buttonName="Supprimer" submit />

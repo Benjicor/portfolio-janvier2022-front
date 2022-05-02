@@ -1,40 +1,102 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import moment from 'moment';
 
 import Button from '../../Button/Button';
 
 import './Files.css';
 
-function Files({ setDashboardTitle }) {
-  const [files, setFiles] = useState('');
+function Files({ setTitlePage }) {
+  const [filesId, setFilesId] = useState();
+  const [files, setFiles] = useState([]);
   const [filesName, setFilesName] = useState('');
   const [filesDateStart, setFilesDateStart] = useState('');
   const [filesDateEnd, setFilesDateEnd] = useState('');
   const [source, setSource] = useState('');
   const [description, setDescription] = useState('');
 
-  const handleChangeFile = (e) => {
-    console.log(e);
-    const selectedFile = e.target.files[0];
-    const { type } = selectedFile;
-    if (type !== 'fichier/pdf') {
-      setFiles();
-      alert('Veuillez sélectionner un fichier .pdf');
-    } else {
-      setFiles(selectedFile);
-    }
+  // const handleChangeFile = (e) => {
+  //   console.log(e);
+  //   const selectedFile = e.target.files[0];
+  //   const { type } = selectedFile;
+  //   if (type !== 'fichier/pdf') {
+  //     setFiles();
+  //     alert('Veuillez sélectionner un fichier .pdf');
+  //   } else {
+  //     setFiles(selectedFile);
+  //   }
+  // };
+
+  const handleProject = (e) => {
+    axios
+      .get(
+        `${process.env.REACT_APP_API_PORTFOLIO_URL}/api/files/${e.target.value}`
+      )
+      .then((res) => {
+        setFilesName(res.data.title);
+        setFilesDateStart(moment(res.data.start_date).format('YYYY-MM-DD'));
+        setFilesDateEnd(moment(res.data.end_date).format('YYYY-MM-DD'));
+        setSource(res.data.src);
+        setDescription(res.data.description);
+        setFilesId(e.target.value);
+      });
+  };
+
+  const getFiles = () => {
+    axios
+      .get(`${process.env.REACT_APP_API_PORTFOLIO_URL}/api/files`)
+      .then((res) => {
+        setFiles(res.data);
+      });
+  };
+
+  const modify = () => {
+    axios
+      .put(
+        `${process.env.REACT_APP_API_PORTFOLIO_URL}/api/files/${filesId}`,
+        {
+          title: filesName,
+          start_date: filesDateStart,
+          end_date: filesDateEnd,
+          src: source,
+          description,
+        },
+        { withCredentials: true }
+      )
+      .then(() => {
+        alert('Les données ont bien été modifiées');
+        setFilesName('');
+        setFilesDateStart('');
+        setFilesDateEnd('');
+        setSource('');
+        setDescription('');
+        setFilesId();
+        getFiles();
+      })
+      .catch((err) => alert(err.message));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    axios.post(`${process.env.REACT_APP_API_PORTFOLIO_URL}/api/files`, {
-      title: filesName,
-      start_date: filesDateStart,
-      end_date: filesDateEnd,
-      src: source,
-      description,
-    });
+    axios
+      .post(`${process.env.REACT_APP_API_PORTFOLIO_URL}/api/files`, {
+        title: filesName,
+        start_date: filesDateStart,
+        end_date: filesDateEnd,
+        src: source,
+        description,
+      })
+      .then(() => {
+        alert('Les données ont bien été ajoutées');
+        setFilesName('');
+        setFilesDateStart('');
+        setFilesDateEnd('');
+        setSource('');
+        setDescription('');
+        setFilesId();
+        getFiles();
+      });
     // if (!files) {
     //   alert('Veuillez sélectionner un fichier .pdf');
     // } else if (!description) {
@@ -58,14 +120,8 @@ function Files({ setDashboardTitle }) {
   };
 
   useEffect(() => {
-    (async () => {
-      axios
-        .get(`${process.env.REACT_APP_API_PORTFOLIO_URL}/api/files`)
-        .then((res) => {
-          setFiles(res.data);
-        });
-    })();
-    setDashboardTitle('Administration des Projets');
+    getFiles();
+    setTitlePage('Administration des Projets');
   }, []);
 
   return (
@@ -73,6 +129,25 @@ function Files({ setDashboardTitle }) {
       <div className="files">
         <form onSubmit={handleSubmit}>
           <div className="container-form">
+            <label
+              htmlFor="project-select"
+              className="project-select"
+              id="label-images"
+            >
+              Selectionner un projet
+              <select
+                name="files_id"
+                id="project-select"
+                onChange={handleProject}
+              >
+                <option value="" selected>
+                  Selectionner un projet
+                </option>
+                {files?.map((file) => (
+                  <option value={file.id}>{file.title}</option>
+                ))}
+              </select>
+            </label>
             <div className="files-upload">
               {/* <label
                 htmlFor="files-select"
@@ -163,7 +238,11 @@ function Files({ setDashboardTitle }) {
                 <Button className="add" buttonName="Ajouter" submit />
               </li>
               <li>
-                <Button className="modify" buttonName="Modifier" submit />
+                <Button
+                  className="modify"
+                  buttonName="Modifier"
+                  onClick={modify}
+                />
               </li>
               <li>
                 <Button className="delete" buttonName="Supprimer" submit />

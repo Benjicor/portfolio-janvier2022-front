@@ -25,3 +25,10 @@
   text-decoration: none;
   color: #333;
 }
+
+.admin-dash {
+  color: #ff1616;
+  font-size: 1rem;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+}

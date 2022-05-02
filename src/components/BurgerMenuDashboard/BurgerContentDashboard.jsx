@@ -8,6 +8,24 @@ function BurgerContentDashboard({ handleClick }) {
     <div>
       <ul className="nav">
         <li>
+          <Link className="link" to="/" onClick={handleClick}>
+            Accueil
+          </Link>
+        </li>
+        <li>
+          <Link className="link" to="/About" onClick={handleClick}>
+            À propos
+          </Link>
+        </li>
+        <li>
+          <Link className="link" to="/Projects" onClick={handleClick}>
+            Projets
+          </Link>
+        </li>
+        <li>
+          <h1 className="admin-dash">ADMIN</h1>
+        </li>
+        <li>
           <Link
             className="link"
             to="/Private/Admin/Files"

@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 import './About.css';
 
-function About({ setSiteTitle, handleClick }) {
+function About({ setTitlePage, handleClick }) {
   useEffect(() => {
-    setSiteTitle('À propos');
+    setTitlePage('À propos');
   }, []);
 
   return (

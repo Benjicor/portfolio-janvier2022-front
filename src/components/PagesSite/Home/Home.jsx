@@ -17,11 +17,11 @@ import certificatHtml5Css3 from '../../../assets/pdf/CertificatDeReussite-Appren
 
 import './Home.css';
 
-function Home({ setSiteTitle }) {
+function Home({ setTitlePage }) {
   const [openModal, setOpenModal] = useState(false);
 
   useEffect(() => {
-    setSiteTitle('Accueil');
+    setTitlePage('Accueil');
   }, []);
 
   return (

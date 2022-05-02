@@ -42,25 +42,55 @@ button {
 
 button:not(.burger-menu) :not(.close-btn),
 .button-cv,
-.button-contact-me {
+.button-contact-me,
+.validate,
+.add,
+.modify,
+.delete {
   width: 100%;
   padding: 1em;
   box-shadow: 6px 6px 6px #adadad;
 }
 
+.overlay-project-link {
+  width: 51%;
+  padding: 1em;
+  box-shadow: 6px 6px 6px #adadad;
+}
+
 button:hover:not(.burger-menu),
-.button-cv,
-.button-contact-me {
+.button-cv:hover,
+.button-contact-me:hover,
+.overlay-project-link:hover,
+.validate,
+.add,
+.modify,
+.delete {
   transform: translateY(3.5px);
-  box-shadow: 2.5px 2.5px 2.5px;
+  box-shadow: 4px 4px 4px;
 }
 
 button:active:not(.burger-menu),
-.button-cv,
-.button-contact-me {
+.button-cv:active,
+.button-contact-me:active,
+.overlay-project-link:active,
+.validate,
+.add,
+.modify,
+.delete {
   transform: translateY(7px);
-  box-shadow: 1.25px 1.25px 1.25px;
-  color: #fff;
+  box-shadow: 2px 2px 2px;
+  color: #e5e5e5;
+}
+
+/* Média Queries - Adaptation sur écran de plus de 460px */
+
+@media screen and (min-width: 460px) {
+  /* Style des boutons (balises a) dans le carousel */
+
+  .overlay-project-link {
+    width: 40%;
+  }
 }
 
 /* Média Queries - Adaptation sur écran de plus de 768px */
@@ -80,6 +110,10 @@ button:active:not(.burger-menu),
     width: 300px;
     height: 300px;
   }
+
+  .overlay-project-link {
+    width: 50%;
+  }
 }
 
 /* Média Queries - Adaptation sur écran de plus de 992px */
@@ -98,5 +132,9 @@ button:active:not(.burger-menu),
   .photo-profil {
     width: 300px;
     height: 300px;
+  }
+
+  .overlay-project-link {
+    width: 55%;
   }
 }
