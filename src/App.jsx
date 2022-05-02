@@ -17,9 +17,8 @@ import Images from './components/PagesDashboard/Images/Images';
 import Technologies from './components/PagesDashboard/Technologies/Technologies';
 
 function App() {
-  const [siteTitle, setSiteTitle] = useState('');
-  const [dashboardTitle, setDashboardTitle] = useState('');
-  const [user, setUser] = useState(1);
+  const [titlePage, setTitlePage] = useState('');
+  const [user, setUser] = useState(false);
 
   useEffect(async () => {
     await axios
@@ -30,46 +29,43 @@ function App() {
   return (
     <div className="app">
       {!user ? (
-        <BurgerMenuSite siteTitle={siteTitle} />
+        <BurgerMenuSite titlePage={titlePage} />
       ) : (
-        <BurgerMenuDashboard dashboardTitle={dashboardTitle} />
+        <BurgerMenuDashboard titlePage={titlePage} />
       )}
       <Routes>
-        <Route path="/" element={<Home setSiteTitle={setSiteTitle} />} />
-        <Route path="/About" element={<About setSiteTitle={setSiteTitle} />} />
+        <Route path="/" element={<Home setTitlePage={setTitlePage} />} />
+        <Route path="/About" element={<About setTitlePage={setTitlePage} />} />
         <Route
           path="/Projects"
-          element={<Projects setSiteTitle={setSiteTitle} />}
+          element={<Projects setTitlePage={setTitlePage} />}
         />
         <Route
           path="/Contact"
-          element={<Contact setSiteTitle={setSiteTitle} />}
+          element={<Contact setTitlePage={setTitlePage} />}
         />
         <Route
           path="/Private/Admin/Connect"
-          element={<Connect setDashboardTitle={setDashboardTitle} />}
+          element={<Connect setTitlePage={setTitlePage} setUser={setUser} />}
         />
-        {user !== 0 && (
+        {user && (
           <>
             <Route
               path="/Private/Admin/CreateUser"
-              element={<Admin setDashboardTitle={setDashboardTitle} />}
+              element={<Admin setTitlePage={setTitlePage} />}
             />
-            <Route
-              path="/Private/Admin/Connect"
-              element={<Connect setDashboardTitle={setDashboardTitle} />}
-            />
+            {/* <Route path="/Private/Admin/Connect" element={<Connect />} /> */}
             <Route
               path="Private/Admin/Files"
-              element={<Files setDashboardTitle={setDashboardTitle} />}
+              element={<Files setTitlePage={setTitlePage} />}
             />
             <Route
               path="Private/Admin/Images"
-              element={<Images setDashboardTitle={setDashboardTitle} />}
+              element={<Images setTitlePage={setTitlePage} />}
             />
             <Route
               path="Private/Admin/Technologies"
-              element={<Technologies setDashboardTitle={setDashboardTitle} />}
+              element={<Technologies setTitlePage={setTitlePage} />}
             />
           </>
         )}

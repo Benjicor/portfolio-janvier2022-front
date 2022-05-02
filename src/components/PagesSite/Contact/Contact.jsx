@@ -5,7 +5,7 @@ import Button from '../../Button/Button';
 
 import './Contact.css';
 
-function Contact({ setSiteTitle }) {
+function Contact({ setTitlePage }) {
   const [firstname, setFirstname] = useState('');
   const [lastname, setLastname] = useState('');
   const [email, setEmail] = useState('');
@@ -32,7 +32,7 @@ function Contact({ setSiteTitle }) {
   };
 
   useEffect(() => {
-    setSiteTitle('Contact');
+    setTitlePage('Contact');
   }, []);
 
   return (

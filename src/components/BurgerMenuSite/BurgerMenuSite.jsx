@@ -4,7 +4,7 @@ import BurgerContentSite from './BurgerContentSite';
 
 import './BurgerMenuSite.css';
 
-function BurgerMenuSite({ siteTitle }) {
+function BurgerMenuSite({ titlePage }) {
   const [open, setOpen] = useState(false);
   const handleClick = () => {
     setOpen(!open);
@@ -19,7 +19,7 @@ function BurgerMenuSite({ siteTitle }) {
           {open ? <BurgerContentSite handleClick={handleClick} /> : null}
         </button>
       </div>
-      <div className="title-burger-menu-site">{siteTitle}</div>
+      <div className="title-burger-menu-site">{titlePage}</div>
     </header>
   );
 }

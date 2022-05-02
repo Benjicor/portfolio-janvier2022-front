@@ -10,7 +10,7 @@ import 'swiper/css';
 import axios from 'axios';
 import './Projects.css';
 
-function Projects({ setSiteTitle }) {
+function Projects({ setTitlePage }) {
   const [files, setFiles] = useState([]);
   const [details, setDetails] = useState(false);
   const [selectedProject, setSelectedProject] = useState({});
@@ -18,7 +18,7 @@ function Projects({ setSiteTitle }) {
     setSelectedProject(files[index]);
   };
   useEffect(() => {
-    setSiteTitle('Projets');
+    setTitlePage('Projets');
     (async () => {
       await axios
         .get(`${process.env.REACT_APP_API_PORTFOLIO_URL}/api/files`)
@@ -46,6 +46,10 @@ function Projects({ setSiteTitle }) {
           breakpoints={{
             640: {
               slidesPerView: 2,
+              spaceBetween: 30,
+            },
+            960: {
+              slidesPerView: 3,
               spaceBetween: 30,
             },
             1280: {
@@ -88,8 +92,8 @@ function Projects({ setSiteTitle }) {
               <div className="selected-project-container">
                 <img
                   className="selected-project-img"
-                  key={image.id}
                   src={`${process.env.REACT_APP_API_PORTFOLIO_URL}/images/${image.src}`}
+                  key={image.id}
                 />
               </div>
             ))}

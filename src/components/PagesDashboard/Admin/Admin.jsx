@@ -7,7 +7,7 @@ import './Admin.css';
 
 const API_URL = process.env.REACT_APP_API_PORTFOLIO_URL;
 
-function Admin({ setDashboardTitle }) {
+function Admin({ setTitlePage }) {
   const [firstname, setFirstname] = useState('');
   const [lastname, setLastname] = useState('');
   const [username, setUsername] = useState('');
@@ -62,7 +62,7 @@ function Admin({ setDashboardTitle }) {
   };
 
   useEffect(() => {
-    setDashboardTitle("Création d'Utilisateur");
+    setTitlePage("Création d'Utilisateur");
   }, []);
 
   return (

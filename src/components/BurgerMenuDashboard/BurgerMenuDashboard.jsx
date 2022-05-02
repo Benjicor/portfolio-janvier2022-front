@@ -4,7 +4,7 @@ import BurgerContentDashboard from './BurgerContentDashboard';
 
 import './BurgerMenuDashboard.css';
 
-function BurgerMenuDashboard({ dashboardTitle }) {
+function BurgerMenuDashboard({ titlePage }) {
   const [open, setOpen] = useState(false);
   const handleClick = () => {
     setOpen(!open);
@@ -19,7 +19,7 @@ function BurgerMenuDashboard({ dashboardTitle }) {
           {open ? <BurgerContentDashboard handleClick={handleClick} /> : null}
         </button>
       </div>
-      <div className="title-burger-menu-dashboard">{dashboardTitle}</div>
+      <div className="title-burger-menu-dashboard">{titlePage}</div>
     </header>
   );
 }

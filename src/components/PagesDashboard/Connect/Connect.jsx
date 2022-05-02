@@ -8,7 +8,7 @@ import './Connect.css';
 
 const API_URL = process.env.REACT_APP_API_PORTFOLIO_URL;
 
-function Connect({ setDashboardTitle }) {
+function Connect({ setTitlePage, setUser }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
@@ -19,16 +19,20 @@ function Connect({ setDashboardTitle }) {
       alert('Vous devez fournir toutes les informations');
     } else {
       try {
-        await axios.post(
-          `${API_URL}/api/auth/connect`,
-          {
-            email,
-            password,
-          },
-          {
-            withCredentials: true,
-          }
-        );
+        await axios
+          .post(
+            `${API_URL}/api/auth/connect`,
+            {
+              email,
+              password,
+            },
+            {
+              withCredentials: true,
+            }
+          )
+          .then(() => {
+            setUser(true);
+          });
         navigate('/Private/Admin/Files');
       } catch (err) {
         alert(err.response.data);
@@ -37,7 +41,7 @@ function Connect({ setDashboardTitle }) {
   };
 
   useEffect(() => {
-    setDashboardTitle('Connexion');
+    setTitlePage('Connexion');
   }, []);
 
   return (
