@@ -65,11 +65,11 @@ function Technologies({ setTitlePage }) {
                 id="project-select"
                 onChange={handleProject}
               >
-                <option value="" selected>
-                  Choisir un projet
-                </option>
+                <option value="">Choisir un projet</option>
                 {files?.map((file) => (
-                  <option value={file.id}>{file.title}</option>
+                  <option value={file.id} key={file.id}>
+                    {file.title}
+                  </option>
                 ))}
               </select>
             </label>

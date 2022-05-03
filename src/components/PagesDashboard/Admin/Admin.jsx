@@ -29,7 +29,7 @@ function Admin({ setTitlePage }) {
     } else if (password !== confirmPassword) {
       alert('Le mot de passe et sa confirmation doivent être identique');
     } else {
-      console.log("Données envoyées pour créer l'utilisateur");
+      alert("Données envoyées pour créer l'utilisateur");
       try {
         const response = await axios.post(
           `${API_URL}/api/users`,

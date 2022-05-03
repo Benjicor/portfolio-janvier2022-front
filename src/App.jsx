@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
 import BurgerMenuSite from './components/BurgerMenuSite/BurgerMenuSite';
@@ -19,12 +18,6 @@ import Technologies from './components/PagesDashboard/Technologies/Technologies'
 function App() {
   const [titlePage, setTitlePage] = useState('');
   const [user, setUser] = useState(false);
-
-  useEffect(async () => {
-    await axios
-      .get(`${process.env.REACT_APP_API_PORTFOLIO_URL}/api/auth/connect`)
-      .then((response) => setUser.data(response.data));
-  }, []);
 
   return (
     <div className="app">
@@ -54,7 +47,6 @@ function App() {
               path="/Private/Admin/CreateUser"
               element={<Admin setTitlePage={setTitlePage} />}
             />
-            {/* <Route path="/Private/Admin/Connect" element={<Connect />} /> */}
             <Route
               path="Private/Admin/Files"
               element={<Files setTitlePage={setTitlePage} />}

@@ -34,9 +34,7 @@ function Images({ setTitlePage }) {
         `${process.env.REACT_APP_API_PORTFOLIO_URL}/api/images/${e.target.value}`
       )
       .then((res) => {
-        setSource([res.data.src]);
-        setDescription([res.data.description]);
-        setFilesId(e.target.value);
+        console.log(res.data);
       });
   };
 
@@ -143,11 +141,11 @@ function Images({ setTitlePage }) {
                 id="project-select"
                 onChange={handleProject}
               >
-                <option value="" selected>
-                  Choisir un projet
-                </option>
+                <option value="">Choisir un projet</option>
                 {files?.map((file) => (
-                  <option value={file.id}>{file.title}</option>
+                  <option value={file.id} key={file.id}>
+                    {file.title}
+                  </option>
                 ))}
               </select>
             </label>
