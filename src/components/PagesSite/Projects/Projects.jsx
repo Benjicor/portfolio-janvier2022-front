@@ -60,10 +60,9 @@ function Projects({ setTitlePage }) {
         >
           {files?.map((file, index) => (
             // eslint-disable-next-line jsx-a11y/click-events-have-key-events
-            <SwiperSlide>
+            <SwiperSlide key={file.id}>
               <div
                 className="swiper-overlay-project"
-                key={file.id}
                 onClick={() => setDetails(true)}
               >
                 <img
@@ -89,11 +88,10 @@ function Projects({ setTitlePage }) {
           ))}
           {details &&
             selectedProject.images.map((image) => (
-              <div className="selected-project-container">
+              <div className="selected-project-container" key={image.id}>
                 <img
                   className="selected-project-img"
                   src={`${process.env.REACT_APP_API_PORTFOLIO_URL}/images/${image.src}`}
-                  key={image.id}
                 />
               </div>
             ))}

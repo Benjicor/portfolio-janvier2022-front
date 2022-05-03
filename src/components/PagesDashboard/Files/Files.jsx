@@ -140,11 +140,11 @@ function Files({ setTitlePage }) {
                 id="project-select"
                 onChange={handleProject}
               >
-                <option value="" selected>
-                  Selectionner un projet
-                </option>
+                <option value="">Selectionner un projet</option>
                 {files?.map((file) => (
-                  <option value={file.id}>{file.title}</option>
+                  <option value={file.id} key={file.id}>
+                    {file.title}
+                  </option>
                 ))}
               </select>
             </label>

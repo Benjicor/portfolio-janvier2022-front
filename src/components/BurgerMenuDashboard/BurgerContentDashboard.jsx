@@ -1,9 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 import './BurgerContentDashboard.css';
 
 function BurgerContentDashboard({ handleClick }) {
+  const handleLogOut = () => {
+    handleClick();
+    axios
+      .get(`${process.env.REACT_APP_API_PORTFOLIO_URL}/api/auth/logOut`, {
+        withCredentials: true,
+      })
+      .then(() => {
+        alert('Vous avez bien été deconnecté');
+      })
+      .catch((err) => {
+        alert(err.message);
+      });
+  };
   return (
     <div>
       <ul className="nav">
@@ -53,7 +67,7 @@ function BurgerContentDashboard({ handleClick }) {
           </Link>
         </li>
         <li>
-          <a className="link" href="/" onClick={handleClick}>
+          <a className="link" href="/" onClick={handleLogOut}>
             Deconnexion
           </a>
         </li>
