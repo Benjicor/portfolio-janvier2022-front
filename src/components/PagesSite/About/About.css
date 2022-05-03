@@ -78,11 +78,6 @@
   }
 }
 
-/* Média Queries - Adaptation sur écran de plus de 768px */
-
-@media screen and (min-width: 768px) {
-}
-
 /* Média Queries - Adaptation sur écran de plus de 992px */
 
 @media screen and (min-width: 992px) {
@@ -92,9 +87,4 @@
     position: fixed;
     bottom: 0;
   }
-}
-
-/* Média Queries - Adaptation sur écran de plus de 992px */
-
-@media screen and (min-width: 350px) and (min-height: 950px) {
 }

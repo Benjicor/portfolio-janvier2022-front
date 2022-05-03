@@ -49,7 +49,6 @@ function About({ setTitlePage, handleClick }) {
             <li>
               <Link
                 className="button-contact-me"
-                buttonName="Me contacter"
                 to="/Contact"
                 onClick={handleClick}
               >

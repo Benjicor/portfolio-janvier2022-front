@@ -50,6 +50,14 @@ textarea::placeholder {
   color: #adadad;
 }
 
+/* Mise en forme des images */
+
+.all-images {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+
 /* Mise en forme input type file */
 
 .images-upload input {
@@ -60,7 +68,7 @@ textarea::placeholder {
 
 /* Mise en place et style du bouton */
 
-.grid-button {
+.grid-button-images {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -70,17 +78,12 @@ textarea::placeholder {
   padding: 0;
 }
 
-.grid-button .button {
+.grid-button-images .button {
   width: 100%;
 }
 
-.grid-button li:nth-child(2) {
+.grid-button-images li:nth-child(1) {
   grid-row: 1;
-  grid-column: 3;
-}
-
-.grid-button li:nth-child(3) {
-  grid-row: 2;
   grid-column: 2;
 }
 
@@ -92,18 +95,37 @@ textarea::placeholder {
   font-size: 15px;
 }
 
-.modify {
-  background-color: #05d8fd;
-  color: #ff1616;
-  border-radius: 5px;
-  border: none;
-  font-size: 15px;
+.button-delete-images {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.delete {
+.delete-images {
   background-color: #ff1616;
   color: #05d8fd;
   border-radius: 5px;
   border: none;
   font-size: 15px;
+  margin: 0.5rem;
+}
+
+/* Définition des images que l'on affiche */
+
+.all-images img {
+  width: 150px;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* Média Queries - Adaptation sur écran de plus de 768px */
+
+@media screen and (min-width: 768px) {
+  /* Media Query dash.Images */
+
+  /* Définition des images que l'on affiche */
+
+  .all-images img {
+    width: 250px;
+  }
 }

@@ -20,7 +20,10 @@ function BurgerContentDashboard({ handleClick }) {
   };
   return (
     <div>
-      <ul className="nav">
+      <ul className="nav-dashboard">
+        <li>
+          <h2 className="user-site">UTILISATEUR</h2>
+        </li>
         <li>
           <Link className="link" to="/" onClick={handleClick}>
             Accueil
@@ -37,7 +40,21 @@ function BurgerContentDashboard({ handleClick }) {
           </Link>
         </li>
         <li>
-          <h1 className="admin-dash">ADMIN</h1>
+          <Link className="link" to="/Contact" onClick={handleClick}>
+            Contact
+          </Link>
+        </li>
+        <li>
+          <h2 className="admin-dash">ADMINISTRATION</h2>
+        </li>
+        <li>
+          <Link
+            className="link"
+            to="/Private/Admin/CreateUser"
+            onClick={handleClick}
+          >
+            Création d&#39;un utilisateur
+          </Link>
         </li>
         <li>
           <Link
@@ -67,8 +84,8 @@ function BurgerContentDashboard({ handleClick }) {
           </Link>
         </li>
         <li>
-          <a className="link" href="/" onClick={handleLogOut}>
-            Deconnexion
+          <a className="link-disconnect" href="/" onClick={handleLogOut}>
+            DÉCONNEXION
           </a>
         </li>
       </ul>

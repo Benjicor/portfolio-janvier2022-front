@@ -6,7 +6,7 @@ import './BurgerContentSite.css';
 function BurgerContentSite({ handleClick }) {
   return (
     <div>
-      <ul className="nav">
+      <ul className="nav-site">
         <li>
           <Link className="link" to="/" onClick={handleClick}>
             Accueil

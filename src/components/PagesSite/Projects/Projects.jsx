@@ -6,17 +6,24 @@
 import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper';
-import 'swiper/css';
 import axios from 'axios';
+
+// import Modal from '../../Modal/Modal';
+
+import 'swiper/css';
 import './Projects.css';
 
 function Projects({ setTitlePage }) {
   const [files, setFiles] = useState([]);
   const [details, setDetails] = useState(false);
   const [selectedProject, setSelectedProject] = useState({});
+
+  // const [openModal, setOpenModal] = useState(false);
+
   const handleClick = (e, index) => {
     setSelectedProject(files[index]);
   };
+
   useEffect(() => {
     setTitlePage('Projets');
     (async () => {
@@ -33,7 +40,7 @@ function Projects({ setTitlePage }) {
       <h1 className="projects-title">Voici mes projets réalisés</h1>
       <div className="carousel-slider-projects">
         <Swiper
-          className="mySwiper-container"
+          className="container-mySwiper"
           modules={[Autoplay, Navigation, Pagination]}
           spaceBetween={20}
           slidesPerView={1}
@@ -69,7 +76,9 @@ function Projects({ setTitlePage }) {
                   className="project-src"
                   src={`${process.env.REACT_APP_API_PORTFOLIO_URL}/images/${file.images[0].src}`}
                   alt={file.alt}
-                  onClick={(e) => handleClick(e, index)}
+                  onClick={
+                    (e) => handleClick(e, index) /* , setOpenModal(true) */
+                  }
                 />
                 <div className="overlay-project">
                   <h2 className="overlay-title">{file.title}</h2>
@@ -80,7 +89,7 @@ function Projects({ setTitlePage }) {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    Lien du Projet déployé
+                    Projet en ligne
                   </a>
                 </div>
               </div>
@@ -88,13 +97,29 @@ function Projects({ setTitlePage }) {
           ))}
           {details &&
             selectedProject.images.map((image) => (
-              <div className="selected-project-container" key={image.id}>
+              <div className="container-selected-project" key={image.id}>
                 <img
-                  className="selected-project-img"
+                  className="selected-project"
                   src={`${process.env.REACT_APP_API_PORTFOLIO_URL}/images/${image.src}`}
                 />
               </div>
             ))}
+          {/* {openModal && (
+            <Modal
+              closeModal={setOpenModal}
+              img={
+                details &&
+                selectedProject.images.map((image) => (
+                  <div className="container-selected-project" key={image.id}>
+                    <img
+                      className="selected-project"
+                      src={`${process.env.REACT_APP_API_PORTFOLIO_URL}/images/${image.src}`}
+                    />
+                  </div>
+                ))
+              }
+            />
+          )} */}
         </Swiper>
       </div>
     </div>

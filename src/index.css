@@ -43,6 +43,7 @@ button {
 button:not(.burger-menu) :not(.close-btn),
 .button-cv,
 .button-contact-me,
+.create,
 .validate,
 .add,
 .modify,
@@ -52,7 +53,8 @@ button:not(.burger-menu) :not(.close-btn),
   box-shadow: 6px 6px 6px #adadad;
 }
 
-.overlay-project-link {
+.overlay-project-link,
+.delete-images {
   width: 51%;
   padding: 1em;
   box-shadow: 6px 6px 6px #adadad;
@@ -62,10 +64,12 @@ button:hover:not(.burger-menu),
 .button-cv:hover,
 .button-contact-me:hover,
 .overlay-project-link:hover,
+.create,
 .validate,
 .add,
 .modify,
-.delete {
+.delete,
+.delete-images {
   transform: translateY(3.5px);
   box-shadow: 4px 4px 4px;
 }
@@ -74,10 +78,12 @@ button:active:not(.burger-menu),
 .button-cv:active,
 .button-contact-me:active,
 .overlay-project-link:active,
+.create,
 .validate,
 .add,
 .modify,
-.delete {
+.delete,
+.delete-images {
   transform: translateY(7px);
   box-shadow: 2px 2px 2px;
   color: #e5e5e5;
@@ -134,7 +140,8 @@ button:active:not(.burger-menu),
     height: 300px;
   }
 
-  .overlay-project-link {
+  .overlay-project-link,
+  .delete-images {
     width: 55%;
   }
 }

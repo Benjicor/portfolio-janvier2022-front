@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
 
 import BurgerMenuSite from './components/BurgerMenuSite/BurgerMenuSite';
 import Home from './components/PagesSite/Home/Home';
@@ -18,7 +19,13 @@ import Technologies from './components/PagesDashboard/Technologies/Technologies'
 function App() {
   const [titlePage, setTitlePage] = useState('');
   const [user, setUser] = useState(false);
+  const [cookies] = useCookies();
 
+  useEffect(() => {
+    if (cookies.id) {
+      setUser(true);
+    }
+  }, []);
   return (
     <div className="app">
       {!user ? (

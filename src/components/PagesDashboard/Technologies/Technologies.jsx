@@ -6,14 +6,62 @@ import Button from '../../Button/Button';
 import './Technologies.css';
 
 function Technologies({ setTitlePage }) {
-  const [/* filesId, */ setFilesId] = useState();
-  const [files, setFiles] = useState([]);
-  // const [technologies, setTechnologies] = useState('');
+  const [technologiesId, setTechnologiesId] = useState();
+  const [technologies, setTechnologies] = useState([]);
   const [technologiesName, setTechnologiesName] = useState('');
   const [source, setSource] = useState('');
 
-  const handleProject = (e) => {
-    setFilesId(parseInt(e.target.value, 10));
+  const handleTechnologies = (e) => {
+    axios
+      .get(
+        `${process.env.REACT_APP_API_PORTFOLIO_URL}/api/technologies/${e.target.value}`
+      )
+      .then((res) => {
+        setTechnologiesName(res.data.name);
+        setSource(res.data.src);
+        setTechnologiesId(e.target.value);
+      });
+  };
+
+  const getTechnologies = () => {
+    axios
+      .get(`${process.env.REACT_APP_API_PORTFOLIO_URL}/api/technologies`)
+      .then((res) => {
+        setTechnologies(res.data);
+      });
+  };
+
+  const modifyTechnologies = () => {
+    axios
+      .put(
+        `${process.env.REACT_APP_API_PORTFOLIO_URL}/api/technologies/${technologiesId}`,
+        {
+          name: technologiesName,
+          src: source,
+        },
+        { withCredentials: true }
+      )
+      .then(() => {
+        alert('Les données ont bien été modifiées');
+        setTechnologiesName('');
+        setSource('');
+        getTechnologies();
+      })
+      .catch((err) => alert(err.message));
+  };
+
+  const deleteTechnologies = () => {
+    axios
+      .delete(
+        `${process.env.REACT_APP_API_PORTFOLIO_URL}/api/technologies/${technologiesId}`,
+        {
+          withCredentials: true,
+        }
+      )
+      .then(() => {
+        alert('Les données ont bien été supprimées');
+      })
+      .catch((err) => alert(err.message));
   };
 
   const handleSubmit = async (e) => {
@@ -39,13 +87,7 @@ function Technologies({ setTitlePage }) {
   };
 
   useEffect(() => {
-    (async () => {
-      axios
-        .get(`${process.env.REACT_APP_API_PORTFOLIO_URL}/api/files`)
-        .then((res) => {
-          setFiles(res.data);
-        });
-    })();
+    getTechnologies();
     setTitlePage('Administration des Technologies');
   }, []);
 
@@ -59,16 +101,16 @@ function Technologies({ setTitlePage }) {
               className="project-select"
               id="label-images"
             >
-              Sélectionner un projet
+              Sélectionner une technologie
               <select
                 name="files_id"
                 id="project-select"
-                onChange={handleProject}
+                onChange={handleTechnologies}
               >
-                <option value="">Choisir un projet</option>
-                {files?.map((file) => (
-                  <option value={file.id} key={file.id}>
-                    {file.title}
+                <option value="">Sélectionner une technologie</option>
+                {technologies?.map((technologie) => (
+                  <option value={technologie.id} key={technologie.id}>
+                    {technologie.name}
                   </option>
                 ))}
               </select>
@@ -124,15 +166,23 @@ function Technologies({ setTitlePage }) {
               </label>
             </div>
             <div className="button-technologies">
-              <ul className="grid-button">
+              <ul className="grid-button-technologies">
                 <li>
                   <Button className="add" buttonName="Ajouter" submit />
                 </li>
                 <li>
-                  <Button className="modify" buttonName="Modifier" submit />
+                  <Button
+                    className="modify"
+                    buttonName="Modifier"
+                    onClick={modifyTechnologies}
+                  />
                 </li>
                 <li>
-                  <Button className="delete" buttonName="Supprimer" submit />
+                  <Button
+                    className="delete"
+                    buttonName="Supprimer"
+                    onClick={deleteTechnologies}
+                  />
                 </li>
               </ul>
             </div>
