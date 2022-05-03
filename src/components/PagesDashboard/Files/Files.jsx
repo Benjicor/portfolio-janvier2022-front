@@ -50,7 +50,7 @@ function Files({ setTitlePage }) {
       });
   };
 
-  const modify = () => {
+  const modifyFiles = () => {
     axios
       .put(
         `${process.env.REACT_APP_API_PORTFOLIO_URL}/api/files/${filesId}`,
@@ -72,6 +72,18 @@ function Files({ setTitlePage }) {
         setDescription('');
         setFilesId();
         getFiles();
+      })
+      .catch((err) => alert(err.message));
+  };
+
+  const deleteFiles = () => {
+    axios
+      .delete(
+        `${process.env.REACT_APP_API_PORTFOLIO_URL}/api/files/${filesId}`,
+        { withCredentials: true }
+      )
+      .then(() => {
+        alert('Les données ont bien été supprimées');
       })
       .catch((err) => alert(err.message));
   };
@@ -160,7 +172,7 @@ function Files({ setTitlePage }) {
                   name="upload"
                   id="files-select"
                   placeholder="Sélectionner un fichier"
-                  accept=".png, .jpg, .jpeg, .svg+xml, .pdf"
+                  accept=".png, .jpg, .jpeg, .svg+xml"
                   multiple
                   onChange={handleChangeFile}
                 />
@@ -233,7 +245,7 @@ function Files({ setTitlePage }) {
                 onChange={(e) => setDescription(e.target.value)}
               />
             </label>
-            <ul className="grid-button">
+            <ul className="grid-button-files">
               <li>
                 <Button className="add" buttonName="Ajouter" submit />
               </li>
@@ -241,11 +253,15 @@ function Files({ setTitlePage }) {
                 <Button
                   className="modify"
                   buttonName="Modifier"
-                  onClick={modify}
+                  onClick={modifyFiles}
                 />
               </li>
               <li>
-                <Button className="delete" buttonName="Supprimer" submit />
+                <Button
+                  className="delete"
+                  buttonName="Supprimer"
+                  onClick={deleteFiles}
+                />
               </li>
             </ul>
           </div>

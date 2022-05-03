@@ -1,6 +1,6 @@
-.nav {
+.nav-dashboard {
   list-style: none;
-  padding: 15px 15px 0;
+  padding: 5px 15px 0;
   display: flex;
   flex-flow: column;
   background: linear-gradient(135deg, #05d8fd, #e5e5e5, #ff1616);
@@ -13,7 +13,7 @@
   top: 45px;
 }
 
-.nav li {
+.nav-dashboard li {
   margin-bottom: 25px;
   text-align: center;
   font-size: 1.2rem;
@@ -26,9 +26,38 @@
   color: #333;
 }
 
+.user-site {
+  color: #fff;
+  font-family: aileronregular, Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  border-top: 2.5px solid #05d8fd;
+  border-bottom: 2.5px solid #ff1616;
+}
+
 .admin-dash {
-  color: #ff1616;
-  font-size: 1rem;
-  border-top: 1px solid #333;
-  border-bottom: 1px solid #333;
+  color: #fff;
+  font-family: aileronregular, Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  border-top: 2.5px solid #05d8fd;
+  border-bottom: 2.5px solid #ff1616;
+}
+
+.link-disconnect {
+  color: #fff;
+  font-family: aileronregular, Arial, Helvetica, sans-serif;
+  font-style: normal;
+  border-top: 2.5px solid #05d8fd;
+  border-bottom: 2.5px solid #ff1616;
+}
+
+/* Média Queries - Adaptation sur écran de maximum 710px */
+
+@media screen and (max-height: 710px) {
+  /* Media BurgerContentDashboard */
+
+  .nav-dashboard li {
+    margin-bottom: 5px;
+    font-size: 1rem;
+    padding-right: 5px;
+  }
 }

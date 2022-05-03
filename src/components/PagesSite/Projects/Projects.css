@@ -1,8 +1,3 @@
-.projects-page ~ footer {
-  position: fixed;
-  bottom: 0;
-}
-
 .projects-title {
   text-align: center;
 }
@@ -65,16 +60,29 @@
 
 /* Définition des images des projets que l'on affiche */
 
-.selected-project-container {
+.container-selected-project {
   display: flex;
   justify-content: center;
   margin: 1rem;
 }
 
-.selected-project-img {
+.selected-project {
   width: 500px;
   height: auto;
   border-radius: 5px;
+}
+
+/* Média Queries - Adaptation sur écran de maximum 480px de haut */
+
+@media screen and (min-height: 700px) {
+  /* Media Query Projets */
+
+  /* Mise en place du footer en bas de page quand pas suffisamment de contenu */
+
+  .projects-page ~ footer {
+    position: fixed;
+    bottom: 0;
+  }
 }
 
 /* Média Queries - Adaptation sur écran de maximum 600px */
@@ -87,19 +95,4 @@
     height: 40vh;
     object-fit: cover;
   }
-}
-
-/* Média Queries - Adaptation sur écran de plus de 360px */
-
-@media screen and (min-width: 360px) {
-}
-
-/* Média Queries - Adaptation sur écran de plus de 768px */
-
-@media screen and (min-width: 768px) and (min-height: 450px) {
-}
-
-/* Média Queries - Adaptation sur écran de plus de 992px */
-
-@media screen and (min-width: 992px) and (min-height: 450px) {
 }

@@ -2,15 +2,20 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 import Button from '../../Button/Button';
+// import Modal from '../../Modal/Modal';
 
 import './Images.css';
 
 function Images({ setTitlePage }) {
-  const [images, setImages] = useState('');
   const [files, setFiles] = useState([]);
   const [filesId, setFilesId] = useState();
+
+  const [images, setImages] = useState('');
   const [source, setSource] = useState('');
   const [description, setDescription] = useState('');
+  const [allImages, setAllImages] = useState([]);
+
+  // const [openModal, setOpenModal] = useState(false);
 
   const handleChangeFile = (e) => {
     const selectedFile = e.target.files;
@@ -22,20 +27,23 @@ function Images({ setTitlePage }) {
         file[index].type !== 'image/svg+xml' &&
         file[index].type !== 'application/pdf'
       ) {
-        alert('Veuillez sélectionner une image .png, .jpg, .jpeg, .svg, .pdf');
+        alert('Veuillez sélectionner une image .png, .jpg, .jpeg, .svg');
       }
       return setImages([...selectedFile]);
     });
   };
 
-  const handleProject = (e) => {
+  const getAllImages = (id) => {
     axios
-      .get(
-        `${process.env.REACT_APP_API_PORTFOLIO_URL}/api/images/${e.target.value}`
-      )
+      .get(`${process.env.REACT_APP_API_PORTFOLIO_URL}/api/images/${id}`)
       .then((res) => {
-        console.log(res.data);
+        setAllImages(res.data);
       });
+  };
+
+  const handleProject = (e) => {
+    getAllImages(e.target.value);
+    setFilesId(e.target.value);
   };
 
   const getImages = () => {
@@ -46,38 +54,18 @@ function Images({ setTitlePage }) {
       });
   };
 
-  const modify = async (e) => {
-    e.preventDefault();
-
-    if (!images) {
-      alert('Veuillez sélectionner une image .png, .jpg, .jpeg, .svg, .pdf');
-    } else if (!description) {
-      alert('Veuillez fournir une description');
-    } else {
-      const data = new FormData();
-      // Ajoute mon fichier image à mon FormData
-      images.forEach((image) => {
-        data.append('file', image);
-      });
-      // Ajoute les différentes valeurs attendu dans ma table images au FormData
-      data.append('data', JSON.stringify({ description, files_id: filesId }));
-      try {
-        await axios
-          .post(
-            `${process.env.REACT_APP_API_PORTFOLIO_URL}/api/images/upload`,
-            data,
-            { withCredentials: true }
-          )
-          .then(() => {
-            setImages('');
-            setSource('');
-            setDescription('');
-            getImages();
-          });
-      } catch (err) {
+  const deleteImages = (id) => {
+    axios
+      .delete(`${process.env.REACT_APP_API_PORTFOLIO_URL}/api/images/${id}`, {
+        withCredentials: true,
+      })
+      .then(() => {
+        getAllImages(id);
+        alert('Votre image a bien été supprimée');
+      })
+      .catch((err) => {
         alert(err.message);
-      }
-    }
+      });
   };
 
   const handleSubmit = async (e) => {
@@ -163,7 +151,7 @@ function Images({ setTitlePage }) {
                   placeholder="Sélectionner une ou des image(s)"
                   accept=".png, .jpg, .jpeg, .svg+xml, .pdf"
                   multiple
-                  onChange={handleChangeFile}
+                  onChange={handleChangeFile /* , setOpenModal */}
                 />
               </label>
             </div>
@@ -198,22 +186,50 @@ function Images({ setTitlePage }) {
                 onChange={(e) => setDescription(e.target.value)}
               />
             </label>
-            <ul className="grid-button">
+            <ul className="grid-button-images">
               <li>
                 <Button className="add" buttonName="Ajouter" submit />
               </li>
-              <li>
-                <Button
-                  className="modify"
-                  buttonName="Modifier"
-                  submit
-                  onClick={modify}
-                />
-              </li>
-              <li>
-                <Button className="delete" buttonName="Supprimer" submit />
-              </li>
             </ul>
+            {allImages.map((image) => (
+              <div className="container-all-images" key={image.id}>
+                <div className="all-images">
+                  <img
+                    src={`${process.env.REACT_APP_API_PORTFOLIO_URL}/images/${image.alt}`}
+                    alt={image.alt}
+                  />
+                </div>
+                <div className="button-delete-images">
+                  <Button
+                    className="delete-images"
+                    buttonName="Supprimer"
+                    onClick={() => deleteImages(image.id)}
+                  />
+                </div>
+              </div>
+            ))}
+            {/* {openModal && (
+              <Modal
+                closeModal={setOpenModal}
+                img={allImages.map((image) => (
+                  <div className="container-all-images" key={image.id}>
+                    <div className="all-images">
+                      <img
+                        src={`${process.env.REACT_APP_API_PORTFOLIO_URL}/images/${image.alt}`}
+                        alt={image.alt}
+                      />
+                    </div>
+                    <div className="button-delete-images">
+                      <Button
+                        className="delete-images"
+                        buttonName="Supprimer"
+                        onClick={() => deleteImages(image.id)}
+                      />
+                    </div>
+                  </div>
+                ))}
+              />
+            )} */}
           </div>
         </form>
       </div>
