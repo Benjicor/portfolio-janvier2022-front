@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { toast } from 'react-toastify';
 
 import Button from '../../Button/Button';
 
@@ -16,7 +17,7 @@ function Connect({ setTitlePage, setUser }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!email || !password) {
-      alert('Vous devez fournir toutes les informations');
+      toast.warning('Vous devez fournir toutes les informations');
     } else {
       try {
         await axios
@@ -32,10 +33,11 @@ function Connect({ setTitlePage, setUser }) {
           )
           .then(() => {
             setUser(true);
+            toast.success('Bravo, vous êtes connecté');
           });
         navigate('/Private/Admin/Files');
       } catch (err) {
-        alert(err.response.data);
+        toast.error(err.response.data);
       }
     }
   };

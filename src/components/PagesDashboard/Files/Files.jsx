@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 import moment from 'moment';
 
 import Button from '../../Button/Button';
@@ -16,15 +17,20 @@ function Files({ setTitlePage }) {
   const [description, setDescription] = useState('');
 
   // const handleChangeFile = (e) => {
-  //   console.log(e);
-  //   const selectedFile = e.target.files[0];
-  //   const { type } = selectedFile;
-  //   if (type !== 'fichier/pdf') {
-  //     setFiles();
-  //     alert('Veuillez sélectionner un fichier .pdf');
-  //   } else {
-  //     setFiles(selectedFile);
-  //   }
+  //   const selectedFile = e.target.files;
+  //   [selectedFile].map((file, index) => {
+  //     if (
+  //       file[index].type !== 'image/png' &&
+  //       file[index].type !== 'image/jpg' &&
+  //       file[index].type !== 'image/jpeg' &&
+  //       file[index].type !== 'image/svg+xml'
+  //     ) {
+  //       toast.warning(
+  //         'Veuillez sélectionner une image .png, .jpg, .jpeg, .svg'
+  //       );
+  //     }
+  //     return setImages([...selectedFile]);
+  //   });
   // };
 
   const handleProject = (e) => {
@@ -64,7 +70,6 @@ function Files({ setTitlePage }) {
         { withCredentials: true }
       )
       .then(() => {
-        alert('Les données ont bien été modifiées');
         setFilesName('');
         setFilesDateStart('');
         setFilesDateEnd('');
@@ -72,8 +77,9 @@ function Files({ setTitlePage }) {
         setDescription('');
         setFilesId();
         getFiles();
+        toast.success('Les données ont bien été modifiées');
       })
-      .catch((err) => alert(err.message));
+      .catch((err) => toast.error(err.message));
   };
 
   const deleteFiles = () => {
@@ -83,9 +89,9 @@ function Files({ setTitlePage }) {
         { withCredentials: true }
       )
       .then(() => {
-        alert('Les données ont bien été supprimées');
+        toast.success('Les données ont bien été supprimées');
       })
-      .catch((err) => alert(err.message));
+      .catch((err) => toast.error(err.message));
   };
 
   const handleSubmit = async (e) => {
@@ -100,7 +106,6 @@ function Files({ setTitlePage }) {
         description,
       })
       .then(() => {
-        alert('Les données ont bien été ajoutées');
         setFilesName('');
         setFilesDateStart('');
         setFilesDateEnd('');
@@ -108,25 +113,36 @@ function Files({ setTitlePage }) {
         setDescription('');
         setFilesId();
         getFiles();
+        toast.success('Les données ont bien été ajoutées');
       });
-    // if (!files) {
-    //   alert('Veuillez sélectionner un fichier .pdf');
+    // if (!images) {
+    //   toast.warning('Veuillez sélectionner une image .png, .jpg, .jpeg, .svg');
     // } else if (!description) {
-    //   alert('Veuillez fournir une description');
+    //   toast.warning('Veuillez fournir une description');
     // } else {
     //   const data = new FormData();
-    //   // Ajoute mon fichier pdf à mon FormData
-    //   data.append('file', files);
-    //   // Ajoute la description au FormData
-    //   data.append('pictureData', JSON.stringify({ description }));
+    //   // Ajoute mon fichier image à mon FormData
+    //   images.forEach((image) => {
+    //     data.append('file', image);
+    //   });
+    //   // Ajoute les différentes valeurs attendu dans ma table images au FormData
+    //   data.append('data', JSON.stringify({ description, files_id: filesId }));
     //   try {
-    //     const res = await axios.post(
-    //       `${process.env.REACT_APP_API_PORTFOLIO_URL}/api/images/upload`,
-    //       data
-    //     );
-    //     console.log(res);
+    //     await axios
+    //       .post(
+    //         `${process.env.REACT_APP_API_PORTFOLIO_URL}/api/images/upload`,
+    //         data,
+    //         { withCredentials: true }
+    //       )
+    //       .then(() => {
+    //         setImages('');
+    //         setSource('');
+    //         setDescription('');
+    //         getImages();
+    //         toast.success('Votre ou vos image(s) ont bien été téléchargées');
+    //       });
     //   } catch (err) {
-    //     console.log(err.message);
+    //     toast.error(err.message);
     //   }
     // }
   };
@@ -160,18 +176,18 @@ function Files({ setTitlePage }) {
                 ))}
               </select>
             </label>
-            <div className="files-upload">
+            <div className="images-upload">
               {/* <label
-                htmlFor="files-select"
-                className="files-select"
-                id="label-files"
+                htmlFor="images-select"
+                className="images-select"
+                id="label-images"
               >
-                Sélectionner une ou des image(s) du projet
+                Sélectionner une ou des image(s)
                 <input
                   type="file"
                   name="upload"
-                  id="files-select"
-                  placeholder="Sélectionner un fichier"
+                  id="images-select"
+                  placeholder="Sélectionner une ou des image(s)"
                   accept=".png, .jpg, .jpeg, .svg+xml"
                   multiple
                   onChange={handleChangeFile}

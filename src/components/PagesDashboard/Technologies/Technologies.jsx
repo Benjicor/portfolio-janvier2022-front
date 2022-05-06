@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 import Button from '../../Button/Button';
 
@@ -42,12 +43,12 @@ function Technologies({ setTitlePage }) {
         { withCredentials: true }
       )
       .then(() => {
-        alert('Les données ont bien été modifiées');
+        toast.success('Les données ont bien été modifiées');
         setTechnologiesName('');
         setSource('');
         getTechnologies();
       })
-      .catch((err) => alert(err.message));
+      .catch((err) => toast.error(err.message));
   };
 
   const deleteTechnologies = () => {
@@ -59,16 +60,16 @@ function Technologies({ setTitlePage }) {
         }
       )
       .then(() => {
-        alert('Les données ont bien été supprimées');
+        toast.success('Les données ont bien été supprimées');
       })
-      .catch((err) => alert(err.message));
+      .catch((err) => toast.error(err.message));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!technologiesName || !source) {
-      alert('Merci de remplir toutes les informations demandées');
+      toast.warning('Merci de remplir toutes les informations demandées');
     } else {
       axios
         .post(
@@ -81,7 +82,7 @@ function Technologies({ setTitlePage }) {
           setSource('');
         })
         .catch((err) => {
-          alert(err.message);
+          toast.error(err.message);
         });
     }
   };

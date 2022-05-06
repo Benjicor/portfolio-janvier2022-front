@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 import './BurgerContentDashboard.css';
 
@@ -12,10 +13,10 @@ function BurgerContentDashboard({ handleClick }) {
         withCredentials: true,
       })
       .then(() => {
-        alert('Vous avez bien été deconnecté');
+        toast.success('Parfait, vous avez bien été deconnecté');
       })
       .catch((err) => {
-        alert(err.message);
+        toast.error(err.message);
       });
   };
   return (

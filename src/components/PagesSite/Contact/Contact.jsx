@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 import Button from '../../Button/Button';
 
@@ -26,8 +27,11 @@ function Contact({ setTitlePage }) {
           message,
         }
       )
+      .then(() => {
+        toast.success('Votre message a bien été envoyé');
+      })
       .catch((err) => {
-        alert(err);
+        toast.error(err);
       });
   };
 
