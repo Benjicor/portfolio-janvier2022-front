@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 import Button from '../../Button/Button';
 // import Modal from '../../Modal/Modal';
@@ -24,10 +25,11 @@ function Images({ setTitlePage }) {
         file[index].type !== 'image/png' &&
         file[index].type !== 'image/jpg' &&
         file[index].type !== 'image/jpeg' &&
-        file[index].type !== 'image/svg+xml' &&
-        file[index].type !== 'application/pdf'
+        file[index].type !== 'image/svg+xml'
       ) {
-        alert('Veuillez sélectionner une image .png, .jpg, .jpeg, .svg');
+        toast.warning(
+          'Veuillez sélectionner une image .png, .jpg, .jpeg, .svg'
+        );
       }
       return setImages([...selectedFile]);
     });
@@ -61,10 +63,10 @@ function Images({ setTitlePage }) {
       })
       .then(() => {
         getAllImages(id);
-        alert('Votre image a bien été supprimée');
+        toast.success('Votre image a bien été supprimée');
       })
       .catch((err) => {
-        alert(err.message);
+        toast.error(err.message);
       });
   };
 
@@ -72,9 +74,9 @@ function Images({ setTitlePage }) {
     e.preventDefault();
 
     if (!images) {
-      alert('Veuillez sélectionner une image .png, .jpg, .jpeg, .svg, .pdf');
+      toast.warning('Veuillez sélectionner une image .png, .jpg, .jpeg, .svg');
     } else if (!description) {
-      alert('Veuillez fournir une description');
+      toast.warning('Veuillez fournir une description');
     } else {
       const data = new FormData();
       // Ajoute mon fichier image à mon FormData
@@ -95,9 +97,10 @@ function Images({ setTitlePage }) {
             setSource('');
             setDescription('');
             getImages();
+            toast.success('Votre ou vos image(s) ont bien été téléchargées');
           });
       } catch (err) {
-        alert(err.message);
+        toast.error(err.message);
       }
     }
   };
@@ -149,7 +152,7 @@ function Images({ setTitlePage }) {
                   name="upload"
                   id="images-select"
                   placeholder="Sélectionner une ou des image(s)"
-                  accept=".png, .jpg, .jpeg, .svg+xml, .pdf"
+                  accept=".png, .jpg, .jpeg, .svg+xml"
                   multiple
                   onChange={handleChangeFile /* , setOpenModal */}
                 />

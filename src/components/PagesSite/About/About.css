@@ -7,7 +7,7 @@
 
 /* Mise en forme du texte (titre et paragraphe) */
 
-.presentation {
+.presentation-h1 {
   margin-left: 7%;
   margin-right: 7%;
   text-align: left;
@@ -15,7 +15,8 @@
   font-size: 1.3rem;
 }
 
-.presentation p {
+.presentation-p {
+  margin: 7%;
   text-align: justify;
   color: #e5e5e5;
   font-size: 0.9rem;
@@ -67,9 +68,20 @@
   grid-column: 2;
 }
 
-/* Média Queries - Adaptation sur écran de plus de 360px */
+/* Média Queries - Adaptaion sur écran d'au moins 360px de large et 880px de haut. */
 
 @media screen and (min-width: 360px) and (min-height: 880px) {
+  /* Mise en place du footer en bas de page quand pas suffisamment de contenu */
+
+  .about-page ~ footer {
+    position: fixed;
+    bottom: 0;
+  }
+}
+
+/* Média Queries - Adaptation sur écran d'au moins 625px de large et 675px de haut. */
+
+@media screen and (min-width: 625px) and (min-height: 675px) {
   /* Mise en place du footer en bas de page quand pas suffisamment de contenu */
 
   .about-page ~ footer {

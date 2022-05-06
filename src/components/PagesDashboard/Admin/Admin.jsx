@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 import Button from '../../Button/Button';
 
@@ -25,11 +26,13 @@ function Admin({ setTitlePage }) {
       !password ||
       !confirmPassword
     ) {
-      alert('Vous devez fournir toutes les informations');
+      toast.warning('Vous devez fournir toutes les informations');
     } else if (password !== confirmPassword) {
-      alert('Le mot de passe et sa confirmation doivent être identique');
+      toast.warning(
+        'Le mot de passe et sa confirmation doivent être identique'
+      );
     } else {
-      alert("Données envoyées pour créer l'utilisateur");
+      toast.info("Données envoyées pour créer l'utilisateur");
       try {
         const response = await axios.post(
           `${API_URL}/api/users`,
@@ -45,7 +48,7 @@ function Admin({ setTitlePage }) {
           }
         );
         if (response.status === 201) {
-          alert('Nouvel utilisateur créé');
+          toast.success('Nouvel utilisateur créé');
           setFirstname('');
           setLastname('');
           setUsername('');
@@ -53,10 +56,10 @@ function Admin({ setTitlePage }) {
           setPassword('');
           setConfirmPassword('');
         } else {
-          alert('Erreur');
+          toast.error('Erreur');
         }
       } catch (err) {
-        alert(err.response.data);
+        toast.error(err.response.data);
       }
     }
   };
