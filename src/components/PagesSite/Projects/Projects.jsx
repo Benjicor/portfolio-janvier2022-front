@@ -3,25 +3,25 @@
 /* eslint-disable import/no-unresolved */
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper';
 import axios from 'axios';
 
-// import Modal from '../../Modal/Modal';
+import ModalSwiper from '../../ModalSwiper/ModalSwiper';
 
-import 'swiper/css';
 import './Projects.css';
+import 'swiper/css';
 
 function Projects({ setTitlePage }) {
   const [files, setFiles] = useState([]);
-  const [details, setDetails] = useState(false);
   const [selectedProject, setSelectedProject] = useState({});
 
-  // const [openModal, setOpenModal] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
 
   const handleClick = (e, index) => {
     setSelectedProject(files[index]);
+    setOpenModal(!openModal);
   };
 
   useEffect(() => {
@@ -66,19 +66,13 @@ function Projects({ setTitlePage }) {
           }}
         >
           {files?.map((file, index) => (
-            // eslint-disable-next-line jsx-a11y/click-events-have-key-events
             <SwiperSlide key={file.id}>
-              <div
-                className="swiper-overlay-project"
-                onClick={() => setDetails(true)}
-              >
+              <div className="swiper-overlay-project">
                 <img
                   className="project-src"
                   src={`${process.env.REACT_APP_API_PORTFOLIO_URL}/images/${file.images[0].src}`}
                   alt={file.alt}
-                  onClick={
-                    (e) => handleClick(e, index) /* , setOpenModal(true) */
-                  }
+                  onClick={(e) => handleClick(e, index)}
                 />
                 <div className="overlay-project">
                   <h2 className="overlay-title">{file.title}</h2>
@@ -95,31 +89,9 @@ function Projects({ setTitlePage }) {
               </div>
             </SwiperSlide>
           ))}
-          {details &&
-            selectedProject.images.map((image) => (
-              <div className="container-selected-project" key={image.id}>
-                <img
-                  className="selected-project"
-                  src={`${process.env.REACT_APP_API_PORTFOLIO_URL}/images/${image.src}`}
-                />
-              </div>
-            ))}
-          {/* {openModal && (
-            <Modal
-              closeModal={setOpenModal}
-              img={
-                details &&
-                selectedProject.images.map((image) => (
-                  <div className="container-selected-project" key={image.id}>
-                    <img
-                      className="selected-project"
-                      src={`${process.env.REACT_APP_API_PORTFOLIO_URL}/images/${image.src}`}
-                    />
-                  </div>
-                ))
-              }
-            />
-          )} */}
+          {openModal && (
+            <ModalSwiper closeModal={setOpenModal} project={selectedProject} />
+          )}
         </Swiper>
       </div>
     </div>

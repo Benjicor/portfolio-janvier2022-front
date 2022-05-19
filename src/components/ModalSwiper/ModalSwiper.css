@@ -1,0 +1,56 @@
+.home {
+  position: relative;
+}
+
+.container-modal-swiper {
+  background-color: #333;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 100%;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.container-my-swiper-modal {
+  width: 100%;
+}
+
+.close-btn-modal-swiper {
+  position: sticky;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 15;
+}
+
+.close-btn-modal-swiper button {
+  background-color: #333;
+  color: #ff1616;
+  border-radius: 100%;
+  border: 2px solid #ff1616;
+  width: 25px;
+  height: 25px;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* Média Queries - Adaptation sur écran de plus de 459px */
+
+@media screen and (min-width: 320px) {
+  /* Media Query Modal */
+}
+
+/* Média Queries - Adaptation sur écran de plus de 768px */
+
+@media screen and (min-width: 768px) {
+  /* Media Query Modal */
+}
+
+/* Média Queries - Adaptation sur écran de plus de 992px */
+
+@media screen and (min-width: 992px) {
+  /* Media Query Modal */
+}

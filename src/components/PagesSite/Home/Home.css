@@ -31,7 +31,7 @@
   margin: 35px auto;
   padding: 2rem;
   background-color: #adadad;
-  border: black solid 8px;
+  border: #000 solid 8px;
 }
 
 .carre {
@@ -85,39 +85,30 @@ h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: #e5e5e5;
   text-transform: capitalize;
   margin-bottom: 0.5rem;
   font-size: 1rem;
 }
 
 .logo li img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 30px;
   height: 30px;
   margin-top: 0.5rem;
   transition: all 0.5s ease;
+  animation: bounce 1.5s infinite ease;
 }
 
 .logo li:hover img {
   transform: scale(1.5);
-}
-
-.logo li a.certificat {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Animation battement */
-
-/* .logo li a.certificat img {
-  animation: bounce 1.5s infinite ease;
-}
-
-.logo li a.certificat:hover img {
   animation: bounce 0.5s both;
   animation: none;
 }
+
+/* Animation battement */
 
 @keyframes bounce {
   0% {
@@ -127,7 +118,7 @@ h2 {
   100% {
     transform: scale(1);
   }
-} */
+}
 
 /* Média Queries - Adaptation sur écran de plus de 381px de large et 1025px de haut */
 
