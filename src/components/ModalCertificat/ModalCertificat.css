@@ -1,0 +1,295 @@
+.home {
+  position: relative;
+}
+
+.container-modal-certificat {
+  position: absolute;
+  width: 310px;
+  top: 595px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  color: #333;
+  z-index: 10;
+}
+
+.container-modal-certificat img {
+  width: 100%;
+  border-radius: 25px;
+}
+
+.close-btn {
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-btn button {
+  background-color: #333;
+  color: #ff1616;
+  border-radius: 100%;
+  border: 2px solid #ff1616;
+  width: 25px;
+  height: 25px;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* Média Queries - Adaptation sur écran de plus de 355px de large */
+
+@media screen and (min-width: 355px) {
+  /* Media Query Modal */
+
+  .container-modal-certificat {
+    width: 335px;
+    top: 585px;
+  }
+}
+
+/* Média Queries - Adaptation sur écran de plus de 381px de large */
+
+@media screen and (min-width: 381px) {
+  /* Media Query Modal */
+
+  .container-modal-certificat {
+    width: 360px;
+    top: 550px;
+  }
+}
+
+/* Média Queries - Adaptation sur écran de plus de 435px de large */
+
+@media screen and (min-width: 435px) {
+  /* Media Query Modal */
+
+  .container-modal-certificat {
+    width: 370px;
+    top: 545px;
+  }
+}
+
+/* Média Queries - Adaptation sur écran de plus de 458px de large */
+
+@media screen and (min-width: 458px) {
+  /* Media Query Modal */
+
+  .container-modal-certificat {
+    width: 370px;
+    top: 508px;
+  }
+}
+
+/* Média Queries - Adaptation sur écran de plus de 525px de large */
+
+@media screen and (min-width: 525px) {
+  /* Media Query Modal */
+
+  .container-modal-certificat {
+    width: 370px;
+    top: 485px;
+  }
+}
+
+/* Média Queries - Adaptation sur écran de plus de 768px de large */
+
+@media screen and (min-width: 768px) {
+  /* Media Query Modal */
+
+  .container-modal-certificat {
+    width: 370px;
+    top: 745px;
+  }
+}
+
+/* Média Queries - Adaptation sur écran de plus de 771px de large */
+
+@media screen and (min-width: 771px) {
+  /* Media Query Modal */
+
+  .container-modal-certificat {
+    width: 370px;
+    top: 713px;
+  }
+}
+
+/* Média Queries - Adaptation sur écran de plus de 992px de large */
+
+@media screen and (min-width: 992px) {
+  /* Media Query Modal */
+
+  .container-modal-certificat {
+    width: 370px;
+    top: 685px;
+  }
+}
+
+/* Média Queries - Adaptation sur écran de moins de  de plus de 1075px de haut */
+
+@media screen and (min-height: 1075px) {
+  /* Media Query Modal */
+
+  .container-modal-certificat {
+    width: 375px;
+    top: 715px;
+  }
+}
+
+/* Média Queries - Adaptation sur écran de moins de  de plus de 1100px de haut */
+
+@media screen and (min-height: 1100px) {
+  /* Media Query Modal */
+
+  .container-modal-certificat {
+    width: 410px;
+    top: 715px;
+  }
+}
+
+/* Média Queries - Adaptation sur écran de moins de  de plus de 1125px de haut */
+
+@media screen and (min-height: 1125px) {
+  /* Media Query Modal */
+
+  .container-modal-certificat {
+    width: 450px;
+    top: 715px;
+  }
+}
+
+/* Média Queries - Adaptation sur écran de moins de  de plus de 1150px de haut */
+
+@media screen and (min-height: 1150px) {
+  /* Media Query Modal */
+
+  .container-modal-certificat {
+    width: 475px;
+    top: 715px;
+  }
+}
+
+/* Média Queries - Adaptation sur écran de moins de  de plus de 1175px de haut */
+
+@media screen and (min-height: 1175px) {
+  /* Media Query Modal */
+
+  .container-modal-certificat {
+    width: 520px;
+    top: 715px;
+  }
+}
+
+/* Média Queries - Adaptation sur écran de moins de  de plus de 1200px de haut */
+
+@media screen and (min-height: 1200px) {
+  /* Media Query Modal */
+
+  .container-modal-certificat {
+    width: 550px;
+    top: 715px;
+  }
+}
+
+/* Média Queries - Adaptation sur écran de moins de  de plus de 1225px de haut */
+
+@media screen and (min-height: 1225px) {
+  /* Media Query Modal */
+
+  .container-modal-certificat {
+    width: 590px;
+    top: 715px;
+  }
+}
+
+/* Média Queries - Adaptation sur écran de moins de  de plus de 1250px de haut */
+
+@media screen and (min-height: 1250px) {
+  /* Media Query Modal */
+
+  .container-modal-certificat {
+    width: 620px;
+    top: 715px;
+  }
+}
+
+/* Média Queries - Adaptation sur écran de moins de  de plus de 1275px de haut */
+
+@media screen and (min-height: 1275px) {
+  /* Media Query Modal */
+
+  .container-modal-certificat {
+    width: 650px;
+    top: 715px;
+  }
+}
+
+/* Média Queries - Adaptation sur écran de moins de  de plus de 1300px de haut */
+
+@media screen and (min-height: 1300px) {
+  /* Media Query Modal */
+
+  .container-modal-certificat {
+    width: 700px;
+    top: 715px;
+  }
+}
+
+/* Média Queries - Adaptation sur écran de moins de  de plus de 1325px de haut */
+
+@media screen and (min-height: 1325px) {
+  /* Media Query Modal */
+
+  .container-modal-certificat {
+    width: 725px;
+    top: 715px;
+  }
+}
+
+/* Média Queries - Adaptation sur écran de moins de  de plus de 1350px de haut */
+
+@media screen and (min-height: 1350px) {
+  /* Media Query Modal */
+
+  .container-modal-certificat {
+    width: 765px;
+    top: 715px;
+  }
+}
+
+/* Média Queries - Adaptation sur écran de moins de  de plus de 1375px de haut */
+
+@media screen and (min-height: 1375px) {
+  /* Media Query Modal */
+
+  .container-modal-certificat {
+    width: 800px;
+    top: 715px;
+  }
+}
+
+/* Média Queries - Adaptation sur écran de plus de 1400px de haut */
+
+@media screen and (min-height: 1400px) {
+  /* Media Query Modal */
+
+  .container-modal-certificat {
+    width: 825px;
+    top: 715px;
+  }
+}
+
+/* Média Queries - Adaptation sur écran de plus de 1425px de haut */
+
+@media screen and (min-height: 1425px) {
+  /* Media Query Modal */
+
+  .container-modal-certificat {
+    width: 850px;
+    top: 715px;
+  }
+}

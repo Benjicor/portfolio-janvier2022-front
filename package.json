@@ -16,7 +16,7 @@
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
     "react-toastify": "^8.2.0",
-    "swiper": "^8.1.4",
+    "swiper": "^8.1.5",
     "toastify": "^2.0.1"
   },
   "scripts": {

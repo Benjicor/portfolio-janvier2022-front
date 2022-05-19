@@ -3,22 +3,44 @@
 import React, { useState, useEffect } from 'react';
 
 import Modal from '../../Modal/Modal';
+import ModalCertificat from '../../ModalCertificat/ModalCertificat';
+
 import grandePhoto from '../../../assets/jpg/grande-photo.jpg';
 import petitePhoto from '../../../assets/png/petite-photo-ronde.png';
+
 import html5 from '../../../assets/svg/html5.svg';
 import css3 from '../../../assets/svg/css3.svg';
 import javascript from '../../../assets/svg/javascript.svg';
 import nodejs from '../../../assets/svg/nodejs.svg';
-import react from '../../../assets/svg/react.svg';
+import reactjs from '../../../assets/svg/react.svg';
 import mysql from '../../../assets/svg/mysql.svg';
 import git from '../../../assets/svg/git.svg';
 import github from '../../../assets/svg/github-original.svg';
-import certificatHtml5Css3 from '../../../assets/pdf/CertificatDeReussite-ApprenezACréerVotreSiteWebAvecHtml5EtCss3.pdf';
+
+import certificatHtml5Css3 from '../../../assets/jpg/CertificatDeReussite-ApprenezACreerVotreSiteWebAvecHtml5EtCss3.jpg';
+import certificatJavaScript from '../../../assets/jpg/CertificatDeReussite-ApprenezAProgrammerAvecJavaScript.jpg';
+import certificatNode from '../../../assets/jpg/CertificatDeReussite-PassezAuFullStackAvecNode.jsExpressEtMongoDB.jpg';
+import certificatReact from '../../../assets/jpg/CertificatDeReussite-DebutezAvecReact.jpg';
+import certificatMySQL from '../../../assets/jpg/CertificatDeReussite-ImplementezVosBasesDeDonneesRelationnellesAvecSQL.jpg';
+import certificatGitEtGitHub from '../../../assets/jpg/CertificatDeReussite-GerezDuCodeAvecGitEtGitHub.jpg';
 
 import './Home.css';
 
 function Home({ setTitlePage }) {
   const [openModal, setOpenModal] = useState(false);
+  const [openModalCertificatHtml5, setOpenModalCertificatHtml5] =
+    useState(false);
+  const [openModalCertificatCss3, setOpenModalCertificatCss3] = useState(false);
+  const [openModalCertificatJavaScript, setOpenModalCertificatJavaScript] =
+    useState(false);
+  const [openModalCertificatNode, setOpenModalCertificatNode] = useState(false);
+  const [openModalCertificatReact, setOpenModalCertificatReact] =
+    useState(false);
+  const [openModalCertificatMySQL, setOpenModalCertificatMySQL] =
+    useState(false);
+  const [openModalCertificatGit, setOpenModalCertificatGit] = useState(false);
+  const [openModalCertificatGitHub, setOpenModalCertificatGitHub] =
+    useState(false);
 
   useEffect(() => {
     setTitlePage('Accueil');
@@ -48,58 +70,132 @@ function Home({ setTitlePage }) {
       <div className="techno">
         <ul className="logo">
           <li>
-            <a
+            HTML5
+            <img
               className="certificat"
-              href={certificatHtml5Css3}
-              target="_blank"
-              rel="noreferrer"
-            >
-              HTML5
-              <img src={html5} alt="Logo Html5" />
-            </a>
+              src={html5}
+              alt="Logo Html5"
+              onClick={() => setOpenModalCertificatHtml5(true)}
+            />
           </li>
+          {openModalCertificatHtml5 && (
+            <ModalCertificat
+              closeModal={setOpenModalCertificatHtml5}
+              img={certificatHtml5Css3}
+            />
+          )}
 
           <li>
-            <a
+            CSS3
+            <img
               className="certificat"
-              href={certificatHtml5Css3}
-              target="_blank"
-              rel="noreferrer"
-            >
-              CSS3
-              <img src={css3} alt="Logo Css3" />
-            </a>
+              src={css3}
+              alt="Logo Css3"
+              onClick={() => setOpenModalCertificatCss3(true)}
+            />
           </li>
+          {openModalCertificatCss3 && (
+            <ModalCertificat
+              closeModal={setOpenModalCertificatCss3}
+              img={certificatHtml5Css3}
+            />
+          )}
 
           <li>
-            javascript
-            <img src={javascript} alt="Logo Javascript" />
+            JavaScript
+            <img
+              className="certificat"
+              src={javascript}
+              alt="Logo JavaScript"
+              onClick={() => setOpenModalCertificatJavaScript(true)}
+            />
           </li>
+          {openModalCertificatJavaScript && (
+            <ModalCertificat
+              closeModal={setOpenModalCertificatJavaScript}
+              img={certificatJavaScript}
+            />
+          )}
 
           <li>
             Node JS
-            <img src={nodejs} alt="Logo Node JS" />
+            <img
+              className="certificat"
+              src={nodejs}
+              alt="Logo Node JS"
+              onClick={() => setOpenModalCertificatNode(true)}
+            />
           </li>
+          {openModalCertificatNode && (
+            <ModalCertificat
+              closeModal={setOpenModalCertificatNode}
+              img={certificatNode}
+            />
+          )}
 
           <li>
             React JS
-            <img src={react} alt="Logo React JS" />
+            <img
+              className="certificat"
+              src={reactjs}
+              alt="Logo React JS"
+              onClick={() => setOpenModalCertificatReact(true)}
+            />
           </li>
+          {openModalCertificatReact && (
+            <ModalCertificat
+              closeModal={setOpenModalCertificatReact}
+              img={certificatReact}
+            />
+          )}
 
           <li>
-            Mysql
-            <img src={mysql} alt="Logo Mysql" />
+            MySQL
+            <img
+              className="certificat"
+              src={mysql}
+              alt="Logo MySQL"
+              onClick={() => setOpenModalCertificatMySQL(true)}
+            />
           </li>
+          {openModalCertificatMySQL && (
+            <ModalCertificat
+              closeModal={setOpenModalCertificatMySQL}
+              img={certificatMySQL}
+            />
+          )}
 
           <li>
             Git
-            <img src={git} alt="Logo Git" />
+            <img
+              className="certificat"
+              src={git}
+              alt="Logo Git"
+              onClick={() => setOpenModalCertificatGit(true)}
+            />
           </li>
+          {openModalCertificatGit && (
+            <ModalCertificat
+              closeModal={setOpenModalCertificatGit}
+              img={certificatGitEtGitHub}
+            />
+          )}
 
           <li>
-            Github
-            <img src={github} alt="Logo Github" />
+            GitHub
+            <img
+              className="certificat"
+              src={github}
+              alt="Logo GitHub"
+              onClick={() => setOpenModalCertificatGitHub(true)}
+            />
           </li>
+          {openModalCertificatGitHub && (
+            <ModalCertificat
+              closeModal={setOpenModalCertificatGitHub}
+              img={certificatGitEtGitHub}
+            />
+          )}
         </ul>
       </div>
     </div>

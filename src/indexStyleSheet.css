@@ -118,5 +118,8 @@ a {
 
 a {
   text-decoration: none;
+  font-family: latobold, Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-style: normal;
   color: #e5e5e5;
 }

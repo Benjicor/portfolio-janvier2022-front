@@ -2,6 +2,8 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 /* Mise en forme du body dans son conteneur */
@@ -15,6 +17,13 @@ body {
   background-color: #333;
   color: #e5e5e5;
 }
+
+/* Il s'agit de régler la hauteur de l'application sur la hauteur de la fenêtre d'affichage */
+
+/* .app {
+  position: relative;
+  min-height: 100vh;
+} */
 
 /* Style des label */
 
