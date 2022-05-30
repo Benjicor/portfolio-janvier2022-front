@@ -3,7 +3,6 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 
 import Button from '../../Button/Button';
-// import Modal from '../../Modal/Modal';
 
 import './Images.css';
 
@@ -15,8 +14,6 @@ function Images({ setTitlePage }) {
   const [source, setSource] = useState('');
   const [description, setDescription] = useState('');
   const [allImages, setAllImages] = useState([]);
-
-  // const [openModal, setOpenModal] = useState(false);
 
   const handleChangeFile = (e) => {
     const selectedFile = e.target.files;
@@ -154,7 +151,7 @@ function Images({ setTitlePage }) {
                   placeholder="Sélectionner une ou des image(s)"
                   accept=".png, .jpg, .jpeg, .svg+xml"
                   multiple
-                  onChange={handleChangeFile /* , setOpenModal */}
+                  onChange={handleChangeFile}
                 />
               </label>
             </div>
@@ -211,28 +208,6 @@ function Images({ setTitlePage }) {
                 </div>
               </div>
             ))}
-            {/* {openModal && (
-              <Modal
-                closeModal={setOpenModal}
-                img={allImages.map((image) => (
-                  <div className="container-all-images" key={image.id}>
-                    <div className="all-images">
-                      <img
-                        src={`${process.env.REACT_APP_API_PORTFOLIO_URL}/images/${image.alt}`}
-                        alt={image.alt}
-                      />
-                    </div>
-                    <div className="button-delete-images">
-                      <Button
-                        className="delete-images"
-                        buttonName="Supprimer"
-                        onClick={() => deleteImages(image.id)}
-                      />
-                    </div>
-                  </div>
-                ))}
-              />
-            )} */}
           </div>
         </form>
       </div>

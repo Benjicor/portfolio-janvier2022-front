@@ -31,17 +31,17 @@ function BurgerContentDashboard({ handleClick }) {
           </Link>
         </li>
         <li>
-          <Link className="link" to="/About" onClick={handleClick}>
+          <Link className="link" to="/about" onClick={handleClick}>
             À propos
           </Link>
         </li>
         <li>
-          <Link className="link" to="/Projects" onClick={handleClick}>
+          <Link className="link" to="/projects" onClick={handleClick}>
             Projets
           </Link>
         </li>
         <li>
-          <Link className="link" to="/Contact" onClick={handleClick}>
+          <Link className="link" to="/contact" onClick={handleClick}>
             Contact
           </Link>
         </li>
@@ -51,7 +51,7 @@ function BurgerContentDashboard({ handleClick }) {
         <li>
           <Link
             className="link"
-            to="/Private/Admin/CreateUser"
+            to="/private/admin/create-user"
             onClick={handleClick}
           >
             Création d&#39;un utilisateur
@@ -60,28 +60,28 @@ function BurgerContentDashboard({ handleClick }) {
         <li>
           <Link
             className="link"
-            to="/Private/Admin/Files"
+            to="/private/admin/projects"
             onClick={handleClick}
           >
-            Fichiers
+            Administration des Projets
           </Link>
         </li>
         <li>
           <Link
             className="link"
-            to="/Private/Admin/Images"
+            to="/private/admin/images"
             onClick={handleClick}
           >
-            Images
+            Administration des Images
           </Link>
         </li>
         <li>
           <Link
             className="link"
-            to="/Private/Admin/Technologies"
+            to="/private/admin/technologies"
             onClick={handleClick}
           >
-            Technologies
+            Administration des Technologies
           </Link>
         </li>
         <li>
