@@ -50,35 +50,35 @@ function App() {
       )}
       <Routes>
         <Route path="/" element={<Home setTitlePage={setTitlePage} />} />
-        <Route path="/About" element={<About setTitlePage={setTitlePage} />} />
+        <Route path="/about" element={<About setTitlePage={setTitlePage} />} />
         <Route
-          path="/Projects"
+          path="/projects"
           element={<Projects setTitlePage={setTitlePage} />}
         />
         <Route
-          path="/Contact"
+          path="/contact"
           element={<Contact setTitlePage={setTitlePage} />}
         />
         <Route
-          path="/Private/Admin/Connect"
+          path="/private/admin/connect"
           element={<Connect setTitlePage={setTitlePage} setUser={setUser} />}
         />
         {user && (
           <>
             <Route
-              path="/Private/Admin/CreateUser"
+              path="/private/admin/create-user"
               element={<Admin setTitlePage={setTitlePage} />}
             />
             <Route
-              path="Private/Admin/Files"
+              path="private/admin/projects"
               element={<Files setTitlePage={setTitlePage} />}
             />
             <Route
-              path="Private/Admin/Images"
+              path="private/admin/images"
               element={<Images setTitlePage={setTitlePage} />}
             />
             <Route
-              path="Private/Admin/Technologies"
+              path="private/admin/technologies"
               element={<Technologies setTitlePage={setTitlePage} />}
             />
           </>

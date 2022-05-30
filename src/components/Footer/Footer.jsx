@@ -17,6 +17,7 @@ function Footer() {
         >
           <img src={linkedin} alt="Logo cliquable Linkedin" />
         </a>
+        <h4 className="follow-me">Me suivre</h4>
         <a
           className="github"
           href="http://github.com/Benjicor"

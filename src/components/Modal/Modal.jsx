@@ -2,9 +2,9 @@ import React from 'react';
 
 import './Modal.css';
 
-function Modal({ closeModal, img }) {
+function Modal({ className, closeModal, img }) {
   return (
-    <div className="container-modal">
+    <div className={`${className}`}>
       <div className="close-btn">
         <button
           type="button"

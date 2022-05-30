@@ -23,6 +23,10 @@ footer {
   flex-grow: 1; /* 4 */
 }
 
+.follow-me {
+  display: none;
+}
+
 .linkedin {
   width: 90px;
   height: 90px;
@@ -46,17 +50,33 @@ footer {
 /* Média Queries - Adaptation sur écran de plus de 360px */
 
 @media screen and (min-width: 360px) {
-  /* Media Query BurgerMenu */
+  /* Media Query Footer */
+
+  .follow-me {
+    display: block;
+    color: #333;
+    border: #404040 solid 2px;
+    border-radius: 5px;
+    padding: 1rem;
+  }
 }
 
 /* Média Queries - Adaptation sur écran de plus de 768px */
 
 @media screen and (min-width: 768px) {
-  /* Media Query BurgerMenu */
+  /* Media Query Footer */
+
+  .follow-me {
+    display: block;
+    color: #333;
+    border: #404040 solid 2px;
+    border-radius: 5px;
+    padding: 1rem;
+  }
 }
 
 /* Média Queries - Adaptation sur écran de plus de 992px */
 
 @media screen and (min-width: 992px) {
-  /* Media Query BurgerMenu */
+  /* Media Query Footer */
 }
