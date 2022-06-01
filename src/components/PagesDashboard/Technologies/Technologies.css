@@ -7,7 +7,21 @@
   display: none;
 }
 
+/* Mise en place du titre de la page */
+
+.technologies-title {
+  text-align: center;
+  margin: 1rem;
+}
+
 /* Mise en place et style du formulaire */
+
+.container-technologies {
+  background-color: #404040;
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 25px;
+}
 
 .container-form {
   margin: 4vh auto;

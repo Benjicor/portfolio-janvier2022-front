@@ -154,30 +154,36 @@ function Files({ setTitlePage }) {
 
   return (
     <div className="dashboard-files">
-      <div className="files">
-        <form onSubmit={handleSubmit}>
-          <div className="container-form">
-            <label
-              htmlFor="project-select"
-              className="project-select"
-              id="label-images"
-            >
-              Selectionner un projet
-              <select
-                name="files_id"
-                id="project-select"
-                onChange={handleProject}
+      <h1 className="files-title">
+        Ajouter, modifier ou
+        <br />
+        supprimer un Projet
+      </h1>
+      <div className="container-files">
+        <div className="files">
+          <form onSubmit={handleSubmit}>
+            <div className="container-form">
+              <label
+                htmlFor="project-select"
+                className="project-select"
+                id="label-images"
               >
-                <option value="">Selectionner un projet</option>
-                {files?.map((file) => (
-                  <option value={file.id} key={file.id}>
-                    {file.title}
-                  </option>
-                ))}
-              </select>
-            </label>
-            <div className="images-upload">
-              {/* <label
+                Selectionner un projet
+                <select
+                  name="files_id"
+                  id="project-select"
+                  onChange={handleProject}
+                >
+                  <option value="">Selectionner un projet</option>
+                  {files?.map((file) => (
+                    <option value={file.id} key={file.id}>
+                      {file.title}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <div className="images-upload">
+                {/* <label
                 htmlFor="images-select"
                 className="images-select"
                 id="label-images"
@@ -193,95 +199,100 @@ function Files({ setTitlePage }) {
                   onChange={handleChangeFile}
                 />
               </label> */}
+              </div>
+              <label
+                htmlFor="files-name"
+                className="files-name"
+                id="label-files"
+              >
+                Nom du projet
+                <input
+                  type="text"
+                  id="files-name"
+                  placeholder="Nom du projet"
+                  value={filesName}
+                  onChange={(e) => setFilesName(e.target.value)}
+                />
+              </label>
+              <label
+                htmlFor="files-start-date"
+                className="files-start-date"
+                id="label-files"
+              >
+                Date de début de réalisation du projet
+                <input
+                  type="date"
+                  id="files-start-date"
+                  placeholder="Date de début de réalisation du projet"
+                  value={filesDateStart}
+                  onChange={(e) => setFilesDateStart(e.target.value)}
+                />
+              </label>
+              <label
+                htmlFor="files-end-date"
+                className="files-end-date"
+                id="label-files"
+              >
+                Date de fin de réalisation du projet
+                <input
+                  type="date"
+                  id="files-end-date"
+                  placeholder="Date de fin de réalisation du projet"
+                  value={filesDateEnd}
+                  onChange={(e) => setFilesDateEnd(e.target.value)}
+                />
+              </label>
+              <label
+                htmlFor="files-source"
+                className="files-source"
+                id="label-files"
+              >
+                Lien du projet en ligne
+                <input
+                  type="text"
+                  id="files-source"
+                  placeholder="Lien du projet en ligne"
+                  value={source}
+                  onChange={(e) => setSource(e.target.value)}
+                />
+              </label>
+              <label
+                htmlFor="files-description"
+                className="files-description"
+                id="label-files"
+              >
+                Déscription du projet
+                <textarea
+                  type="text"
+                  rows={10}
+                  id="files-description"
+                  placeholder="Description du projet"
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                />
+              </label>
+              <ul className="grid-button-files">
+                <li>
+                  <Button className="add" buttonName="Ajouter" submit />
+                </li>
+                <li>
+                  <Button
+                    className="modify"
+                    buttonName="Modifier"
+                    onClick={modifyFiles}
+                  />
+                </li>
+                <li>
+                  <Button
+                    className="delete"
+                    buttonName="Supprimer"
+                    onClick={deleteFiles}
+                  />
+                </li>
+              </ul>
             </div>
-            <label htmlFor="files-name" className="files-name" id="label-files">
-              Nom du projet
-              <input
-                type="text"
-                id="files-name"
-                placeholder="Nom du projet"
-                value={filesName}
-                onChange={(e) => setFilesName(e.target.value)}
-              />
-            </label>
-            <label
-              htmlFor="files-start-date"
-              className="files-start-date"
-              id="label-files"
-            >
-              Date de début de réalisation du projet
-              <input
-                type="date"
-                id="files-start-date"
-                placeholder="Date de début de réalisation du projet"
-                value={filesDateStart}
-                onChange={(e) => setFilesDateStart(e.target.value)}
-              />
-            </label>
-            <label
-              htmlFor="files-end-date"
-              className="files-end-date"
-              id="label-files"
-            >
-              Date de fin de réalisation du projet
-              <input
-                type="date"
-                id="files-end-date"
-                placeholder="Date de fin de réalisation du projet"
-                value={filesDateEnd}
-                onChange={(e) => setFilesDateEnd(e.target.value)}
-              />
-            </label>
-            <label
-              htmlFor="files-source"
-              className="files-source"
-              id="label-files"
-            >
-              Lien du projet en ligne
-              <input
-                type="text"
-                id="files-source"
-                placeholder="Lien du projet en ligne"
-                value={source}
-                onChange={(e) => setSource(e.target.value)}
-              />
-            </label>
-            <label
-              htmlFor="files-description"
-              className="files-description"
-              id="label-files"
-            >
-              Déscription du projet
-              <textarea
-                type="text"
-                rows={10}
-                id="files-description"
-                placeholder="Description du projet"
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-              />
-            </label>
-            <ul className="grid-button-files">
-              <li>
-                <Button className="add" buttonName="Ajouter" submit />
-              </li>
-              <li>
-                <Button
-                  className="modify"
-                  buttonName="Modifier"
-                  onClick={modifyFiles}
-                />
-              </li>
-              <li>
-                <Button
-                  className="delete"
-                  buttonName="Supprimer"
-                  onClick={deleteFiles}
-                />
-              </li>
-            </ul>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
   );

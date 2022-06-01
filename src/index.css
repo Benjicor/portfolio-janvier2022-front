@@ -101,7 +101,7 @@ button:active:not(.burger-menu),
 .delete-images {
   transform: translateY(7px);
   box-shadow: 2px 2px 2px;
-  color: #e5e5e5;
+  color: #fff;
 }
 
 /* Média Queries - Adaptation sur écran de plus de 460px */
