@@ -8,7 +8,21 @@
   display: none;
 }
 
+/* Mise en place du titre de la page */
+
+.connect-title {
+  text-align: center;
+  margin: 1rem;
+}
+
 /* Mise en place et style du formulaire */
+
+.container-connect {
+  background-color: #404040;
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 25px;
+}
 
 .container-form-connect {
   margin: 8vh auto;

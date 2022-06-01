@@ -94,30 +94,36 @@ function Technologies({ setTitlePage }) {
 
   return (
     <div className="dashboard-technologies">
-      <div className="technologies">
-        <form onSubmit={handleSubmit}>
-          <div className="container-form">
-            <label
-              htmlFor="project-select"
-              className="project-select"
-              id="label-images"
-            >
-              Sélectionner une technologie
-              <select
-                name="files_id"
-                id="project-select"
-                onChange={handleTechnologies}
+      <h1 className="technologies-title">
+        Ajouter, modifier ou supprimer
+        <br />
+        une Technologie
+      </h1>
+      <div className="container-technologies">
+        <div className="technologies">
+          <form onSubmit={handleSubmit}>
+            <div className="container-form">
+              <label
+                htmlFor="project-select"
+                className="project-select"
+                id="label-images"
               >
-                <option value="">Sélectionner une technologie</option>
-                {technologies?.map((technologie) => (
-                  <option value={technologie.id} key={technologie.id}>
-                    {technologie.name}
-                  </option>
-                ))}
-              </select>
-            </label>
-            <div className="technologies-upload">
-              {/* <label
+                Sélectionner une technologie
+                <select
+                  name="files_id"
+                  id="project-select"
+                  onChange={handleTechnologies}
+                >
+                  <option value="">Sélectionner une technologie</option>
+                  {technologies?.map((technologie) => (
+                    <option value={technologie.id} key={technologie.id}>
+                      {technologie.name}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <div className="technologies-upload">
+                {/* <label
                 htmlFor="technologies-select"
                 className="technologies-select"
                 id="label-technologies"
@@ -133,62 +139,63 @@ function Technologies({ setTitlePage }) {
                   onChange={(e) => setTechnologies(e.target.value)}
                 />
               </label> */}
-            </div>
-            <div>
-              <label
-                htmlFor="technologies-name"
-                className="technologies-name"
-                id="label-technologies"
-              >
-                Nom de la technologie
-                <input
-                  type="text"
-                  id="technologies-name"
-                  placeholder="Nom de la technologie"
-                  value={technologiesName}
-                  onChange={(e) => setTechnologiesName(e.target.value)}
-                />
-              </label>
-            </div>
-            <div>
-              <label
-                htmlFor="technologies-source"
-                className="technologies-source"
-                id="label-technologies"
-              >
-                Lien de la technologie en ligne
-                <input
-                  type="text"
-                  id="technologies-source"
-                  placeholder="Lien de la technologie en ligne"
-                  value={source}
-                  onChange={(e) => setSource(e.target.value)}
-                />
-              </label>
-            </div>
-            <div className="button-technologies">
-              <ul className="grid-button-technologies">
-                <li>
-                  <Button className="add" buttonName="Ajouter" submit />
-                </li>
-                <li>
-                  <Button
-                    className="modify"
-                    buttonName="Modifier"
-                    onClick={modifyTechnologies}
+              </div>
+              <div>
+                <label
+                  htmlFor="technologies-name"
+                  className="technologies-name"
+                  id="label-technologies"
+                >
+                  Nom de la technologie
+                  <input
+                    type="text"
+                    id="technologies-name"
+                    placeholder="Nom de la technologie"
+                    value={technologiesName}
+                    onChange={(e) => setTechnologiesName(e.target.value)}
                   />
-                </li>
-                <li>
-                  <Button
-                    className="delete"
-                    buttonName="Supprimer"
-                    onClick={deleteTechnologies}
+                </label>
+              </div>
+              <div>
+                <label
+                  htmlFor="technologies-source"
+                  className="technologies-source"
+                  id="label-technologies"
+                >
+                  Lien de la technologie en ligne
+                  <input
+                    type="text"
+                    id="technologies-source"
+                    placeholder="Lien de la technologie en ligne"
+                    value={source}
+                    onChange={(e) => setSource(e.target.value)}
                   />
-                </li>
-              </ul>
+                </label>
+              </div>
+              <div className="button-technologies">
+                <ul className="grid-button-technologies">
+                  <li>
+                    <Button className="add" buttonName="Ajouter" submit />
+                  </li>
+                  <li>
+                    <Button
+                      className="modify"
+                      buttonName="Modifier"
+                      onClick={modifyTechnologies}
+                    />
+                  </li>
+                  <li>
+                    <Button
+                      className="delete"
+                      buttonName="Supprimer"
+                      onClick={deleteTechnologies}
+                    />
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
   );
