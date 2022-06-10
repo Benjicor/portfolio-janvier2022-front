@@ -3,7 +3,7 @@
 # lock files
 package-lock.json
 yarn.lock
-pnpm_lock.yaml
+pnpm-lock.yaml
 
 # eslint
 .eslintcache
