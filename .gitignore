@@ -148,3 +148,4 @@ pnpm-error.log
 
 # vs code
 .vscode
+.code-workspace
