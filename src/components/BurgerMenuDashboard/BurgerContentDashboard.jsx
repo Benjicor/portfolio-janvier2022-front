@@ -63,7 +63,7 @@ function BurgerContentDashboard({ handleClick }) {
             to="/Private/Admin/Files"
             onClick={handleClick}
           >
-            Fichiers
+            Projets
           </Link>
         </li>
         <li>
