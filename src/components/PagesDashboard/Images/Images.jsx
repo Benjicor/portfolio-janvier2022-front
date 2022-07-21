@@ -3,7 +3,6 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 
 import Button from '../../Button/Button';
-// import Modal from '../../Modal/Modal';
 
 import './Images.css';
 
@@ -15,8 +14,6 @@ function Images({ setTitlePage }) {
   const [source, setSource] = useState('');
   const [description, setDescription] = useState('');
   const [allImages, setAllImages] = useState([]);
-
-  // const [openModal, setOpenModal] = useState(false);
 
   const handleChangeFile = (e) => {
     const selectedFile = e.target.files;
@@ -118,123 +115,108 @@ function Images({ setTitlePage }) {
 
   return (
     <div className="dashboard-images">
-      <div className="images">
-        <form onSubmit={handleSubmit}>
-          <div className="container-form">
-            <label
-              htmlFor="project-select"
-              className="project-select"
-              id="label-images"
-            >
-              Sélectionner un projet
-              <select
-                name="files_id"
-                id="project-select"
-                onChange={handleProject}
-              >
-                <option value="">Choisir un projet</option>
-                {files?.map((file) => (
-                  <option value={file.id} key={file.id}>
-                    {file.title}
-                  </option>
-                ))}
-              </select>
-            </label>
-            <div className="images-upload">
+      <h1 className="images-title">
+        Ajouter ou supprimer une ou
+        <br />
+        des Image(s) aux Projets
+      </h1>
+      <div className="container-images">
+        <div className="images">
+          <form onSubmit={handleSubmit}>
+            <div className="container-form">
               <label
-                htmlFor="images-select"
-                className="images-select"
+                htmlFor="project-select"
+                className="project-select"
                 id="label-images"
               >
-                Sélectionner une ou des image(s)
+                Sélectionner un projet
+                <select
+                  name="files_id"
+                  id="project-select"
+                  onChange={handleProject}
+                >
+                  <option value="">Choisir un projet</option>
+                  {files?.map((file) => (
+                    <option value={file.id} key={file.id}>
+                      {file.title}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <div className="images-upload">
+                <label
+                  htmlFor="images-select"
+                  className="images-select"
+                  id="label-images"
+                >
+                  Sélectionner une ou des image(s)
+                  <input
+                    type="file"
+                    name="upload"
+                    id="images-select"
+                    placeholder="Sélectionner une ou des image(s)"
+                    accept=".png, .jpg, .jpeg, .svg+xml"
+                    multiple
+                    onChange={handleChangeFile}
+                  />
+                </label>
+              </div>
+              <label
+                htmlFor="images-source"
+                className="images-source"
+                id="label-images"
+              >
+                Lien de l&#39;image en ligne
                 <input
-                  type="file"
-                  name="upload"
-                  id="images-select"
-                  placeholder="Sélectionner une ou des image(s)"
-                  accept=".png, .jpg, .jpeg, .svg+xml"
-                  multiple
-                  onChange={handleChangeFile /* , setOpenModal */}
+                  type="text"
+                  name="source"
+                  id="images-source"
+                  placeholder="Lien de l'image en ligne"
+                  value={source}
+                  onChange={(e) => setSource(e.target.value)}
                 />
               </label>
-            </div>
-            <label
-              htmlFor="images-source"
-              className="images-source"
-              id="label-images"
-            >
-              Lien de l&#39;image en ligne
-              <input
-                type="text"
-                name="source"
-                id="images-source"
-                placeholder="Lien de l'image en ligne"
-                value={source}
-                onChange={(e) => setSource(e.target.value)}
-              />
-            </label>
-            <label
-              htmlFor="images-description"
-              className="images-description"
-              id="label-images"
-            >
-              Déscription de l&#39;image
-              <textarea
-                type="text"
-                name="description"
-                rows={10}
-                id="images-description"
-                placeholder="Description de l'image"
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-              />
-            </label>
-            <ul className="grid-button-images">
-              <li>
-                <Button className="add" buttonName="Ajouter" submit />
-              </li>
-            </ul>
-            {allImages.map((image) => (
-              <div className="container-all-images" key={image.id}>
-                <div className="all-images">
-                  <img
-                    src={`${process.env.REACT_APP_API_PORTFOLIO_URL}/images/${image.alt}`}
-                    alt={image.alt}
-                  />
-                </div>
-                <div className="button-delete-images">
-                  <Button
-                    className="delete-images"
-                    buttonName="Supprimer"
-                    onClick={() => deleteImages(image.id)}
-                  />
-                </div>
-              </div>
-            ))}
-            {/* {openModal && (
-              <Modal
-                closeModal={setOpenModal}
-                img={allImages.map((image) => (
-                  <div className="container-all-images" key={image.id}>
-                    <div className="all-images">
-                      <img
-                        src={`${process.env.REACT_APP_API_PORTFOLIO_URL}/images/${image.alt}`}
-                        alt={image.alt}
-                      />
-                    </div>
-                    <div className="button-delete-images">
-                      <Button
-                        className="delete-images"
-                        buttonName="Supprimer"
-                        onClick={() => deleteImages(image.id)}
-                      />
-                    </div>
+              <label
+                htmlFor="images-description"
+                className="images-description"
+                id="label-images"
+              >
+                Déscription de l&#39;image
+                <textarea
+                  type="text"
+                  name="description"
+                  rows={10}
+                  id="images-description"
+                  placeholder="Description de l'image"
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                />
+              </label>
+              <ul className="grid-button-images">
+                <li>
+                  <Button className="add" buttonName="Ajouter" submit />
+                </li>
+              </ul>
+              {allImages.map((image) => (
+                <div className="container-all-images" key={image.id}>
+                  <div className="all-images">
+                    <img
+                      src={`${process.env.REACT_APP_API_PORTFOLIO_URL}/images/${image.alt}`}
+                      alt={image.alt}
+                    />
                   </div>
-                ))}
-              />
-            )} */}
-          </div>
-        </form>
+                  <div className="button-delete-images">
+                    <Button
+                      className="delete-images"
+                      buttonName="Supprimer"
+                      onClick={() => deleteImages(image.id)}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );

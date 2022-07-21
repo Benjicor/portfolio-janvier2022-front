@@ -1,20 +1,54 @@
-import React, { useEffect } from 'react';
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+
+import Modal from '../../Modal/Modal';
+
+import grandePhoto from '../../../assets/jpg/grande-photo.jpg';
+import petitePhoto from '../../../assets/png/petite-photo-ronde.png';
 
 import './About.css';
 
 function About({ setTitlePage, handleClick }) {
+  const [openModal, setOpenModal] = useState(false);
+
   useEffect(() => {
     setTitlePage('À propos');
   }, []);
 
   return (
     <div className="about-page">
+      <h1 className="about-title">Bonjour et bienvenue.</h1>
+      <div className="container-about">
+        <div className="container-about-image">
+          <div className="about-rond">
+            <div className="about-carre">
+              <img
+                className="about-photo-profil"
+                src={petitePhoto}
+                alt="Img de profil"
+                onClick={() => setOpenModal(true)}
+              />
+            </div>
+          </div>
+          {openModal && (
+            <Modal
+              className="container-modal"
+              closeModal={setOpenModal}
+              img={grandePhoto}
+            />
+          )}
+        </div>
+        <div className="container-about-description">
+          <h1 className="about-title">Je suis Benjamin CORDREAUX.</h1>
+        </div>
+      </div>
+      <h1 className="about-title">
+        Je vais tenter de vous présenter qui je suis.
+      </h1>
       <div className="about">
-        <h1 className="presentation-h1">
-          Bonjour et bienvenue, je suis Benjamin CORDREAUX et je vais tenter de
-          vous présenter qui je suis.
-        </h1>
         <p className="presentation-p">
           Mes 20 années d’expériences en Hôtellerie-Restauration sur des postes
           de direction et d’encadrement m’ont permis de développer des
@@ -32,21 +66,20 @@ function About({ setTitlePage, handleClick }) {
           du développement de projets web et intégrer une équipe dynamique !
         </p>
         <div className="container-btn-about">
-          <ul className="grid-button-about">
+          <ul className="button-about">
             <li>
-              <a
-                className="button-cv"
-                href="https://benjicor.github.io/curriculum-vitae"
-                target="_blank"
-                rel="noreferrer"
+              <Link
+                className="button-my-work"
+                to="/projects"
+                onClick={handleClick}
               >
-                CV
-              </a>
+                Mes réalisations
+              </Link>
             </li>
             <li>
               <Link
                 className="button-contact-me"
-                to="/Contact"
+                to="/contact"
                 onClick={handleClick}
               >
                 Me contacter

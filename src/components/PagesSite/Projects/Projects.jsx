@@ -3,12 +3,18 @@
 /* eslint-disable import/no-unresolved */
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
+
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper';
 import axios from 'axios';
 
+import Modal from '../../Modal/Modal';
 import ModalSwiper from '../../ModalSwiper/ModalSwiper';
+
+import grandePhoto from '../../../assets/jpg/grande-photo.jpg';
+import petitePhoto from '../../../assets/png/petite-photo-ronde.png';
 
 import './Projects.css';
 import 'swiper/css';
@@ -18,10 +24,11 @@ function Projects({ setTitlePage }) {
   const [selectedProject, setSelectedProject] = useState({});
 
   const [openModal, setOpenModal] = useState(false);
+  const [openModalProjects, setOpenModalProjects] = useState(false);
 
   const handleClick = (e, index) => {
     setSelectedProject(files[index]);
-    setOpenModal(!openModal);
+    setOpenModalProjects(!openModalProjects);
   };
 
   useEffect(() => {
@@ -38,6 +45,57 @@ function Projects({ setTitlePage }) {
   return (
     <div className="projects-page">
       <h1 className="projects-title">Voici mes projets réalisés</h1>
+      <div className="container-projects">
+        <div className="container-projects-image">
+          <div className="projects-rond">
+            <div className="projects-carre">
+              <img
+                className="projects-photo-profil"
+                src={petitePhoto}
+                alt="Img de profil"
+                onClick={() => setOpenModal(true)}
+              />
+            </div>
+          </div>
+          {openModal && (
+            <Modal
+              className="container-modal"
+              closeModal={setOpenModal}
+              img={grandePhoto}
+            />
+          )}
+        </div>
+        <div className="container-btn-projects">
+          <ul className="button-projects">
+            <li>
+              <a
+                className="button-cv"
+                href="https://benjicor.github.io/curriculum-vitae"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Voir mon CV
+              </a>
+            </li>
+            <li>
+              <Link
+                className="button-contact-me"
+                to="/contact"
+                onClick={handleClick}
+              >
+                Me contacter
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div className="container-projects-description">
+        <p className="projects-description">
+          Vous trouverez ci-dessous l&#39;ensemble des projets réalisés ou
+          auxquels j&#39;ai participé sur le plan professionnel, scolaire et
+          personnel.
+        </p>
+      </div>
       <div className="carousel-slider-projects">
         <Swiper
           className="container-mySwiper"
@@ -82,15 +140,19 @@ function Projects({ setTitlePage }) {
                     href={file.src}
                     target="_blank"
                     rel="noreferrer"
+                    onClick={(e) => handleClick(e, index)}
                   >
-                    Projet en ligne
+                    En savoir plus
                   </a>
                 </div>
               </div>
             </SwiperSlide>
           ))}
-          {openModal && (
-            <ModalSwiper closeModal={setOpenModal} project={selectedProject} />
+          {openModalProjects && (
+            <ModalSwiper
+              closeModal={setOpenModalProjects}
+              project={selectedProject}
+            />
           )}
         </Swiper>
       </div>

@@ -1,8 +1,118 @@
+/* Mise en forme photo */
+
+.projects-photo-profil {
+  display: block;
+  width: 140px;
+  height: 140px;
+  transform: rotate(40deg);
+  transition: 0.5s ease;
+}
+
+.projects-photo-profil:hover {
+  transform: scale(1.5) rotate(40deg);
+}
+
+/* Mise en forme cadre photo */
+
+.projects-rond {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  width: 230px;
+  height: 230px;
+  margin: 35px auto;
+  padding: 2rem;
+  background-color: #adadad;
+  border: #000 solid 8px;
+}
+
+.projects-carre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 145px;
+  height: 145px;
+  padding: 1rem;
+  background: linear-gradient(
+    to right,
+    #00678c 25%,
+    #1572b6 25% 50%,
+    #33a9dc 50% 75%,
+    #05d8fd 75%
+  );
+  transform: rotate(-45deg);
+}
+
+.container-projects {
+  background-color: #404040;
+  align-items: center;
+  flex-direction: row;
+  gap: 3rem;
+  justify-content: flex-start;
+  text-align: center;
+  margin: 1rem 0;
+  padding: 0 2rem 2rem;
+  border-radius: 25px;
+}
+
+.container-projects-image {
+  display: flex;
+  justify-content: center;
+  vertical-align: baseline;
+}
+
+.container-projects-description {
+  margin: 1rem;
+}
+
 .projects-title {
+  margin: 1rem 2.7rem;
   text-align: center;
 }
 
+.projects-description {
+  margin: 1rem 2.7rem;
+  text-align: center;
+}
+
+/* Mise en place et style des boutons */
+
+.button-cv {
+  display: block;
+  text-align: center;
+  background-color: #05d8fd;
+  color: #ff1616;
+  border-radius: 5px;
+  border: none;
+  font-size: 15px;
+}
+
+.button-contact-me {
+  display: block;
+  text-align: center;
+  background-color: #ff1616;
+  color: #05d8fd;
+  border-radius: 5px;
+  border: none;
+  font-size: 15px;
+}
+
+.button-projects {
+  display: flex;
+  flex-direction: column;
+  grid-row-gap: 1rem;
+  margin: 0 1rem;
+}
+
 /* Stylisation du carousel */
+
+.carousel-slider-projects {
+  background-color: #404040;
+  margin: 1rem 0;
+  padding: 1rem 2.7rem 0;
+  border-radius: 25px;
+}
 
 .carousel-slider-projects .swiper {
   padding-bottom: 2rem;
@@ -39,6 +149,8 @@
   border: none;
   font-size: 15px;
 }
+
+/* Marge du container */
 
 /* Définition de l'overlay du slider */
 
@@ -79,10 +191,10 @@
 
   /* Mise en place du footer en bas de page quand pas suffisamment de contenu */
 
-  .projects-page ~ footer {
+  /* .projects-page ~ footer {
     position: fixed;
     bottom: 0;
-  }
+  } */
 }
 
 /* Média Queries - Adaptation sur écran de maximum 600px */
@@ -94,5 +206,39 @@
     width: 100vw !important;
     height: 40vh;
     object-fit: cover;
+  }
+}
+
+/* Média Queries - Adaptation sur écran de plus de 768px */
+
+@media screen and (min-width: 768px) {
+  /* Mise en place photo, texte et boutons */
+
+  .container-projects {
+    display: flex;
+  }
+
+  .container-projects-image {
+    padding: 0 2.7rem;
+  }
+
+  .button-projects {
+    display: flex;
+    width: 42vw;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+/* Média Queries - Adaptation sur écran de maximum 992px de haut */
+
+@media screen and (min-height: 992px) {
+  /* Media Query Projets */
+
+  /* Mise en place du footer en bas de page quand pas suffisamment de contenu */
+
+  .projects-page ~ footer {
+    position: fixed;
+    bottom: 0;
   }
 }

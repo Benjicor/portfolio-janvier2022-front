@@ -41,10 +41,10 @@ function Contact({ setTitlePage }) {
 
   return (
     <div className="contact-page">
-      <div className="contact">
-        <h1 className="contact-title">Me contacter</h1>
+      <h1 className="contact-title">Me contacter</h1>
+      <div className="container-contact">
         <form onSubmit={onSubmit} autoComplete="on">
-          <div className="container-form">
+          <div className="container-form-contact">
             <div className="contact-form">
               <label
                 htmlFor="contact-firstname"

@@ -50,8 +50,10 @@ button {
 }
 
 button:not(.burger-menu) :not(.close-btn),
+.button-my-work,
 .button-cv,
 .button-contact-me,
+.send,
 .create,
 .validate,
 .add,
@@ -70,9 +72,11 @@ button:not(.burger-menu) :not(.close-btn),
 }
 
 button:hover:not(.burger-menu),
+.button-my-work:hover,
 .button-cv:hover,
 .button-contact-me:hover,
 .overlay-project-link:hover,
+.send:hover,
 .create,
 .validate,
 .add,
@@ -84,9 +88,11 @@ button:hover:not(.burger-menu),
 }
 
 button:active:not(.burger-menu),
+.button-my-work:active,
 .button-cv:active,
 .button-contact-me:active,
 .overlay-project-link:active,
+.send:active,
 .create,
 .validate,
 .add,
@@ -95,7 +101,7 @@ button:active:not(.burger-menu),
 .delete-images {
   transform: translateY(7px);
   box-shadow: 2px 2px 2px;
-  color: #e5e5e5;
+  color: #fff;
 }
 
 /* Média Queries - Adaptation sur écran de plus de 460px */

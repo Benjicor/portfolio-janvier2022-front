@@ -48,41 +48,52 @@ function Connect({ setTitlePage, setUser }) {
 
   return (
     <div className="dashboard-connect">
-      <div className="connect">
-        <form onSubmit={handleSubmit}>
-          <div className="container-form-connect">
-            <div className="form-group-user">
-              <label htmlFor="username" className="username" id="label-connect">
-                Nom d&#39;utilisateur
-                <input
-                  type="email"
-                  pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
-                  id="username"
-                  placeholder="Entrer votre nom d'utilisateur"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </label>
+      <h1 className="connect-title">Se connecter</h1>
+      <div className="container-connect">
+        <div className="connect">
+          <form onSubmit={handleSubmit}>
+            <div className="container-form-connect">
+              <div className="form-group-user">
+                <label
+                  htmlFor="username"
+                  className="username"
+                  id="label-connect"
+                >
+                  Nom d&#39;utilisateur
+                  <input
+                    type="email"
+                    pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+                    id="username"
+                    placeholder="Entrer votre nom d'utilisateur"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </label>
+              </div>
+              <div className="form-group-password">
+                <label
+                  htmlFor="password"
+                  className="password"
+                  id="label-connect"
+                >
+                  Mot de passe
+                  <input
+                    type="password"
+                    minLength="10"
+                    id="password"
+                    placeholder="Entrer votre mot de passe"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    autoComplete="off"
+                  />
+                </label>
+              </div>
+              <div className="button-connect">
+                <Button className="validate" buttonName="Valider" submit />
+              </div>
             </div>
-            <div className="form-group-password">
-              <label htmlFor="password" className="password" id="label-connect">
-                Mot de passe
-                <input
-                  type="password"
-                  minLength="10"
-                  id="password"
-                  placeholder="Entrer votre mot de passe"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  autoComplete="off"
-                />
-              </label>
-            </div>
-            <div className="button-connect">
-              <Button className="validate" buttonName="Valider" submit />
-            </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
   );

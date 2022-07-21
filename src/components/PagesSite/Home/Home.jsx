@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+
 import React, { useState, useEffect } from 'react';
 
 import Modal from '../../Modal/Modal';
-import ModalCertificat from '../../ModalCertificat/ModalCertificat';
 
 import grandePhoto from '../../../assets/jpg/grande-photo.jpg';
 import petitePhoto from '../../../assets/png/petite-photo-ronde.png';
@@ -48,8 +48,8 @@ function Home({ setTitlePage }) {
 
   return (
     <div className="home-page">
+      <h1 className="welcome">Bienvenue sur mon Portfolio</h1>
       <div className="home">
-        <h1 className="welcome">Bienvenue sur mon Portfolio</h1>
         <div className="rond">
           <div className="carre">
             <img
@@ -60,13 +60,20 @@ function Home({ setTitlePage }) {
             />
           </div>
         </div>
-        {openModal && <Modal closeModal={setOpenModal} img={grandePhoto} />}
+        {openModal && (
+          <Modal
+            className="container-modal"
+            closeModal={setOpenModal}
+            img={grandePhoto}
+          />
+        )}
         <h2>Je suis Benjamin CORDREAUX,</h2>
         <p>
           ici, vous trouverez mes créations, mes chefs-d&#39;oeuvres et plus
           encore...
         </p>
       </div>
+      <h2 className="skills">Mes Compétences</h2>
       <div className="techno">
         <ul className="logo">
           <li>
@@ -79,7 +86,8 @@ function Home({ setTitlePage }) {
             />
           </li>
           {openModalCertificatHtml5 && (
-            <ModalCertificat
+            <Modal
+              className="container-modal-certificat"
               closeModal={setOpenModalCertificatHtml5}
               img={certificatHtml5Css3}
             />
@@ -95,7 +103,8 @@ function Home({ setTitlePage }) {
             />
           </li>
           {openModalCertificatCss3 && (
-            <ModalCertificat
+            <Modal
+              className="container-modal-certificat"
               closeModal={setOpenModalCertificatCss3}
               img={certificatHtml5Css3}
             />
@@ -111,7 +120,8 @@ function Home({ setTitlePage }) {
             />
           </li>
           {openModalCertificatJavaScript && (
-            <ModalCertificat
+            <Modal
+              className="container-modal-certificat"
               closeModal={setOpenModalCertificatJavaScript}
               img={certificatJavaScript}
             />
@@ -127,7 +137,8 @@ function Home({ setTitlePage }) {
             />
           </li>
           {openModalCertificatNode && (
-            <ModalCertificat
+            <Modal
+              className="container-modal-certificat"
               closeModal={setOpenModalCertificatNode}
               img={certificatNode}
             />
@@ -143,7 +154,8 @@ function Home({ setTitlePage }) {
             />
           </li>
           {openModalCertificatReact && (
-            <ModalCertificat
+            <Modal
+              className="container-modal-certificat"
               closeModal={setOpenModalCertificatReact}
               img={certificatReact}
             />
@@ -159,7 +171,8 @@ function Home({ setTitlePage }) {
             />
           </li>
           {openModalCertificatMySQL && (
-            <ModalCertificat
+            <Modal
+              className="container-modal-certificat"
               closeModal={setOpenModalCertificatMySQL}
               img={certificatMySQL}
             />
@@ -175,7 +188,8 @@ function Home({ setTitlePage }) {
             />
           </li>
           {openModalCertificatGit && (
-            <ModalCertificat
+            <Modal
+              className="container-modal-certificat"
               closeModal={setOpenModalCertificatGit}
               img={certificatGitEtGitHub}
             />
@@ -191,7 +205,8 @@ function Home({ setTitlePage }) {
             />
           </li>
           {openModalCertificatGitHub && (
-            <ModalCertificat
+            <Modal
+              className="container-modal-certificat"
               closeModal={setOpenModalCertificatGitHub}
               img={certificatGitEtGitHub}
             />
