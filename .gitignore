@@ -110,7 +110,6 @@ dist
 .tern-port
 
 # lock files
-package-lock.json
 npm-lock
 npm-lock.yaml
 yarn.lock
